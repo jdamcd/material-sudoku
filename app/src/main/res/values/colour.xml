@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <!-- Base -->
+  <color name="black">#212121</color>
+  <color name="white">#ffffff</color>
+  <color name="page_background">#eeeeee</color>
+  <color name="primary">#de000000</color>
+  <color name="secondary">#8a000000</color>
+  <color name="disabled">#39000000</color>
+
+  <!-- Theme -->
+  <color name="brand">#2196f3</color>
+  <color name="brand_dark">#1976d2</color>
+  <color name="brand_accent">#ff5252</color>
+
+  <!-- Puzzle list -->
+  <color name="tab_selection">#20ffffff</color>
+
+  <!-- Puzzle view -->
+  <color name="board_background">@color/white</color>
+  <color name="board_lines">@color/black</color>
+  <color name="cell_selected">#442196f3</color>
+  <color name="cell_highlight">#222196f3</color>
+  <color name="cell_warning">#11d50000</color>
+  <color name="note_background">#aaeeeeee</color>
+  <color name="mistake">@color/brand_accent</color>
+
+  <!-- Keypad -->
+  <color name="keypad_border">#eeeeee</color>
+  <color name="keypad_background">#f5f5f5</color>
+  <color name="control_highlight">@color/brand</color>
+
+  <!-- Text -->
+  <color name="digits_given">@color/black</color>
+  <color name="digits_solved">@color/brand</color>
+  <color name="preview_solved">#9e9e9e</color>
+  <color name="digits_note">#707070</color>
+
+  <!-- Levels -->
+  <color name="easy">#8bc34a</color>
+  <color name="normal">#2196f3</color>
+  <color name="hard">#ff9800</color>
+  <color name="extreme">#ff5252</color>
+
+</resources>

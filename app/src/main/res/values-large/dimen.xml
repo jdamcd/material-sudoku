@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  
+  <dimen name="text_button">20sp</dimen>
+  <dimen name="text_tab">16.5sp</dimen>
+  <dimen name="text_scorecard_title">26sp</dimen>
+  <dimen name="text_scorecard">17sp</dimen>
+
+  <dimen name="bar_height">64dp</dimen>
+  <dimen name="land_numpad_margin">70dp</dimen>
+  
+</resources>

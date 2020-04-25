@@ -1,0 +1,66 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style name="Match">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">match_parent</item>
+  </style>
+
+  <style name="Wrap">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <style
+    name="NumpadButton"
+    parent="Widget.AppCompat.Button.Borderless">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">0dp</item>
+    <item name="android:padding">6dp</item>
+    <item name="android:textSize">@dimen/text_button</item>
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+    <item name="autoSizeTextType">uniform</item>
+    <item name="autoSizeMinTextSize">10sp</item>
+    <item name="autoSizeMaxTextSize">24sp</item>
+    <item name="autoSizeStepGranularity">2sp</item>
+  </style>
+
+  <style
+    name="NumpadButton.Clear">
+    <item name="android:src">@drawable/keypad_clear</item>
+    <item name="android:contentDescription">@string/clear_cell</item>
+  </style>
+
+  <style
+    name="Placeholder">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">0dp</item>
+  </style>
+
+  <style
+    name="SolverGrid"
+    parent="Match">
+    <item name="lineStroke">@dimen/grid_line</item>
+    <item name="boxStroke">@dimen/grid_box</item>
+    <item name="borderless">true</item>
+  </style>
+
+  <style
+    name="SolverGrid.Tablet">
+    <item name="borderless">false</item>
+  </style>
+
+  <style
+    name="VerticalDivider"
+    parent="Match">
+    <item name="android:layout_height">1px</item>
+    <item name="android:background">@color/board_lines</item>
+  </style>
+
+  <style
+    name="HorizontalDivider"
+    parent="Match">
+    <item name="android:layout_width">1px</item>
+    <item name="android:background">@color/board_lines</item>
+  </style>
+
+</resources>

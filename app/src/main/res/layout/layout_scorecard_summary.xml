@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    style="@style/Scorecard"
+    android:layout_height="@dimen/scorecard_default_height"
+    android:animateLayoutChanges="true">
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.4" />
+
+    <TextView
+      android:id="@+id/summary_title"
+      style="@style/ScorecardTitle"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      android:text="@string/scorecard_summary" />
+
+    <TextView
+      android:id="@+id/summary_total"
+      style="@style/ScorecardNumber"
+      android:layout_marginEnd="@dimen/gutter"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/guideline"
+      app:layout_constraintTop_toBottomOf="@+id/summary_title"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:visibility="gone" />
+
+    <com.jdamcd.sudoku.scoreboard.LevelGraphView
+      android:id="@+id/summary_graph"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:layout_marginTop="@dimen/half_gutter"
+      android:layout_marginBottom="@dimen/half_gutter"
+      android:layout_marginEnd="@dimen/half_gutter"
+      app:layout_constraintStart_toEndOf="@+id/guideline"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/summary_title"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:visibility="gone" />
+
+    <TextView
+      android:id="@+id/summary_empty"
+      style="@style/ScorecardText"
+      android:layout_below="@id/summary_title"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/summary_title"
+      app:layout_constraintBottom_toBottomOf="parent"
+      android:text="@string/scorecard_empty"
+      android:visibility="gone" />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

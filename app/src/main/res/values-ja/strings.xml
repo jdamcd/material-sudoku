@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">パズル</string>
+  <string name="title_activity_bookmarks">ブックマーク</string>
+  <string name="title_activity_scoreboard">スコアボード</string>
+  <string name="title_activity_settings">設定</string>
+  <string name="title_activity_licenses">ライセンス</string>
+  <string name="title_activity_how_to_play">遊び方</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">ブックマーク</string>
+  <string name="action_settings">設定</string>
+  <string name="action_scoreboard">スコアボード</string>
+  <string name="action_hide_completed">攻略済みのパズルを隠す\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">やさしい</string>
+  <string name="level_medium">ノーマル</string>
+  <string name="level_hard">難しい</string>
+  <string name="level_extreme">超難関</string>
+  <string name="level_special">スペシャル</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">良く出来ました！</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">完了済み</string>
+  <string name="scorecard_best">ベスト</string>
+  <string name="scorecard_average">平均的</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="other">答えを明かした数 %d</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">このアプリは気に入って頂けましたか？</string>
+  <string name="banner_rate">評価する</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">あなたが遊び始めたゲームはここに表示されます</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">セルの答えを見る</string>
+  <string name="action_cheat_random_cell">ランダムなセルの答えを見る</string>
+  <string name="action_bookmark">ブックマーク</string>
+  <string name="action_remove_bookmark">ブックマークを削除する</string>
+  <string name="action_undo">戻す</string>
+  <string name="action_clear_notes">全てのノートを削除する</string>
+  <string name="action_restart">やり直し</string>
+  <string name="note_toggle">ノート</string>
+  <string name="clear_cell">クリア</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">パズルをやり直しますか？</string>
+  <string name="dialog_restart_warning">このパズルの進捗状況は完全に失われます！</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">良くできました！</string>
+  <string name="puzzle_complete_2">素晴らしい！</string>
+  <string name="puzzle_complete_3">凄い！</string>
+  <string name="puzzle_complete_4">お見事！</string>
+  <string name="puzzle_complete_5">参った！</string>
+  <string name="puzzle_complete_6">超凄い！</string>
+
+  <string name="puzzle_complete_message">パズルを攻略しました！よくできました！</string>
+  <string name="puzzle_complete_time">パズル攻略の所要時間 %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="other">( %d セルの回答が明かされました)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">セルの選択</string>
+  <string name="toast_no_move_history">履歴がありません</string>
+  <string name="toast_puzzle_completed">パズルが完全攻略されました</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">パズル</string>
+  <string name="settings_puzzle_cheat">ヒントオプションの表示</string>
+  <string name="settings_puzzle_cheat_summary">身動きが取れないときのヒント</string>
+  <string name="settings_puzzle_timer">タイマーの表示</string>
+  <string name="settings_puzzle_timer_summary">時間内に解けるか挑戦する</string>
+  <string name="settings_general_title">一般</string>
+  <string name="settings_general_version">ヴァージョン</string>
+  <string name="settings_how_to_play">遊び方</string>
+
+  <string name="action_licenses">ソフトウェア・ライセンス</string>
+  <string name="action_rate">アプリを評価する</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">記入してパズルを完成させる・・・</string>
+  <string name="how_to_play_row">各行</string>
+  <string name="how_to_play_col">各列</string>
+  <string name="how_to_play_box">各ボックス</string>
+  <string name="how_to_play_end">１〜９の数</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">ブックマーク</string>
+
+</resources>

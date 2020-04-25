@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <integer-array name="level_colours">
+    <item>@color/easy</item>
+    <item>@color/normal</item>
+    <item>@color/hard</item>
+    <item>@color/extreme</item>
+  </integer-array>
+
+  <integer-array name="tab_colours">
+    <item>@color/easy</item>
+    <item>@color/white</item>
+    <item>@color/hard</item>
+    <item>@color/extreme</item>
+  </integer-array>
+
+  <string-array name="complete_greetings">
+    <item>@string/puzzle_complete_1</item>
+    <item>@string/puzzle_complete_2</item>
+    <item>@string/puzzle_complete_3</item>
+    <item>@string/puzzle_complete_4</item>
+    <item>@string/puzzle_complete_5</item>
+    <item>@string/puzzle_complete_6</item>
+  </string-array>
+
+</resources>

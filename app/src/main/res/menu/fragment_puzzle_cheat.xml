@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
+
+  <item
+    android:id="@+id/action_bookmark"
+    android:title="@string/action_bookmark"
+    android:icon="@drawable/ic_action_bookmark_off"
+    app:showAsAction="ifRoom" />
+
+  <item
+    android:id="@+id/action_undo"
+    android:title="@string/action_undo"
+    android:icon="@drawable/ic_action_undo"
+    app:showAsAction="always" />
+
+  <item
+    android:id="@+id/action_cheat_cell"
+    android:title="@string/action_cheat_cell"
+    app:showAsAction="never" />
+
+  <item
+    android:id="@+id/action_cheat_random_cell"
+    android:title="@string/action_cheat_random_cell"
+    app:showAsAction="never" />
+
+  <item
+    android:id="@+id/action_clear_notes"
+    android:title="@string/action_clear_notes"
+    app:showAsAction="never"
+    android:visible="false" />
+
+  <item
+    android:id="@+id/action_restart"
+    android:title="@string/action_restart"
+    app:showAsAction="never" />
+
+</menu>

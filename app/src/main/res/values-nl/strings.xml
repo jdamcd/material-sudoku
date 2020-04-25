@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Puzzel</string>
+  <string name="title_activity_bookmarks">Bladwijzers</string>
+  <string name="title_activity_scoreboard">Scorebord</string>
+  <string name="title_activity_settings">Instellingen</string>
+  <string name="title_activity_licenses">Licenties</string>
+  <string name="title_activity_how_to_play">Hoe te spelen</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Bladwijzers</string>
+  <string name="action_settings">Instellingen</string>
+  <string name="action_scoreboard">Scorebord</string>
+  <string name="action_hide_completed">Verberg voltooid\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Makkelijk</string>
+  <string name="level_medium">Normaal</string>
+  <string name="level_hard">Moeilijk</string>
+  <string name="level_extreme">Extreem</string>
+  <string name="level_special">Speciaal</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Prima gedaan!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Voltooid</string>
+  <string name="scorecard_best">BESTE</string>
+  <string name="scorecard_average">GEMIDDELD</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d toon</item>
+    <item quantity="other">%d tonen</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Vind u deze app leuk?</string>
+  <string name="banner_rate">Beoordeling</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Puzzels die u begonnen bent te spelen verschijnen hier</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Toon cel</string>
+  <string name="action_cheat_random_cell">Toon willekeurige cel</string>
+  <string name="action_bookmark">Bladwijzer</string>
+  <string name="action_remove_bookmark">Verwijder bladwijzer</string>
+  <string name="action_undo">Maak ongedaan</string>
+  <string name="action_clear_notes">Wis alle notities</string>
+  <string name="action_restart">Start opnieuw</string>
+  <string name="note_toggle">NOTITIES</string>
+  <string name="clear_cell">WIS</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Puzzel opnieuw starten?</string>
+  <string name="dialog_restart_warning">Uw voortgang met deze puzzel zal voor altijd verloren zijn!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Goed gedaan!</string>
+  <string name="puzzle_complete_2">Geweldig!</string>
+  <string name="puzzle_complete_3">Super!</string>
+  <string name="puzzle_complete_4">Schitterend!</string>
+  <string name="puzzle_complete_5">Met vlag en wimpel!</string>
+  <string name="puzzle_complete_6">Prima!</string>
+
+  <string name="puzzle_complete_message">U heeft de puzzel opgelost.Compliment!</string>
+  <string name="puzzle_complete_time">U heeft deze puzzel opgelost binnen %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d cel getoond)</item>
+    <item quantity="other">(%d cellen getoond)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Selecteer cel</string>
+  <string name="toast_no_move_history">Geen geschiedenis</string>
+  <string name="toast_puzzle_completed">Puzzel voltooid</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Puzzel</string>
+  <string name="settings_puzzle_cheat">Toon hint opties</string>
+  <string name="settings_puzzle_cheat_summary">Wat hulp als u vastzit</string>
+  <string name="settings_puzzle_timer">Toon timer</string>
+  <string name="settings_puzzle_timer_summary">Speel tegen de klok</string>
+  <string name="settings_general_title">Algemeen</string>
+  <string name="settings_general_version">Versie</string>
+  <string name="settings_how_to_play">Hoe te spelen</string>
+
+  <string name="action_licenses">Software licenties</string>
+  <string name="action_rate">Beoordeel de App</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Maak de puzzel af door het invullen van …</string>
+  <string name="how_to_play_row">elke rij</string>
+  <string name="how_to_play_col">elke kolom</string>
+  <string name="how_to_play_box">en elk vak</string>
+  <string name="how_to_play_end">met de cijfers 1\u20149</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Gemarkeerd met bladwijzer</string>
+
+</resources>

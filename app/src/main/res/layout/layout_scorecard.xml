@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.cardview.widget.CardView
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="wrap_content"
+  android:visibility="gone">
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    style="@style/Scorecard">
+
+    <androidx.constraintlayout.widget.Guideline
+      android:id="@+id/guideline"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:orientation="vertical"
+      app:layout_constraintGuide_percent="0.4" />
+
+    <TextView
+      android:id="@+id/level"
+      style="@style/ScorecardTitle"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent"
+      tools:text="Easy" />
+
+    <TextView
+      android:id="@+id/completed_field"
+      style="@style/ScorecardNumber"
+      android:layout_marginEnd="@dimen/gutter"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toStartOf="@+id/guideline"
+      app:layout_constraintTop_toBottomOf="@+id/level"
+      app:layout_constraintBottom_toBottomOf="parent"
+      tools:text="9" />
+
+    <TextView
+      android:id="@+id/average_title"
+      style="@style/ScorecardText.Secondary"
+      android:text="@string/scorecard_average"
+      app:layout_constraintTop_toBottomOf="@+id/level"
+      app:layout_constraintStart_toEndOf="@+id/guideline" />
+
+    <View
+      android:id="@+id/average_underline"
+      style="@style/ScorecardLine"
+      android:layout_width="0dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/guideline"
+      app:layout_constraintTop_toBottomOf="@id/average_title" />
+
+    <TextView
+      android:id="@+id/average_field"
+      style="@style/ScorecardText"
+      android:layout_marginTop="@dimen/half_gutter"
+      app:layout_constraintStart_toEndOf="@+id/guideline"
+      app:layout_constraintTop_toBottomOf="@id/average_underline"
+      tools:text="5:55" />
+
+    <TextView
+      android:id="@+id/best_title"
+      style="@style/ScorecardText.Secondary"
+      android:layout_marginTop="@dimen/gutter"
+      app:layout_constraintStart_toEndOf="@+id/guideline"
+      app:layout_constraintTop_toBottomOf="@id/average_field"
+      android:text="@string/scorecard_best" />
+
+    <View
+      android:id="@+id/best_underline"
+      style="@style/ScorecardLine"
+      android:layout_width="0dp"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/guideline"
+      app:layout_constraintTop_toBottomOf="@id/best_title" />
+
+    <TextView
+      android:id="@+id/best_field"
+      style="@style/ScorecardText"
+      android:paddingBottom="@dimen/half_gutter"
+      android:layout_marginTop="@dimen/half_gutter"
+      app:layout_constraintEnd_toStartOf="@+id/best_details_field"
+      app:layout_constraintStart_toEndOf="@+id/guideline"
+      app:layout_constraintTop_toBottomOf="@+id/best_underline"
+      app:layout_constraintHorizontal_chainStyle="spread_inside"
+      tools:text="4:03" />
+
+    <TextView
+      android:id="@+id/best_details_field"
+      style="@style/ScorecardText.Secondary"
+      android:layout_margin="@dimen/half_gutter"
+      android:paddingBottom="@dimen/half_gutter"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toEndOf="@+id/best_field"
+      app:layout_constraintTop_toBottomOf="@+id/best_underline"
+      tools:text="#4" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

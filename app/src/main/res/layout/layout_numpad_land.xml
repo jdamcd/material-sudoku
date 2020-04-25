@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  android:id="@+id/keypad_grid"
+  style="@style/Match"
+  android:background="@drawable/floating_keypad_background"
+  android:padding="@dimen/half_gutter"
+  tools:ignore="HardcodedText">
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_1"
+    style="@style/NumpadButton"
+    android:text="1"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/keypad_2"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/keypad_4" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_2"
+    style="@style/NumpadButton"
+    android:text="2"
+    app:layout_constraintStart_toEndOf="@+id/keypad_1"
+    app:layout_constraintEnd_toStartOf="@+id/keypad_3"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/keypad_5" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_3"
+    style="@style/NumpadButton"
+    android:text="3"
+    app:layout_constraintStart_toEndOf="@+id/keypad_2"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:layout_constraintBottom_toTopOf="@+id/keypad_6" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_4"
+    style="@style/NumpadButton"
+    android:text="4"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/keypad_5"
+    app:layout_constraintTop_toBottomOf="@+id/keypad_1"
+    app:layout_constraintBottom_toTopOf="@+id/keypad_7" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_5"
+    style="@style/NumpadButton"
+    android:text="5"
+    app:layout_constraintStart_toEndOf="@+id/keypad_4"
+    app:layout_constraintEnd_toStartOf="@+id/keypad_6"
+    app:layout_constraintTop_toBottomOf="@+id/keypad_2"
+    app:layout_constraintBottom_toTopOf="@+id/keypad_8" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_6"
+    style="@style/NumpadButton"
+    android:text="6"
+    app:layout_constraintStart_toEndOf="@+id/keypad_5"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/keypad_3"
+    app:layout_constraintBottom_toTopOf="@+id/keypad_9" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_7"
+    style="@style/NumpadButton"
+    android:text="7"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/keypad_8"
+    app:layout_constraintTop_toBottomOf="@+id/keypad_4"
+    app:layout_constraintBottom_toTopOf="@+id/note_toggle" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_8"
+    style="@style/NumpadButton"
+    android:text="8"
+    app:layout_constraintStart_toEndOf="@+id/keypad_7"
+    app:layout_constraintEnd_toStartOf="@+id/keypad_9"
+    app:layout_constraintTop_toBottomOf="@+id/keypad_5"
+    app:layout_constraintBottom_toTopOf="@+id/note_toggle" />
+
+  <androidx.appcompat.widget.AppCompatButton
+    android:id="@+id/keypad_9"
+    style="@style/NumpadButton"
+    android:text="9"
+    app:layout_constraintStart_toEndOf="@+id/keypad_8"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toBottomOf="@+id/keypad_6"
+    app:layout_constraintBottom_toTopOf="@+id/note_toggle" />
+
+  <com.jdamcd.sudoku.view.CheckableImageButton
+    android:id="@+id/note_toggle"
+    style="@style/NumpadButton.Notes"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintEnd_toStartOf="@+id/clear_cell"
+    app:layout_constraintTop_toBottomOf="@+id/keypad_7"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+  <androidx.appcompat.widget.AppCompatImageButton
+    android:id="@+id/clear_cell"
+    style="@style/NumpadButton.Clear"
+    app:layout_constraintStart_toEndOf="@+id/note_toggle"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintTop_toTopOf="@+id/note_toggle"
+    app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Puzzle</string>
+  <string name="title_activity_bookmarks">Bookmarks</string>
+  <string name="title_activity_scoreboard">Scoreboard</string>
+  <string name="title_activity_settings">Settings</string>
+  <string name="title_activity_licenses">Licenses</string>
+  <string name="title_activity_how_to_play">How to play</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Bookmarks</string>
+  <string name="action_settings">Settings</string>
+  <string name="action_scoreboard">Scoreboard</string>
+  <string name="action_hide_completed">Hide completed\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Easy</string>
+  <string name="level_medium">Medium</string>
+  <string name="level_hard">Hard</string>
+  <string name="level_extreme">Extreme</string>
+  <string name="level_special">Special</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Nice work!</string>
+  <string name="fab_random">Play random</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_empty">No puzzles completed</string>
+  <string name="scorecard_summary">Completed</string>
+  <string name="scorecard_best">BEST</string>
+  <string name="scorecard_average">AVERAGE</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d reveal</item>
+    <item quantity="other">%d reveals</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Enjoying this app?</string>
+  <string name="banner_rate">Rate</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Puzzles you\'ve started playing appear here</string>
+  <string name="action_remove_all">Remove all</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Reveal cell</string>
+  <string name="action_cheat_random_cell">Reveal random cell</string>
+  <string name="action_bookmark">Bookmark</string>
+  <string name="action_remove_bookmark">Remove bookmark</string>
+  <string name="action_undo">Undo</string>
+  <string name="action_clear_notes">Clear all notes</string>
+  <string name="action_restart">Restart</string>
+  <string name="note_toggle">Notes</string>
+  <string name="clear_cell">Clear</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Restart puzzle?</string>
+  <string name="dialog_restart_warning">Your progress on this puzzle will be lost forever!</string>
+  
+  <!-- Puzzle dialogs -->
+  <string name="puzzle_complete_1">Nice work!</string>
+  <string name="puzzle_complete_2">Awesome!</string>
+  <string name="puzzle_complete_3">Super!</string>
+  <string name="puzzle_complete_4">Splendid!</string>
+  <string name="puzzle_complete_5">Aced it!</string>
+  <string name="puzzle_complete_6">Excellent!</string>
+
+  <string name="puzzle_complete_message">You solved the puzzle. High five!</string>
+  <string name="puzzle_complete_time">You solved this puzzle in %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d cell revealed)</item>
+    <item quantity="other">(%d cells revealed)</item>
+  </plurals>
+
+  <string name="resume_title">Resume %s?</string>
+  <string name="resume_time_played">Time played</string>
+  <string name="resume_progress">Progress</string>
+  <string name="resume_button">Resume</string>
+
+  <!-- Shortcuts -->
+  <string name="shortcut_random_label">Random</string>
+  <string name="shortcut_random_long_label">Random puzzle</string>
+  <string name="shortcut_resume_label">Resume</string>
+  <string name="shortcut_resume_long_label">Resume last</string>
+  <string name="shortcut_resume_disabled">No puzzle to resume</string>
+
+  <!-- Snackbars -->
+  <string name="toast_no_cursor">Select cell</string>
+  <string name="toast_no_move_history">No history</string>
+  <string name="toast_puzzle_completed">Puzzle completed</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Puzzle</string>
+  <string name="settings_puzzle_cheat">Show hint options</string>
+  <string name="settings_puzzle_cheat_summary">A little help when you\'re stuck</string>
+  <string name="settings_puzzle_timer">Show timer</string>
+  <string name="settings_puzzle_timer_summary">Play against the clock</string>
+  <string name="settings_puzzle_show_errors">Highlight errors</string>
+  <string name="settings_puzzle_show_errors_summary">Instant feedback if you make a mistake</string>
+  <string name="settings_theme_title">Theme</string>
+  <string name="settings_dark_mode">Force dark mode</string>
+  <string name="settings_general_title">General</string>
+  <string name="settings_general_version">Version</string>
+  <string name="settings_how_to_play">How to play</string>
+
+  <string name="action_licenses">Software licenses</string>
+  <string name="action_rate">Rate app</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Complete the puzzle by filling…</string>
+  <string name="how_to_play_row">each row</string>
+  <string name="how_to_play_col">each column</string>
+  <string name="how_to_play_box">and each box</string>
+  <string name="how_to_play_end">with the digits 1\u20149</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Bookmarked</string>
+
+</resources>

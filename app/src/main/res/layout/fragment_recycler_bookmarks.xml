@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<FrameLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  style="@style/Match">
+
+  <com.jdamcd.sudoku.view.AutoGridRecyclerView
+    android:id="@+id/recycler_view"
+    style="@style/PuzzleRecycler" />
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+    android:id="@+id/empty"
+    style="@style/Match"
+    android:background="@color/page_background"
+    android:padding="20dp"
+    android:visibility="visible">
+
+    <ImageView
+      android:id="@+id/empty_logo"
+      style="@style/Wrap"
+      android:importantForAccessibility="no"
+      android:src="@drawable/empty_bookmarks"
+      app:layout_constraintTop_toTopOf="parent"
+      app:layout_constraintBottom_toTopOf="@+id/empty_text"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintVertical_chainStyle="packed" />
+
+    <TextView
+      android:id="@+id/empty_text"
+      style="@style/EmptyText"
+      android:text="@string/bookmarks_empty"
+      app:layout_constraintTop_toBottomOf="@+id/empty_logo"
+      app:layout_constraintBottom_toBottomOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent" />
+  </androidx.constraintlayout.widget.ConstraintLayout>
+
+  <include
+    android:id="@+id/loading"
+    style="@style/Match"
+    layout="@layout/layout_loading" />
+
+</FrameLayout>
+
+

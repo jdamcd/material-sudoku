@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Bulmaca</string>
+  <string name="title_activity_bookmarks">Yer işaretleri</string>
+  <string name="title_activity_scoreboard">Skorbord</string>
+  <string name="title_activity_settings">Ayarlar</string>
+  <string name="title_activity_licenses">Lisanslar</string>
+  <string name="title_activity_how_to_play">Nasıl oynanır</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Yer işaretleri</string>
+  <string name="action_settings">Ayarlar</string>
+  <string name="action_scoreboard">Skorbord</string>
+  <string name="action_hide_completed">Tamamlananları gizle\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Kolay</string>
+  <string name="level_medium">Orta</string>
+  <string name="level_hard">Zor</string>
+  <string name="level_extreme">Çok zor</string>
+  <string name="level_special">Özel</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">İyi seçim!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Tamamlananlar</string>
+  <string name="scorecard_best">EN YÜKSEK</string>
+  <string name="scorecard_average">ORTALAMA</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d adet gösteriliyor</item>
+    <item quantity="other">%d adet gösteriliyor</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Bu uygulamayı beğendiniz mi?</string>
+  <string name="banner_rate">Puan verin</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Oynamaya başladığınız bulmacaları burada görebilirsiniz</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Hücreyi göster</string>
+  <string name="action_cheat_random_cell">Rastgele bir hücre göster</string>
+  <string name="action_bookmark">Yer işareti ekle</string>
+  <string name="action_remove_bookmark">Yer işaretini sil</string>
+  <string name="action_undo">Geri al</string>
+  <string name="action_clear_notes">Tüm notları sil</string>
+  <string name="action_restart">Yeniden başlat</string>
+  <string name="note_toggle">NOTLAR</string>
+  <string name="clear_cell">TEMİZLE</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Bulmaca yeniden başlatılsın mı?</string>
+  <string name="dialog_restart_warning">Bu bulmacadaki ilerleme durumunuz kaydedilmeyecektir!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Güzel!</string>
+  <string name="puzzle_complete_2">Müthiş!</string>
+  <string name="puzzle_complete_3">Süper!</string>
+  <string name="puzzle_complete_4">Muhteşem!</string>
+  <string name="puzzle_complete_5">Olağanüstü!</string>
+  <string name="puzzle_complete_6">Mükemmel!</string>
+
+  <string name="puzzle_complete_message">Bulmacayı çözdünüz. Tebrikler!</string>
+  <string name="puzzle_complete_time">Bu bulmacayı çözmeniz %s sürdü</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d hücre gösterildi)</item>
+    <item quantity="other">(%d hücre gösterildi)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Hücre seç</string>
+  <string name="toast_no_move_history">Geçmiş kaydı yok</string>
+  <string name="toast_puzzle_completed">Bulmaca tamamlandı</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Bulmaca</string>
+  <string name="settings_puzzle_cheat">İpucu seçeneklerini göster</string>
+  <string name="settings_puzzle_cheat_summary">Takıldığınız yerde küçük bir yardım</string>
+  <string name="settings_puzzle_timer">Saati göster</string>
+  <string name="settings_puzzle_timer_summary">Zamana karşı oyna</string>
+  <string name="settings_general_title">Genel</string>
+  <string name="settings_general_version">Sürüm</string>
+  <string name="settings_how_to_play">Nasıl oynanır</string>
+
+  <string name="action_licenses">Yazılım lisansları</string>
+  <string name="action_rate">Uygulamaya puan ver</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Bulmacayı tamamlamak için</string>
+  <string name="how_to_play_row">her satırı</string>
+  <string name="how_to_play_col">her sütunu</string>
+  <string name="how_to_play_box">ve her kutuyu</string>
+  <string name="how_to_play_end">1\'den 9\'ya kadar rakamlarla doldurun</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Yer işareti eklenmiş</string>
+
+</resources>

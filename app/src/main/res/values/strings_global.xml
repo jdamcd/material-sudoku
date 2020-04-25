@@ -1,0 +1,9 @@
+<resources
+  xmlns:tools="http://schemas.android.com/tools"
+  tools:ignore="MissingTranslation">
+
+  <string name="app_name" translatable="false">Sudoku</string>
+  <string name="toast_missing_play">Google Play not found!</string>
+  <string name="licenses_title" translatable="false">Open Source &lt;3</string>
+
+</resources>

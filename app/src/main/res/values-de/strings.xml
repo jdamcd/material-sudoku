@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Rätsel</string>
+  <string name="title_activity_bookmarks">Lesezeichen</string>
+  <string name="title_activity_scoreboard">Punkteübersicht</string>
+  <string name="title_activity_settings">Einstellungen</string>
+  <string name="title_activity_licenses">Lizenzen</string>
+  <string name="title_activity_how_to_play">Spielregeln</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Lesezeichen</string>
+  <string name="action_settings">Einstellungen</string>
+  <string name="action_scoreboard">Punkteübersicht</string>
+  <string name="action_hide_completed">Abgeschlossene verbergen\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Leicht</string>
+  <string name="level_medium">Normal</string>
+  <string name="level_hard">Schwer</string>
+  <string name="level_extreme">Extrem</string>
+  <string name="level_special">Spezial</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Toll gemacht!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Abgeschlossen</string>
+  <string name="scorecard_best">BESTZEIT</string>
+  <string name="scorecard_average">DURCHSCHNITT</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d Enthüllung</item>
+    <item quantity="other">%d Enthüllungen</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Gefällt dir die App?</string>
+  <string name="banner_rate">Bewerte sie</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Begonnene Rätsel erscheinen hier</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Zelle enthüllen</string>
+  <string name="action_cheat_random_cell">Zufällige Zelle enthüllen</string>
+  <string name="action_bookmark">Lesezeichen</string>
+  <string name="action_remove_bookmark">Lesezeichen entfernen</string>
+  <string name="action_undo">Rückgängig</string>
+  <string name="action_clear_notes">Alle Notizen löschen</string>
+  <string name="action_restart">Neustart</string>
+  <string name="note_toggle">NOTIZEN</string>
+  <string name="clear_cell">LÖSCHEN</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Rätsel neu starten?</string>
+  <string name="dialog_restart_warning">Dein Fortschritt in diesem Rätsel geht für immer verloren!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Toll gemacht!</string>
+  <string name="puzzle_complete_2">Wunderbar!</string>
+  <string name="puzzle_complete_3">Super!</string>
+  <string name="puzzle_complete_4">Brillant!</string>
+  <string name="puzzle_complete_5">Du bist ein Ass!</string>
+  <string name="puzzle_complete_6">Echt gut!</string>
+
+  <string name="puzzle_complete_message">Du hast das Rätsel gelöst. Eine Glanzleistung!</string>
+  <string name="puzzle_complete_time">Du hast das Rätsel in %s gelöst!</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d Zelle enthüllt)</item>
+    <item quantity="other">(%d Zellen enthüllt)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Zelle auswählen</string>
+  <string name="toast_no_move_history">Keine Historie</string>
+  <string name="toast_puzzle_completed">Rätsel abgeschlossen</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Rätsel</string>
+  <string name="settings_puzzle_cheat">Hinweisoptionen anzeigen</string>
+  <string name="settings_puzzle_cheat_summary">Ein bisschen Hilfe, wenn du feststeckst</string>
+  <string name="settings_puzzle_timer">Timer anzeigen</string>
+  <string name="settings_puzzle_timer_summary">Gegen die Uhr spielen</string>
+  <string name="settings_general_title">Allgemein</string>
+  <string name="settings_general_version">Version</string>
+  <string name="settings_how_to_play">Spielregeln</string>
+
+  <string name="action_licenses">Softwarelizenzen</string>
+  <string name="action_rate">App bewerten</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Du löst das Rätsel durch Ausfüllen von</string>
+  <string name="how_to_play_row">jeder Zeile</string>
+  <string name="how_to_play_col">jeder Spalte</string>
+  <string name="how_to_play_box">und jeder Box</string>
+  <string name="how_to_play_end">mit Zahlen von 1\u20149</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Lesezeichen gesetzt</string>
+
+</resources>

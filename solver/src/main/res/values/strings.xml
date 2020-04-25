@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <string name="app_name">Sudoku Solver</string>
+  <string name="about_name">About</string>
+
+  <!-- Action bar -->
+  <string name="action_clear">Clear all</string>
+  <string name="action_solve">Solve</string>
+  <string name="action_about">About</string>
+
+  <!-- Snackbars -->
+  <string name="toast_no_solution">No possible solution from the given digits</string>
+  <string name="toast_no_cursor">Select cell</string>
+  <string name="toast_solved">Puzzle has been solved</string>
+
+  <!-- Keypad -->
+  <string name="clear_cell">CLEAR</string>
+
+  <!-- About -->
+  <string name="about_general_version">Version</string>
+  <string name="about_general_play">Play Sudoku</string>
+  <string name="about_general_play_summary">Get the game!</string>
+  <string name="about_general_rate">Rate this app</string>
+
+</resources>

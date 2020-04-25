@@ -1,0 +1,73 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/material-sudoku
+  docker:
+    - image: circleci/android:api-29
+  environment:
+    JVM_OPTS: -Xmx2048m
+    GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"
+    TERM: dumb
+
+jobs:
+  build:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "core/build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Download Dependencies
+          command: ./gradlew androidDependencies
+      - save_cache:
+          paths:
+            - ~/.gradle
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "core/build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - run:
+          name: Analysis
+          command: ./gradlew spotlessCheck app:lint
+      - run:
+          name: Assemble
+          command: ./gradlew app:assembleGoogleDebug
+      - store_artifacts:
+          path: app/build/reports
+          destination: reports
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .gradle
+            - build
+            - app/build
+  test:
+    <<: *defaults
+    steps:
+      - checkout
+      - restore_cache:
+          key: jars-{{ checksum "build.gradle" }}-{{ checksum  "core/build.gradle" }}-{{ checksum  "app/build.gradle" }}
+      - attach_workspace:
+          at: ~/sudoku
+      - run:
+          name: Test
+          command: ./gradlew core:test app:testGoogleDebug
+      - store_artifacts:
+          path: app/build/reports/tests
+          destination: reports
+      - store_test_results:
+          path: app/build/test-results
+      - store_test_results:
+          path: core/build/test-results
+      - persist_to_workspace:
+          root: .
+          paths:
+            - .gradle
+            - build
+            - app/build
+
+workflows:
+  version: 2
+  pipeline:
+    jobs:
+      - build
+      - test:
+          requires:
+            - build

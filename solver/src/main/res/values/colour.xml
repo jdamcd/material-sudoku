@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <!-- Base -->
+  <color name="black">#333333</color>
+  <color name="white">#ffffff</color>
+  <color name="background_grey">#dddddd</color>
+
+  <!-- Theme -->
+  <color name="brand">#009688</color>
+  <color name="brand_dark">#00796b</color>
+  <color name="brand_accent">#00bcd4</color>
+    
+  <!-- Puzzle view -->
+  <color name="board_background">@color/white</color>
+  <color name="board_lines">@color/black</color>
+  <color name="cell_selected">#33009688</color>
+  <color name="cell_warning">#11cc0000</color>
+  <color name="digits_given">@color/black</color>
+  <color name="digits_solved">@color/brand</color>
+
+  <!-- Keypad -->
+  <color name="keypad_background">#f3f3f3</color>
+
+</resources>

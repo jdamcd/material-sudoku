@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/Match"
+  android:orientation="vertical">
+
+  <androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    style="@style/Toolbar" />
+
+  <ScrollView
+    android:id="@+id/scoreboard_container"
+    style="@style/Match"
+    android:fillViewport="true"
+    android:background="@color/page_background">
+
+    <LinearLayout
+      style="@style/ScoreboardContainer">
+
+      <fragment
+        android:id="@+id/fragment_scoreboard"
+        style="@style/Match"
+        android:name="com.jdamcd.sudoku.scoreboard.ScoreboardFragment" />
+    </LinearLayout>
+  </ScrollView>
+
+</LinearLayout>
+

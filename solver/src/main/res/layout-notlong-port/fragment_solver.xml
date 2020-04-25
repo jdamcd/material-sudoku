@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/Match"
+  android:orientation="vertical">
+
+  <com.jdamcd.sudokusolver.solver.view.InteractivePuzzleView
+    android:id="@+id/puzzle_board"
+    style="@style/SolverGrid" />
+
+  <View
+    android:id="@+id/divider"
+    style="@style/VerticalDivider" />
+
+  <include
+    android:id="@+id/numpad"
+    style="@style/Match"
+    layout="@layout/layout_numpad_rectangle_solver" />
+
+</LinearLayout>

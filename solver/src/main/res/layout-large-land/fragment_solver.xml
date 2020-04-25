@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/Match"
+  android:background="@color/background_grey">
+
+  <com.jdamcd.sudokusolver.solver.view.InteractivePuzzleView
+    android:id="@+id/puzzle_board"
+    style="@style/SolverGrid" />
+
+  <View
+    style="@style/HorizontalDivider"
+    android:layout_toRightOf="@id/puzzle_board" />
+
+  <RelativeLayout
+    style="@style/Match"
+    android:layout_toRightOf="@id/puzzle_board">
+
+    <include
+      android:id="@+id/numpad"
+      layout="@layout/layout_numpad_land_solver"
+      android:layout_width="@dimen/tablet_numpad_size"
+      android:layout_height="@dimen/tablet_numpad_size"
+      android:layout_centerInParent="true" />
+  </RelativeLayout>
+
+</RelativeLayout>

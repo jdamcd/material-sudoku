@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Łamigłówka</string>
+  <string name="title_activity_bookmarks">Zakładki</string>
+  <string name="title_activity_scoreboard">Tablica wyników</string>
+  <string name="title_activity_settings">Ustawienia</string>
+  <string name="title_activity_licenses">Licencje</string>
+  <string name="title_activity_how_to_play">Jak grać</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Zakładki</string>
+  <string name="action_settings">Ustawienia</string>
+  <string name="action_scoreboard">Tablica wyników</string>
+  <string name="action_hide_completed">Ukryj zakończone\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Łatwe</string>
+  <string name="level_medium">Normalne</string>
+  <string name="level_hard">Trudne</string>
+  <string name="level_extreme">Skrajny</string>
+  <string name="level_special">Specjalne</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Dobrze!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Zakończone</string>
+  <string name="scorecard_best">NAJLEPSZE</string>
+  <string name="scorecard_average">ŚREDNIA</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d ujawniono</item>
+    <item quantity="few">%d ujawniono</item>
+    <item quantity="many">%d ujawniono</item>
+    <item quantity="other">%d ujawniono</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Podoba ci się ta aplikacja?</string>
+  <string name="banner_rate">Oceń ją</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Łamigłówki, które zacząłeś rozwiązywać pojawiają się tutaj</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Odsłoń komórkę</string>
+  <string name="action_cheat_random_cell">Odsłoń losowo wybraną komórkę</string>
+  <string name="action_bookmark">Dodaj do ulubionych</string>
+  <string name="action_remove_bookmark">Usuń zakładkę</string>
+  <string name="action_undo">Cofnij</string>
+  <string name="action_clear_notes">Wyczyść wszystkie notatki</string>
+  <string name="action_restart">Restart</string>
+  <string name="note_toggle">UWAGI</string>
+  <string name="clear_cell">WYCZYŚĆ</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Restartować łamigłówkę?</string>
+  <string name="dialog_restart_warning">Twoje postępy w ramach tej łamigłówki zostaną utracone na zawsze!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Dobrze!</string>
+  <string name="puzzle_complete_2">Niesamowicie!</string>
+  <string name="puzzle_complete_3">Super!</string>
+  <string name="puzzle_complete_4">Doskonale!</string>
+  <string name="puzzle_complete_5">Świetnie!</string>
+  <string name="puzzle_complete_6">Bardzo dobrze!</string>
+
+  <string name="puzzle_complete_message">Rozwiązałeś łamigłówkę. Piątka!</string>
+  <string name="puzzle_complete_time">Rozwiązałeś tą łamigłówkę w %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d komórka odkryta)</item>
+    <item quantity="few">(%d komórki odkryte)</item>
+    <item quantity="many">(%d komórki odkryte)</item>
+    <item quantity="other">(%d komórki odkryte)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Zaznacz komórkę</string>
+  <string name="toast_no_move_history">Brak historii</string>
+  <string name="toast_puzzle_completed">Łamigłówka zakończona</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Łamigłówki</string>
+  <string name="settings_puzzle_cheat">Pokaż opcje podpowiedzi / wskazówek</string>
+  <string name="settings_puzzle_cheat_summary">Mała pomoc, gdy utkniesz w jednym punkcie</string>
+  <string name="settings_puzzle_timer">Pokaż zegar</string>
+  <string name="settings_puzzle_timer_summary">Zagraj na czas</string>
+  <string name="settings_general_title">Ogólne</string>
+  <string name="settings_general_version">Wersja</string>
+  <string name="settings_how_to_play">Jak grać</string>
+
+  <string name="action_licenses">Licencje na oprogramowanie</string>
+  <string name="action_rate">Oceń aplikację</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Ułóż układankę poprzez wypełnienie …</string>
+  <string name="how_to_play_row">każdego rzędu</string>
+  <string name="how_to_play_col">każdej kolumny</string>
+  <string name="how_to_play_box">i każdego kwadratu</string>
+  <string name="how_to_play_end">cyframi 1–9</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Dodano do ulubionych</string>
+
+</resources>

@@ -1,0 +1,37 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+  <PreferenceCategory
+    android:title="@string/settings_puzzle_title">
+    <CheckBoxPreference
+      android:key="settings_timer"
+      android:title="@string/settings_puzzle_timer"
+      android:summary="@string/settings_puzzle_timer_summary"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="settings_cheat"
+      android:title="@string/settings_puzzle_cheat"
+      android:summary="@string/settings_puzzle_cheat_summary"
+      android:defaultValue="true" />
+    <CheckBoxPreference
+      android:key="settings_show_errors"
+      android:title="@string/settings_puzzle_show_errors"
+      android:summary="@string/settings_puzzle_show_errors_summary"
+      android:defaultValue="false" />
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="@string/settings_theme_title">
+    <SwitchPreference
+      android:key="settings_dark_mode"
+      android:title="@string/settings_dark_mode"
+      android:defaultValue="false" />
+  </PreferenceCategory>
+  <PreferenceCategory
+    android:title="@string/settings_general_title">
+    <Preference
+      android:key="settings_how_to_play"
+      android:title="@string/settings_how_to_play" />
+    <Preference
+      android:key="settings_version"
+      android:title="@string/settings_general_version"
+      android:selectable="false" />
+  </PreferenceCategory>
+</PreferenceScreen>

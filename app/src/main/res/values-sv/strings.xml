@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Pussel</string>
+  <string name="title_activity_bookmarks">Bokmärken</string>
+  <string name="title_activity_scoreboard">Resultatlista</string>
+  <string name="title_activity_settings">Inställningar</string>
+  <string name="title_activity_licenses">Licenser</string>
+  <string name="title_activity_how_to_play">Hur du spelar</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Bokmärken</string>
+  <string name="action_settings">Inställningar</string>
+  <string name="action_scoreboard">Resultatlista</string>
+  <string name="action_hide_completed">Dölj färdiga\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Lätt</string>
+  <string name="level_medium">Medelsvår</string>
+  <string name="level_hard">Svår</string>
+  <string name="level_extreme">Extrem</string>
+  <string name="level_special">Special</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Bra jobbat!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Färdiga</string>
+  <string name="scorecard_best">BÄST</string>
+  <string name="scorecard_average">MEDEL</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d visa</item>
+    <item quantity="other">%d visar</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Gillar du den här appen?</string>
+  <string name="banner_rate">Betygsätt den</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Pussel du har påbörjat visas här</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Visa ruta</string>
+  <string name="action_cheat_random_cell">Visa slumpmässig ruta</string>
+  <string name="action_bookmark">Bokmärke</string>
+  <string name="action_remove_bookmark">Ta bort bokmärke</string>
+  <string name="action_undo">Ångra</string>
+  <string name="action_clear_notes">Rensa alla noteringar</string>
+  <string name="action_restart">Starta om</string>
+  <string name="note_toggle">NOT</string>
+  <string name="clear_cell">RENSA</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Starta om pusslet?</string>
+  <string name="dialog_restart_warning">Dina framsteg på detta pussel kommer att gå förlorade för alltid!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Bra jobbat!</string>
+  <string name="puzzle_complete_2">Utmärkt!</string>
+  <string name="puzzle_complete_3">Toppen!</string>
+  <string name="puzzle_complete_4">Suveränt!</string>
+  <string name="puzzle_complete_5">Där satt den!</string>
+  <string name="puzzle_complete_6">Fantastiskt!</string>
+
+  <string name="puzzle_complete_message">Du löste pusslet! Bra jobbat!</string>
+  <string name="puzzle_complete_time">Du löste pusslet på %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">%d ruta visas</item>
+    <item quantity="other">%d rutor visas</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Välj ruta</string>
+  <string name="toast_no_move_history">Ingen historik</string>
+  <string name="toast_puzzle_completed">Pusslet är löst</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Pussel</string>
+  <string name="settings_puzzle_cheat">Visa tipsalternativ</string>
+  <string name="settings_puzzle_cheat_summary">Lite hjälp när du har fastnat</string>
+  <string name="settings_puzzle_timer">Visa tidtagare</string>
+  <string name="settings_puzzle_timer_summary">Spela mot klockan</string>
+  <string name="settings_general_title">Allmänt</string>
+  <string name="settings_general_version">Version</string>
+  <string name="settings_how_to_play">Hur du spelar</string>
+
+  <string name="action_licenses">Programlicenser</string>
+  <string name="action_rate">Betygsätt appen</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Gör pusslet färdigt genom att fylla i…</string>
+  <string name="how_to_play_row">varje vågrät rad</string>
+  <string name="how_to_play_col">varje lodrät rad</string>
+  <string name="how_to_play_box">och varje box</string>
+  <string name="how_to_play_end">med siffrorna 1\u20149</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Bokmärkt</string>
+
+</resources>

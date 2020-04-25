@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  
+  <dimen name="text_button">15sp</dimen>
+  <dimen name="grid_line">1px</dimen>
+  <dimen name="grid_box">2dp</dimen>
+  <dimen name="gutter">16dp</dimen>
+  <dimen name="half_gutter">8dp</dimen>
+  <dimen name="land_numpad_margin">20dp</dimen>
+  <dimen name="tablet_numpad_size">300dp</dimen>
+
+</resources>

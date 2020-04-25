@@ -1,0 +1,17 @@
+<shortcuts xmlns:android="http://schemas.android.com/apk/res/android">
+  <shortcut
+    android:shortcutId="random"
+    android:enabled="true"
+    android:icon="@drawable/ic_shortcut_random"
+    android:shortcutShortLabel="@string/shortcut_random_label"
+    android:shortcutLongLabel="@string/shortcut_random_long_label">
+    <intent
+      android:action="android.intent.action.VIEW"
+      android:targetPackage="com.jdamcd.sudoku"
+      android:targetClass="com.jdamcd.sudoku.app.SplashActivity">
+      <extra
+        android:name="extra_shortcut"
+        android:value="random" />
+    </intent>
+  </shortcut>
+</shortcuts>

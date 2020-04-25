@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/Match"
+  android:orientation="vertical">
+
+  <androidx.appcompat.widget.Toolbar
+    android:id="@+id/toolbar"
+    style="@style/Toolbar" />
+
+  <fragment
+    android:id="@+id/fragment_how_to_play"
+    style="@style/Match"
+    android:name="com.jdamcd.sudoku.settings.howto.HowToPlayFragment" />
+
+</LinearLayout>

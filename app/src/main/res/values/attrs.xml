@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <declare-styleable name="PuzzleView">
+    <attr name="lineStroke" format="reference|dimension" />
+    <attr name="boxStroke" format="reference|dimension" />
+    <attr name="borderless" format="boolean" />
+  </declare-styleable>
+
+</resources>

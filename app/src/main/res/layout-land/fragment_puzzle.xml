@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/Match"
+  android:background="@color/keypad_border">
+
+  <com.jdamcd.sudoku.view.GamePuzzleView
+    android:id="@+id/puzzle_board"
+    style="@style/GameGrid" />
+
+  <View
+    style="@style/HorizontalDivider"
+    android:layout_toRightOf="@id/puzzle_board" />
+
+  <include
+    android:id="@+id/numpad"
+    style="@style/Match"
+    android:layout_toRightOf="@id/puzzle_board"
+    layout="@layout/layout_numpad_land"
+    android:layout_margin="@dimen/land_numpad_margin" />
+
+</RelativeLayout>

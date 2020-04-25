@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+  
+  <dimen name="text_button">15sp</dimen>
+  <dimen name="text_tab">14.5sp</dimen>
+  <dimen name="text_puzzle_title">24sp</dimen>
+  <dimen name="text_puzzle_time">13sp</dimen>
+  <dimen name="text_scorecard_title">22sp</dimen>
+  <dimen name="text_scorecard">14.5sp</dimen>
+  <dimen name="text_how_to">28sp</dimen>
+
+  <dimen name="grid_line">1px</dimen>
+  <dimen name="grid_box">2dp</dimen>
+
+  <dimen name="large_gutter">24dp</dimen>
+  <dimen name="gutter">16dp</dimen>
+  <dimen name="half_gutter">8dp</dimen>
+
+  <dimen name="bar_height">56dp</dimen>
+  <dimen name="land_numpad_margin">20dp</dimen>
+  <dimen name="tablet_numpad_size">300dp</dimen>
+  <dimen name="center_list_width">600dp</dimen>
+  <dimen name="scorecard_default_height">168dp</dimen>
+  <dimen name="standard_elevation">4dp</dimen>
+  <dimen name="resume_sheet_height">300dp</dimen>
+  <dimen name="bottom_sheet_width">0dp</dimen>
+
+</resources>

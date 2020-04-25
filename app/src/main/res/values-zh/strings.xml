@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">谜题</string>
+  <string name="title_activity_bookmarks">书签</string>
+  <string name="title_activity_scoreboard">记分牌</string>
+  <string name="title_activity_settings">设置</string>
+  <string name="title_activity_licenses">授权许可</string>
+  <string name="title_activity_how_to_play">怎么玩</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">书签</string>
+  <string name="action_settings">设置</string>
+  <string name="action_scoreboard">记分牌</string>
+  <string name="action_hide_completed">隐藏已完成\u0020</string>
+
+  <!-- Levels -->
+  <string name="level_easy">简单</string>
+  <string name="level_medium">普通</string>
+  <string name="level_hard">困难</string>
+  <string name="level_extreme">极难</string>
+  <string name="level_special">特殊</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">干得不错！</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">完成</string>
+  <string name="scorecard_best">最佳</string>
+  <string name="scorecard_average">平均</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="other">%d 展示</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">喜欢这个应用?</string>
+  <string name="banner_rate">评价</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">这里的都是你已经开始玩的拼图</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">显示单元</string>
+  <string name="action_cheat_random_cell">显示随机单元</string>
+  <string name="action_bookmark">书签</string>
+  <string name="action_remove_bookmark">移除书签</string>
+  <string name="action_undo">复原</string>
+  <string name="action_clear_notes">清除所有笔记</string>
+  <string name="action_restart">重新开始</string>
+  <string name="note_toggle">笔记</string>
+  <string name="clear_cell">清除</string>
+
+  <!-- Restart dialog -->
+  <string name="dialog_restart">重新开始?</string>
+  <string name="dialog_restart_warning">你对这个谜题的进展将会永远失去！</string>
+
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">干得不错！</string>
+  <string name="puzzle_complete_2">真棒！</string>
+  <string name="puzzle_complete_3">超强！</string>
+  <string name="puzzle_complete_4">精彩！</string>
+  <string name="puzzle_complete_5">精准！</string>
+  <string name="puzzle_complete_6">完美！</string>
+
+  <string name="puzzle_complete_message">你解决了这个谜题。</string>
+  <string name="puzzle_complete_time">你在 %s 解决这个谜题</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="other">(%d 单元已显示)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">选择单元格</string>
+  <string name="toast_no_move_history">没有历史</string>
+  <string name="toast_puzzle_completed">谜题完成</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">谜题</string>
+  <string name="settings_puzzle_cheat">显示提示选项</string>
+  <string name="settings_puzzle_cheat_summary">坚持下去会给你一点点帮助</string>
+  <string name="settings_puzzle_timer">显示计时</string>
+  <string name="settings_puzzle_timer_summary">分秒必争地玩</string>
+  <string name="settings_general_title">通用</string>
+  <string name="settings_general_version">版本</string>
+  <string name="settings_how_to_play">怎么玩</string>
+
+  <string name="action_licenses">软件授权</string>
+  <string name="action_rate">评价</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">通过填写数字完成谜题…</string>
+  <string name="how_to_play_row">每一行</string>
+  <string name="how_to_play_col">每一列</string>
+  <string name="how_to_play_box">和每个格子</string>
+  <string name="how_to_play_end">通过使用数字 1\u20149</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">书签</string>
+
+</resources>

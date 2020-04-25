@@ -1,0 +1,295 @@
+<resources
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:tools="http://schemas.android.com/tools">
+
+  <!-- Base -->
+
+  <style name="Match">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">match_parent</item>
+  </style>
+
+  <style name="Wrap">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+  </style>
+
+  <!-- Tabs -->
+
+  <style
+    name="TabText"
+    parent="TextAppearance.AppCompat.Medium">
+    <item name="android:focusable">true</item>
+    <item name="android:paddingRight">@dimen/gutter</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:textAllCaps">true</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+  </style>
+
+  <!-- List -->
+
+  <style
+    name="PuzzleRecycler"
+    parent="Match">
+    <item name="android:scrollbars">vertical</item>
+    <item name="android:scrollbarStyle">outsideOverlay</item>
+    <item name="android:padding">@dimen/half_gutter</item>
+    <item name="android:clipToPadding">false</item>
+    <item name="android:columnWidth">190dp</item>
+    <item name="android:background">@color/page_background</item>
+  </style>
+
+  <style
+    name="PuzzleCard">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:foreground">?android:attr/selectableItemBackground</item>
+    <item name="cardCornerRadius">4dp</item>
+    <item name="cardMaxElevation">4dp</item>
+    <item name="contentPaddingTop">4dp</item>
+    <item name="contentPaddingRight">4dp</item>
+    <item name="contentPaddingLeft">4dp</item>
+  </style>
+
+  <style
+    name="PuzzleTitle"
+    parent="Wrap">
+    <item name="android:textColor">@color/secondary</item>
+    <item name="android:textSize">@dimen/text_puzzle_title</item>
+    <item name="android:fontFamily">sans-serif-condensed-light</item>
+  </style>
+
+  <style
+    name="PuzzleTime"
+    parent="Wrap">
+    <item name="android:textColor">@color/secondary</item>
+    <item name="android:textSize">@dimen/text_puzzle_time</item>
+  </style>
+
+  <style
+    name="PuzzleBookmark"
+    parent="Wrap">
+    <item name="android:src">@drawable/ic_card_bookmark</item>
+    <item name="android:contentDescription">@string/content_bookmarked</item>
+  </style>
+
+  <style
+    name="EmptyText"
+    parent="Wrap">
+    <item name="android:textSize">14.5sp</item>
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+    <item name="android:layout_marginTop">@dimen/large_gutter</item>
+  </style>
+
+  <style
+    name="EmptyTitle"
+    parent="Wrap">
+    <item name="android:textSize">26sp</item>
+    <item name="android:textColor">@color/brand_accent</item>
+    <item name="android:layout_marginBottom">@dimen/gutter</item>
+    <item name="android:layout_centerHorizontal">true</item>
+  </style>
+
+  <style
+    name="CenterListContainer"
+    parent="Match">
+    <item name="android:layout_width">@dimen/center_list_width</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+  </style>
+
+  <style
+    name="CenterList"
+    parent="Match">
+    <item name="android:orientation">vertical</item>
+  </style>
+
+  <style
+    name="PagerIndicator">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">@dimen/bar_height</item>
+    <item name="android:background">@color/brand</item>
+    <item name="android:textSize">@dimen/text_tab</item>
+    <item name="android:textColor">@color/white</item>
+    <item name="android:elevation">@dimen/standard_elevation</item>
+  </style>
+
+  <!-- Puzzle -->
+
+  <style
+    name="NumpadButton"
+    parent="Widget.AppCompat.Button.Borderless">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">0dp</item>
+    <item name="android:padding">6dp</item>
+    <item name="android:textSize">@dimen/text_button</item>
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+    <item name="autoSizeTextType">uniform</item>
+    <item name="autoSizeMinTextSize">10sp</item>
+    <item name="autoSizeMaxTextSize">24sp</item>
+    <item name="autoSizeStepGranularity">2sp</item>
+  </style>
+
+  <style
+    name="NumpadButton.Notes">
+    <item name="android:src">@drawable/keypad_notes</item>
+    <item name="android:contentDescription">@string/note_toggle</item>
+  </style>
+
+  <style
+    name="NumpadButton.Clear">
+    <item name="android:src">@drawable/keypad_clear</item>
+    <item name="android:contentDescription">@string/clear_cell</item>
+  </style>
+  
+  <style
+    name="Placeholder">
+    <item name="android:layout_width">0dp</item>
+    <item name="android:layout_height">0dp</item>
+  </style>
+
+  <style
+    name="GameGrid"
+    parent="Match">
+    <item name="lineStroke">@dimen/grid_line</item>
+    <item name="boxStroke">@dimen/grid_box</item>
+    <item name="borderless">true</item>
+    <item name="android:keepScreenOn">true</item>
+  </style>
+
+  <style
+    name="GameGrid.Tablet">
+    <item name="borderless">false</item>
+  </style>
+
+  <style
+    name="VerticalDivider"
+    parent="Match">
+    <item name="android:layout_height">1px</item>
+    <item name="android:background">@color/board_lines</item>
+  </style>
+
+  <style
+    name="HorizontalDivider"
+    parent="Match">
+    <item name="android:layout_width">1px</item>
+    <item name="android:background">@color/board_lines</item>
+  </style>
+
+  <!-- Scoreboard -->
+
+  <style
+    name="ScoreboardContainer"
+    parent="Match">
+    <item name="android:orientation">vertical</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+    <item name="android:paddingTop">@dimen/half_gutter</item>
+    <item name="android:paddingBottom">@dimen/half_gutter</item>
+  </style>
+
+  <style
+    name="Scorecard">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:padding">@dimen/gutter</item>
+  </style>
+
+  <style
+    name="ScorecardTitle"
+    parent="Wrap">
+    <item name="android:textColor">?android:attr/textColorSecondary</item>
+    <item name="android:textSize">@dimen/text_scorecard_title</item>
+    <item name="android:paddingBottom">@dimen/half_gutter</item>
+    <item name="android:fontFamily">sans-serif-condensed</item>
+  </style>
+
+  <style
+    name="ScorecardNumber"
+    parent="Wrap">
+    <item name="android:textSize" tools:ignore="SpUsage">48dp</item>
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+  </style>
+
+  <style
+    name="ScorecardText"
+    parent="Wrap">
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+    <item name="android:textSize">@dimen/text_scorecard</item>
+  </style>
+
+  <style
+    name="ScorecardText.Secondary">
+    <item name="android:textColor">?android:attr/textColorSecondary</item>
+    <item name="android:gravity">right</item>
+    <item name="android:singleLine">true</item>
+    <item name="android:ellipsize">end</item>
+    <item name="android:textAllCaps">true</item>
+  </style>
+
+  <style
+    name="ScorecardLine"
+    parent="Wrap">
+    <item name="android:layout_height">1px</item>
+    <item name="android:background">@color/secondary</item>
+  </style>
+
+  <style
+    name="CardMargin">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:layout_marginStart">@dimen/gutter</item>
+    <item name="android:layout_marginEnd">@dimen/gutter</item>
+    <item name="android:layout_marginTop">@dimen/half_gutter</item>
+    <item name="android:layout_marginBottom">@dimen/half_gutter</item>
+  </style>
+
+  <!-- Resume prompt -->
+
+  <style
+    name="ResumeTitle"
+    parent="TextAppearance.AppCompat.Title">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+  </style>
+
+  <style
+    name="ResumeStat">
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+    <item name="android:textSize">26sp</item>
+    <item name="android:fontFamily">sans-serif-light</item>
+  </style>
+
+  <style
+    name="ResumePromptLine"
+    parent="ScorecardLine">
+    <item name="android:layout_width">260dp</item>
+  </style>
+
+  <style
+    name="ResumeButton"
+    parent="Wrap">
+    <item name="android:textColor">@color/white</item>
+    <item name="android:backgroundTint">@color/control_highlight</item>
+    <item name="android:text">@string/resume_button</item>
+  </style>
+
+  <!-- How to -->
+
+  <style
+    name="HowToText"
+    parent="Wrap">
+    <item name="android:textColor">?android:attr/textColorPrimary</item>
+    <item name="android:fontFamily">sans-serif-light</item>
+    <item name="android:textSize">@dimen/text_how_to</item>
+    <item name="android:gravity">center_horizontal</item>
+  </style>
+
+  <style
+    name="HowToStep"
+    parent="Wrap">
+    <item name="android:orientation">vertical</item>
+    <item name="android:padding">@dimen/large_gutter</item>
+    <item name="android:gravity">center_horizontal</item>
+  </style>
+
+</resources>

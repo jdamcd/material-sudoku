@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Quebra-cabeças</string>
+  <string name="title_activity_bookmarks">Favoritos</string>
+  <string name="title_activity_scoreboard">Pontuação</string>
+  <string name="title_activity_settings">Configurações</string>
+  <string name="title_activity_licenses">Licenças</string>
+  <string name="title_activity_how_to_play">Como jogar</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Favoritos</string>
+  <string name="action_settings">Configurações</string>
+  <string name="action_scoreboard">Pontuação</string>
+  <string name="action_hide_completed">Ocultar concluído\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Fácil</string>
+  <string name="level_medium">Normal</string>
+  <string name="level_hard">Difícil</string>
+  <string name="level_extreme">Extremo</string>
+  <string name="level_special">Especial</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Bom trabalho!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Concluído</string>
+  <string name="scorecard_best">MELHOR</string>
+  <string name="scorecard_average">MÉDIA</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d revelado</item>
+    <item quantity="other">%d revelados</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Gosta deste aplicativo?</string>
+  <string name="banner_rate">Avalie</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Os quebra-cabeças que você começou a jogar aparecem aqui</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Revelar célula</string>
+  <string name="action_cheat_random_cell">Revelar célula aleatória</string>
+  <string name="action_bookmark">Favorito</string>
+  <string name="action_remove_bookmark">Remover favorito</string>
+  <string name="action_undo">Desfazer</string>
+  <string name="action_clear_notes">Limpar todas as notas</string>
+  <string name="action_restart">Reiniciar</string>
+  <string name="note_toggle">NOTAS</string>
+  <string name="clear_cell">LIMPAR</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Reiniciar quebra-cabeças?</string>
+  <string name="dialog_restart_warning">O seu progresso neste quebra-cabeças será perdido para sempre!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Bom trabalho!</string>
+  <string name="puzzle_complete_2">Impressionante!</string>
+  <string name="puzzle_complete_3">Espectacular!</string>
+  <string name="puzzle_complete_4">Esplêndido!</string>
+  <string name="puzzle_complete_5">Arrasou!</string>
+  <string name="puzzle_complete_6">Muito bem!</string>
+
+  <string name="puzzle_complete_message">Você solucionou o quebra-cabeças. Parabéns!</string>
+  <string name="puzzle_complete_time">Você solucionou este quebra-cabeças em %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d célula revelada)</item>
+    <item quantity="other">(%d células reveladas)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Selecionar célula</string>
+  <string name="toast_no_move_history">Nenhum histórico</string>
+  <string name="toast_puzzle_completed">Quebra-cabeças concluído</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Quebra-cabeças</string>
+  <string name="settings_puzzle_cheat">Exibir opções de sugestão</string>
+  <string name="settings_puzzle_cheat_summary">Um pouco de ajuda quando você está travado</string>
+  <string name="settings_puzzle_timer">Mostrar temporizador</string>
+  <string name="settings_puzzle_timer_summary">Jogar contra o relógio</string>
+  <string name="settings_general_title">Geral</string>
+  <string name="settings_general_version">Versão</string>
+  <string name="settings_how_to_play">Como jogar</string>
+
+  <string name="action_licenses">Licenças de software</string>
+  <string name="action_rate">Avaliar o aplicativo</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Conclua o quebra-cabeças preenchendo…</string>
+  <string name="how_to_play_row">cada linha</string>
+  <string name="how_to_play_col">cada coluna</string>
+  <string name="how_to_play_box">e cada caixa</string>
+  <string name="how_to_play_end">com os dígitos de 1 a 9</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Favoritos</string>
+
+</resources>

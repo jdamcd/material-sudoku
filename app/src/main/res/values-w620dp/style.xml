@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <style
+    name="ScoreboardContainer"
+    parent="Match">
+    <item name="android:orientation">vertical</item>
+    <item name="android:layout_gravity">center_horizontal</item>
+    <item name="android:layout_width">@dimen/center_list_width</item>
+    <item name="android:paddingTop">@dimen/half_gutter</item>
+    <item name="android:paddingBottom">@dimen/half_gutter</item>
+  </style>
+
+  <style
+    name="CenterList"
+    parent="Match">
+    <item name="android:orientation">vertical</item>
+    <item name="android:background">@drawable/center_list_background</item>
+  </style>
+
+</resources>

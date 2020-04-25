@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Головоломка</string>
+  <string name="title_activity_bookmarks">Закладки</string>
+  <string name="title_activity_scoreboard">Таблица результатов</string>
+  <string name="title_activity_settings">Настройки</string>
+  <string name="title_activity_licenses">Лицензии</string>
+  <string name="title_activity_how_to_play">Как играть</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Закладки</string>
+  <string name="action_settings">Настройки</string>
+  <string name="action_scoreboard">Таблица результатов</string>
+  <string name="action_hide_completed">Скрыть завершенные\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Просто</string>
+  <string name="level_medium">Нормально</string>
+  <string name="level_hard">Сложно</string>
+  <string name="level_extreme">Оч.сложно</string>
+  <string name="level_special">Специальное предложение</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Отличная работа!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Завершено</string>
+  <string name="scorecard_best">ЛУЧШИЙ РЕЗУЛЬТАТ</string>
+  <string name="scorecard_average">СРЕДНИЙ РЕЗУЛЬТАТ</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d открыта</item>
+    <item quantity="few">%d открыты</item>
+    <item quantity="many">%d открыта</item>
+    <item quantity="other">%d открыты</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Нравится это приложение?</string>
+  <string name="banner_rate">Оцените его</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Здесь показаны головоломки, которые вы начали разгадывать</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Открыть клетку</string>
+  <string name="action_cheat_random_cell">Открыть случайные клетки</string>
+  <string name="action_bookmark">Закладка</string>
+  <string name="action_remove_bookmark">Убрать закладку</string>
+  <string name="action_undo">Отменить</string>
+  <string name="action_clear_notes">Удалить все заметки</string>
+  <string name="action_restart">Начать заново</string>
+  <string name="note_toggle">ЗАМЕТКИ</string>
+  <string name="clear_cell">ОЧИСТИТЬ</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Начать головоломку заново?</string>
+  <string name="dialog_restart_warning">Ваш прогресс по этой головоломке будет безвозвратно утерян.</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Отлично!</string>
+  <string name="puzzle_complete_2">Шикарно!</string>
+  <string name="puzzle_complete_3">Супер!</string>
+  <string name="puzzle_complete_4">Блестяще!</string>
+  <string name="puzzle_complete_5">Класс!</string>
+  <string name="puzzle_complete_6">Очень хорошо!</string>
+
+  <string name="puzzle_complete_message">Вы решили эту головоломку! Отличная работа!</string>
+  <string name="puzzle_complete_time">Вы решили эту головоломку за %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d клетка открыта)</item>
+    <item quantity="few">(%d клетки открыто)</item>
+    <item quantity="many">(%d клетка открыто)</item>
+    <item quantity="other">(%d клеток открыто)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Выберите клетку</string>
+  <string name="toast_no_move_history">Истории нет</string>
+  <string name="toast_puzzle_completed">Головоломка закончена</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Головоломка</string>
+  <string name="settings_puzzle_cheat">Показать варианты подсказок</string>
+  <string name="settings_puzzle_cheat_summary">Небольшая помощь в затруднении</string>
+  <string name="settings_puzzle_timer">Показать таймер</string>
+  <string name="settings_puzzle_timer_summary">Играть против часов</string>
+  <string name="settings_general_title">Общее</string>
+  <string name="settings_general_version">Версия</string>
+  <string name="settings_how_to_play">Как играть</string>
+
+  <string name="action_licenses">Лицензии на программное обеспечение</string>
+  <string name="action_rate">Оценить приложение</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Головоломка заканчивается, если…</string>
+  <string name="how_to_play_row">каждая строка</string>
+  <string name="how_to_play_col">каждый столбец</string>
+  <string name="how_to_play_box">и каждый квадрат</string>
+  <string name="how_to_play_end">заполнены цифрами от 1 до 9</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Добавлено в закладки</string>
+
+</resources>

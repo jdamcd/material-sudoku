@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  style="@style/Match"
+  android:background="@color/background_grey">
+
+  <FrameLayout
+    android:id="@+id/board_container"
+    android:layout_width="wrap_content"
+    android:layout_height="match_parent"
+    android:layout_above="@+id/numpad"
+    android:padding="@dimen/gutter">
+
+    <com.jdamcd.sudokusolver.solver.view.InteractivePuzzleView
+      android:id="@+id/puzzle_board"
+      style="@style/SolverGrid.Tablet"
+      android:layout_gravity="center_horizontal" />
+  </FrameLayout>
+
+  <include
+    android:id="@+id/numpad"
+    layout="@layout/layout_numpad_land_solver"
+    android:layout_alignParentBottom="true"
+    android:layout_width="@dimen/tablet_numpad_size"
+    android:layout_height="@dimen/tablet_numpad_size"
+    android:layout_marginBottom="@dimen/gutter"
+    android:layout_centerInParent="true" />
+
+</RelativeLayout>

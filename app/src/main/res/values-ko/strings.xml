@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">퍼즐</string>
+  <string name="title_activity_bookmarks">북마크</string>
+  <string name="title_activity_scoreboard">스코어 보드</string>
+  <string name="title_activity_settings">설정</string>
+  <string name="title_activity_licenses">라이센스</string>
+  <string name="title_activity_how_to_play">게임 방법</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">북마크</string>
+  <string name="action_settings">설정</string>
+  <string name="action_scoreboard">스코어 보드</string>
+  <string name="action_hide_completed">숨기기 완료\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">쉬운</string>
+  <string name="level_medium">보통</string>
+  <string name="level_hard">어려운</string>
+  <string name="level_extreme">익스트림</string>
+  <string name="level_special">특별</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">잘하셨어요!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">완료</string>
+  <string name="scorecard_best">최고</string>
+  <string name="scorecard_average">평균</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="other">%d 개 공개됨</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">이 앱이 마음에 드십니까?</string>
+  <string name="banner_rate">평가해 주세요</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">플레이하기 시작한 퍼즐이 여기 나타납니다.</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">셀 공개</string>
+  <string name="action_cheat_random_cell">임의의 셀 공개</string>
+  <string name="action_bookmark">북마크</string>
+  <string name="action_remove_bookmark">북마크 제거</string>
+  <string name="action_undo">실행취소</string>
+  <string name="action_clear_notes">모든 참고 취소</string>
+  <string name="action_restart">다시 시작</string>
+  <string name="note_toggle">참고</string>
+  <string name="clear_cell">지우기</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">퍼즐을 다시 시작하시겠습니까?</string>
+  <string name="dialog_restart_warning">이 퍼즐에 대한 진도가 영원히 없어집니다!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">대단하네요!</string>
+  <string name="puzzle_complete_2">굉장해요!</string>
+  <string name="puzzle_complete_3">최고입니다!</string>
+  <string name="puzzle_complete_4">훌륭하네요!</string>
+  <string name="puzzle_complete_5">정말 잘했어요!</string>
+  <string name="puzzle_complete_6">아주 좋아요!</string>
+
+  <string name="puzzle_complete_message">퍼즐을 해결했습니다. 하이 파이브!</string>
+  <string name="puzzle_complete_time"> %s 에 퍼즐을 해결했습니다.</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="other">(%d 셀 공개)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">셀 선택</string>
+  <string name="toast_no_move_history">기록 없음</string>
+  <string name="toast_puzzle_completed">퍼즐 완성</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">퍼즐</string>
+  <string name="settings_puzzle_cheat">힌트 옵션 보기</string>
+  <string name="settings_puzzle_cheat_summary">해결되지 않을 때 약간의 도움</string>
+  <string name="settings_puzzle_timer">타이머 보기</string>
+  <string name="settings_puzzle_timer_summary">제한 시간 모드</string>
+  <string name="settings_general_title">일반</string>
+  <string name="settings_general_version">버전</string>
+  <string name="settings_how_to_play">게임 방법</string>
+
+  <string name="action_licenses">소프트웨어 라이센스</string>
+  <string name="action_rate">앱 평가</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">…을 작성하여 퍼즐 완성</string>
+  <string name="how_to_play_row">각 행</string>
+  <string name="how_to_play_col">각 열</string>
+  <string name="how_to_play_box">각 상자</string>
+  <string name="how_to_play_end">숫자 1~9로</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">북마크됨</string>
+
+</resources>

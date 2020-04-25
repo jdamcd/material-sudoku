@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<fragment
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  android:id="@+id/fragment_settings"
+  style="@style/Match"
+  android:name="com.jdamcd.sudokusolver.about.AboutFragment" />

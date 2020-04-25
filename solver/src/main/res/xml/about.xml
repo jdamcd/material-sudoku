@@ -1,0 +1,17 @@
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <Preference
+    android:key="about_play"
+    android:title="@string/about_general_play"
+    android:summary="@string/about_general_play_summary" />
+
+  <Preference
+    android:key="about_rate"
+    android:title="@string/about_general_rate" />
+
+  <Preference
+    android:key="about_version"
+    android:title="@string/about_general_version"
+    android:selectable="false" />
+
+</PreferenceScreen>

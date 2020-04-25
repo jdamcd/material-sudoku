@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+
+  <dimen name="text_tab">19sp</dimen>
+  <dimen name="gutter">20dp</dimen>
+  <dimen name="center_list_width">660dp</dimen>
+  
+</resources>

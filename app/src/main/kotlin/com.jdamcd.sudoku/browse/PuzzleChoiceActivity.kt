@@ -1,0 +1,158 @@
+package com.jdamcd.sudoku.browse
+
+import android.content.Intent
+import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import android.view.View
+import com.jakewharton.rxbinding2.view.RxView
+import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.R
+import com.jdamcd.sudoku.base.BaseActivity
+import com.jdamcd.sudoku.repository.Level
+import com.jdamcd.sudoku.repository.Puzzle
+import com.jdamcd.sudoku.settings.user.Settings
+import com.jdamcd.sudoku.util.ViewUtil
+import io.reactivex.Observable
+import io.reactivex.subjects.PublishSubject
+import java.util.concurrent.TimeUnit
+import javax.inject.Inject
+import kotlinx.android.synthetic.main.activity_puzzle_choice.*
+import org.jetbrains.anko.AnkoLogger
+import org.jetbrains.anko.info
+
+class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View, AnkoLogger {
+
+    @Inject internal lateinit var presenter: PuzzleChoicePresenter
+
+    @Inject internal lateinit var rateSnackbarHelper: RatingSnackbarView
+    @Inject internal lateinit var intents: IntentFactory
+    @Inject internal lateinit var settings: Settings
+
+    private val toggleSubject = PublishSubject.create<Boolean>()
+    private val fabView = RandomFabView()
+
+    public override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_puzzle_choice)
+        setupActionBar(false)
+
+        presenter.start(this)
+        fabView.setup(fab)
+        configurePager()
+
+        handleIntent()
+    }
+
+    override fun onNewIntent(intent: Intent?) {
+        super.onNewIntent(intent)
+        this.intent = intent
+        handleIntent()
+    }
+
+    private fun handleIntent() {
+        if (IntentFactory.isRandomShortcut(intent)) {
+            presenter.playRandomPuzzle(this, Level.MEDIUM)
+        } else {
+            checkResumePuzzle()
+        }
+        intent.removeExtra(IntentFactory.EXTRA_SHORTCUT)
+        intent.removeExtra(IntentFactory.EXTRA_RESUME_ID)
+    }
+
+    private fun checkResumePuzzle() {
+        val resumeId = intent.getLongExtra(IntentFactory.EXTRA_RESUME_ID, Settings.NOT_SET)
+        if (resumeId > 0L) {
+            presenter.loadInProgressPuzzle(resumeId, !IntentFactory.isResumeShortcut(intent))
+        }
+    }
+
+    override fun getContext() = this
+
+    override fun onDestroy() {
+        super.onDestroy()
+        presenter.stop()
+    }
+
+    private fun configurePager() {
+        val pagerAdapter = PuzzlePagerAdapter(supportFragmentManager, resources)
+        pager.adapter = pagerAdapter
+        indicator.setViewPager(pager)
+        pager.currentItem = 1
+        pager.offscreenPageLimit = pagerAdapter.count - 1
+        pager.setPageMarginDrawable(R.drawable.divider_vertical)
+        pager.pageMargin = ViewUtil.dpToPx(resources, 5)
+        pager.addOnPageChangeListener(fabView)
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+        menuInflater.inflate(R.menu.activity_puzzle_choice, menu)
+        val item = menu.findItem(R.id.action_hide_completed)
+        item.isChecked = settings.isHideCompleted
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.action_scoreboard -> {
+                startActivity(intents.getScoreboard())
+                return true
+            }
+            R.id.action_bookmarks -> {
+                startActivity(intents.getBookmarks())
+                return true
+            }
+            R.id.action_hide_completed -> {
+                toggleShowCompleted(item)
+                return true
+            }
+            R.id.action_settings -> {
+                startActivity(intents.getSettings())
+                return true
+            }
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
+    override fun onToggleCompleted(): PublishSubject<Boolean> = toggleSubject
+
+    override fun onFabClick(): Observable<Level> {
+        return RxView.clicks(fab)
+                .throttleFirst(2, TimeUnit.SECONDS)
+                .map { PuzzlePagerAdapter.levels[pager.currentItem] }
+    }
+
+    override fun showRandomError() {
+        info("No unplayed puzzles")
+    }
+
+    override fun showRatingPrompt() {
+        rateSnackbarHelper.show(pager)
+    }
+
+    override fun showSyncStatus(isSyncing: Boolean) {
+        progress_bar.visibility = if (isSyncing) View.VISIBLE else View.GONE
+    }
+
+    override fun showResumePrompt(puzzle: Puzzle) {
+        if (!isFinishing) {
+            ResumePuzzleSheet
+                    .forPuzzle(puzzle)
+                    .show(supportFragmentManager, TAG_RESUME_PROMPT)
+        }
+    }
+
+    override fun openPuzzle(puzzle: Puzzle) {
+        startActivity(intents.getPuzzle(puzzle.id))
+    }
+
+    private fun toggleShowCompleted(item: MenuItem) {
+        val toggled = !item.isChecked
+        item.isChecked = toggled
+        toggleSubject.onNext(toggled)
+    }
+
+    companion object {
+        const val TAG_RESUME_PROMPT = "resume_prompt"
+    }
+}

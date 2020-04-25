@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Puzle</string>
+  <string name="title_activity_bookmarks">Marcadores</string>
+  <string name="title_activity_scoreboard">Tabla de marcadores</string>
+  <string name="title_activity_settings">Configuración</string>
+  <string name="title_activity_licenses">Licencias</string>
+  <string name="title_activity_how_to_play">Cómo jugar</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Marcadores</string>
+  <string name="action_settings">Configuración</string>
+  <string name="action_scoreboard">Tabla de marcadores</string>
+  <string name="action_hide_completed">Ocultar los completados\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Fácil</string>
+  <string name="level_medium">Normal</string>
+  <string name="level_hard">Difícil</string>
+  <string name="level_extreme">Extremo</string>
+  <string name="level_special">Especial</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">¡Buen trabajo!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Completado</string>
+  <string name="scorecard_best">MEJOR</string>
+  <string name="scorecard_average">PROMEDIO</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d revelado</item>
+    <item quantity="other">%d revelados</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">¿Te gusta esta app?</string>
+  <string name="banner_rate">Califícala</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Los puzles que has comenzado a jugar aparecen aquí</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Revelar celda</string>
+  <string name="action_cheat_random_cell">Revelar celda al azar</string>
+  <string name="action_bookmark">Marcador</string>
+  <string name="action_remove_bookmark">Quitar marcador</string>
+  <string name="action_undo">Deshacer</string>
+  <string name="action_clear_notes">Borrar todas las notas</string>
+  <string name="action_restart">Reiniciar</string>
+  <string name="note_toggle">NOTAS</string>
+  <string name="clear_cell">BORRAR</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">¿Reiniciar el puzle?</string>
+  <string name="dialog_restart_warning">¡Tu progreso en este puzle se perderá definitivamente!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">¡Buen trabajo!</string>
+  <string name="puzzle_complete_2">¡Asombroso!</string>
+  <string name="puzzle_complete_3">¡Súper!</string>
+  <string name="puzzle_complete_4">¡Esplendido!</string>
+  <string name="puzzle_complete_5">¡Eres un as!</string>
+  <string name="puzzle_complete_6">¡Muy bien!</string>
+
+  <string name="puzzle_complete_message">Resolviste el puzle, ¡Choca esos cinco!</string>
+  <string name="puzzle_complete_time">Resolviste este puzle en %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d celda revelada)</item>
+    <item quantity="other">(%d celdas reveladas)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Selecciona celda</string>
+  <string name="toast_no_move_history">No hay historial</string>
+  <string name="toast_puzzle_completed">Puzle completado</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Puzle</string>
+  <string name="settings_puzzle_cheat">Opciones de pistas</string>
+  <string name="settings_puzzle_cheat_summary">Una pequeña ayuda cuando estás atascado</string>
+  <string name="settings_puzzle_timer">Mostrar temporizador</string>
+  <string name="settings_puzzle_timer_summary">Jugar contra reloj</string>
+  <string name="settings_general_title">General</string>
+  <string name="settings_general_version">Versión</string>
+  <string name="settings_how_to_play">Cómo jugar</string>
+
+  <string name="action_licenses">Licencias de software</string>
+  <string name="action_rate">Calificar app</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Completar el puzle llenando…</string>
+  <string name="how_to_play_row">cada fila</string>
+  <string name="how_to_play_col">cada columna</string>
+  <string name="how_to_play_box">y cada celda</string>
+  <string name="how_to_play_end">con los dígitos 1 al 9</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Agregado a marcadores</string>
+
+</resources>

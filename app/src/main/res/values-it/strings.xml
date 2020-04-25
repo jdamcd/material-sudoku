@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resources>
+
+  <!-- Activity titles -->
+  <string name="title_activity_puzzle">Puzzle</string>
+  <string name="title_activity_bookmarks">Segnalibri</string>
+  <string name="title_activity_scoreboard">Segnapunti</string>
+  <string name="title_activity_settings">Impostazioni</string>
+  <string name="title_activity_licenses">Licenze</string>
+  <string name="title_activity_how_to_play">Come si gioca</string>
+
+  <!-- Action bar -->
+  <string name="action_bookmarks">Segnalibri</string>
+  <string name="action_settings">Impostazioni</string>
+  <string name="action_scoreboard">Segnapunti</string>
+  <string name="action_hide_completed">Nascondi completati\u0020</string>
+  
+  <!-- Levels -->
+  <string name="level_easy">Facile</string>
+  <string name="level_medium">Normale</string>
+  <string name="level_hard">Difficile</string>
+  <string name="level_extreme">Estremo</string>
+  <string name="level_special">Speciale</string>
+
+  <!-- Puzzle choice -->
+  <string name="puzzles_empty_title">Ottimo lavoro!</string>
+
+  <!-- Scoreboard -->
+  <string name="scorecard_summary">Completato</string>
+  <string name="scorecard_best">MIGLIORE</string>
+  <string name="scorecard_average">MEDIA</string>
+  <plurals name="scorecard_cheats">
+    <item quantity="one">%d scoperta</item>
+    <item quantity="other">%d scoperte</item>
+  </plurals>
+
+  <!-- Banners -->
+  <string name="banner_action_call">Ti piace questa applicazione?</string>
+  <string name="banner_rate">Valutazione</string>
+
+  <!-- Bookmarks -->
+  <string name="bookmarks_empty">Ecco i puzzle hai iniziato a scoprire</string>
+
+  <!-- Puzzle -->
+  <string name="action_cheat_cell">Scopri casella</string>
+  <string name="action_cheat_random_cell">Scopri una casella a caso</string>
+  <string name="action_bookmark">Segnalibro</string>
+  <string name="action_remove_bookmark">Rimuovi segnalibro</string>
+  <string name="action_undo">Annulla</string>
+  <string name="action_clear_notes">Cancella tutte le note</string>
+  <string name="action_restart">Riavvia</string>
+  <string name="note_toggle">NOTE</string>
+  <string name="clear_cell">CANCELLA</string>
+  
+  <!-- Restart dialog -->
+  <string name="dialog_restart">Riavvia puzzle?</string>
+  <string name="dialog_restart_warning">I progressi fatti su questo puzzle andranno persi per sempre!</string>
+  
+  <!-- Puzzle complete dialog -->
+  <string name="puzzle_complete_1">Ottimo lavoro!</string>
+  <string name="puzzle_complete_2">Impressionante!</string>
+  <string name="puzzle_complete_3">Super!</string>
+  <string name="puzzle_complete_4">Splendido!</string>
+  <string name="puzzle_complete_5">Bel colpo!</string>
+  <string name="puzzle_complete_6">Ben fatto!</string>
+
+  <string name="puzzle_complete_message">Hai risolto il puzzle. Dammi il cinque!</string>
+  <string name="puzzle_complete_time">Hai risolto il puzzle in %s</string>
+  <plurals name="puzzle_complete_cheats">
+    <item quantity="one">(%d casella scoperta)</item>
+    <item quantity="other">(%d caselle scoperte)</item>
+  </plurals>
+
+  <!-- Toasts -->
+  <string name="toast_no_cursor">Seleziona casella</string>
+  <string name="toast_no_move_history">Nessuna cronologia</string>
+  <string name="toast_puzzle_completed">Puzzle completato</string>
+
+  <!-- Settings -->
+  <string name="settings_puzzle_title">Puzzle</string>
+  <string name="settings_puzzle_cheat">Mostra opzioni di suggerimento</string>
+  <string name="settings_puzzle_cheat_summary">Un piccolo aiuto quando sei bloccato</string>
+  <string name="settings_puzzle_timer">Mostra timer</string>
+  <string name="settings_puzzle_timer_summary">Gioca contro il tempo</string>
+  <string name="settings_general_title">Generale</string>
+  <string name="settings_general_version">Versione</string>
+  <string name="settings_how_to_play">Come si gioca</string>
+
+  <string name="action_licenses">Licenze del software</string>
+  <string name="action_rate">Valuta l\'applicazone</string>
+
+  <!-- How to play -->
+  <string name="how_to_play_start">Completa il puzzle compilando…</string>
+  <string name="how_to_play_row">ogni riga</string>
+  <string name="how_to_play_col">ogni colona</string>
+  <string name="how_to_play_box">e ogni casela</string>
+  <string name="how_to_play_end">con un numero da\n1 a 9 caratteri</string>
+
+  <!-- Content description -->
+  <string name="content_bookmarked">Contrassegnato come preferito</string>
+
+</resources>

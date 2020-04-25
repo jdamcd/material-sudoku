@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources xmlns:tools="http://schemas.android.com/tools"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+
+  <style
+    name="SudokuTheme"
+    parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <item name="android:layout_width">wrap_content</item>
+    <item name="android:layout_height">wrap_content</item>
+    <item name="colorPrimary">@color/brand</item>
+    <item name="colorPrimaryDark">@color/brand_dark</item>
+    <item name="colorAccent">@color/brand_accent</item>
+    <item name="dialogTheme">@style/SudokuDialog</item>
+    <item name="alertDialogTheme">@style/SudokuDialog</item>
+  </style>
+
+  <style name="SplashTheme" parent="Theme.MaterialComponents.NoActionBar">
+    <item name="colorPrimary">@color/brand</item>
+    <item name="colorPrimaryDark">@color/brand_dark</item>
+    <item name="android:windowBackground">@drawable/splash</item>
+  </style>
+
+  <style
+    name="SudokuTheme.Main">
+    <item name="android:windowContentOverlay">@null</item>
+    <item name="actionBarStyle">@style/FlatActionBar</item>
+  </style>
+
+  <style
+      name="FlatActionBar"
+      parent="@style/Widget.MaterialComponents.ActionBar.Solid">
+    <item name="elevation">0dp</item>
+  </style>
+
+  <style
+    name="SudokuTheme.NoBackground"
+    parent="SudokuTheme">
+    <item name="android:windowBackground">@null</item>
+  </style>
+
+  <style
+    name="SudokuDialog"
+    parent="Theme.MaterialComponents.DayNight.Dialog.Alert">
+    <item name="colorPrimary">@color/brand</item>
+    <item name="colorPrimaryDark">@color/brand_dark</item>
+    <item name="colorAccent">@color/brand_accent</item>
+  </style>
+
+  <style
+    name="ToolbarBase">
+    <item name="android:layout_width">match_parent</item>
+    <item name="android:theme">@style/ThemeOverlay.MaterialComponents.Dark.ActionBar</item>
+    <item name="android:minHeight">?attr/actionBarSize</item>
+    <item name="android:layout_height">?attr/actionBarSize</item>
+    <item name="android:background">?attr/colorPrimary</item>
+    <item name="android:elevation" tools:ignore="NewApi">@dimen/standard_elevation</item>
+  </style>
+
+  <style
+    name="Toolbar"
+    parent="ToolbarBase">
+    <item name="popupTheme">@style/ThemeOverlay.MaterialComponents.Light</item>
+  </style>
+
+</resources>
