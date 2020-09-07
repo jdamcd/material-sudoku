@@ -123,7 +123,7 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
     }
 
     override fun showRandomError() {
-        Log.i(PuzzleChoiceActivity::class.simpleName,"No unplayed puzzles")
+        Log.i(PuzzleChoiceActivity::class.simpleName, "No unplayed puzzles")
     }
 
     override fun showRatingPrompt() {
