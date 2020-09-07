@@ -8,13 +8,6 @@
         android:data="https://github.com/JetBrains/kotlin" />
     </Preference>
     <Preference
-      android:summary="© JetBrains s.r.o. \u00B7 Apache License 2.0"
-      android:title="Anko Commons">
-      <intent
-        android:action="android.intent.action.VIEW"
-        android:data="https://github.com/Kotlin/anko" />
-    </Preference>
-    <Preference
       android:summary="© Dagger Contributors \u00B7 Apache License 2.0"
       android:title="Dagger">
       <intent
@@ -27,13 +20,6 @@
       <intent
         android:action="android.intent.action.VIEW"
         android:data="https://github.com/ReactiveX/RxJava" />
-    </Preference>
-    <Preference
-      android:summary="© Jake Wharton \u00B7 Apache License 2.0"
-      android:title="RxBinding">
-      <intent
-        android:action="android.intent.action.VIEW"
-        android:data="https://github.com/JakeWharton/RxBinding" />
     </Preference>
   </PreferenceCategory>
 </PreferenceScreen>

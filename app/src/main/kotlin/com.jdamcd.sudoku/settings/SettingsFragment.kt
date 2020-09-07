@@ -14,8 +14,8 @@ import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.base.BasePreferenceFragment
 import com.jdamcd.sudoku.util.AppInfo
+import com.jdamcd.sudoku.util.snackbar
 import javax.inject.Inject
-import org.jetbrains.anko.design.snackbar
 
 class SettingsFragment : BasePreferenceFragment(), OnPreferenceClickListener, OnPreferenceChangeListener {
 

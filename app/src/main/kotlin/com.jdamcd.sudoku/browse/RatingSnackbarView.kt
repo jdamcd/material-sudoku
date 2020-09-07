@@ -6,8 +6,8 @@ import com.google.android.material.snackbar.Snackbar
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.settings.user.Settings
+import com.jdamcd.sudoku.util.snackbar
 import javax.inject.Inject
-import org.jetbrains.anko.design.snackbar
 
 internal class RatingSnackbarView @Inject constructor(
     private val intents: IntentFactory,

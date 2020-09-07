@@ -2,10 +2,10 @@ package com.jdamcd.sudoku.browse
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
-import com.jakewharton.rxbinding2.view.RxView
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.base.BaseActivity
@@ -18,10 +18,8 @@ import io.reactivex.subjects.PublishSubject
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.activity_puzzle_choice.*
-import org.jetbrains.anko.AnkoLogger
-import org.jetbrains.anko.info
 
-class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View, AnkoLogger {
+class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
 
     @Inject internal lateinit var presenter: PuzzleChoicePresenter
 
@@ -117,13 +115,15 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View, AnkoLog
     override fun onToggleCompleted(): PublishSubject<Boolean> = toggleSubject
 
     override fun onFabClick(): Observable<Level> {
-        return RxView.clicks(fab)
+        val subject = PublishSubject.create<View>()
+        fab.setOnClickListener { subject.onNext(it) }
+        return subject
                 .throttleFirst(2, TimeUnit.SECONDS)
                 .map { PuzzlePagerAdapter.levels[pager.currentItem] }
     }
 
     override fun showRandomError() {
-        info("No unplayed puzzles")
+        Log.i(PuzzleChoiceActivity::class.simpleName,"No unplayed puzzles")
     }
 
     override fun showRatingPrompt() {

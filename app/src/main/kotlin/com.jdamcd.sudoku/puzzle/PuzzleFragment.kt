@@ -27,6 +27,7 @@ import com.jdamcd.sudoku.repository.database.PuzzleSave
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.shortcut.ShortcutController
 import com.jdamcd.sudoku.util.Format
+import com.jdamcd.sudoku.util.snackbar
 import com.jdamcd.sudoku.view.GamePuzzleView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposables
@@ -34,7 +35,6 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_puzzle.*
 import kotlinx.android.synthetic.main.layout_numpad_rectangle.*
-import org.jetbrains.anko.design.snackbar
 
 class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, GamePuzzleView.OnCellSelectedListener, ConfirmRestartDialog.RestartContract {
 
