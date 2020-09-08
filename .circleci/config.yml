@@ -3,7 +3,7 @@ version: 2
 defaults: &defaults
   working_directory: ~/material-sudoku
   docker:
-    - image: circleci/android:api-29
+    - image: circleci/android:api-30
   environment:
     JVM_OPTS: -Xmx2048m
     GRADLE_OPTS: -Dorg.gradle.daemon=false -Dorg.gradle.parallel=false -Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"
