@@ -109,11 +109,12 @@ class SolverFragment : Fragment(), OnClickListener, OnCellSelectedListener {
 
         when (item.itemId) {
             R.id.action_clear -> clearPuzzle()
-            R.id.action_solve -> if (isSolved) {
-                showMessage(R.string.toast_solved)
-            } else {
-                solve()
-            }
+            R.id.action_solve ->
+                if (isSolved) {
+                    showMessage(R.string.toast_solved)
+                } else {
+                    solve()
+                }
             R.id.action_about -> startActivity(Intent(activity, AboutActivity::class.java))
         }
         return true
@@ -185,17 +186,18 @@ class SolverFragment : Fragment(), OnClickListener, OnCellSelectedListener {
 
     private fun solve() {
         disposable = Single.fromCallable { puzzle?.solve() }
-                .subscribeOn(Schedulers.computation())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe(
-                        {
-                            setViewsEnabled(false)
-                            resetCursor()
-                        },
-                        {
-                            showMessage(R.string.toast_no_solution)
-                            resetCursor()
-                        })
+            .subscribeOn(Schedulers.computation())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe(
+                {
+                    setViewsEnabled(false)
+                    resetCursor()
+                },
+                {
+                    showMessage(R.string.toast_no_solution)
+                    resetCursor()
+                }
+            )
     }
 
     private fun resetCursor() {

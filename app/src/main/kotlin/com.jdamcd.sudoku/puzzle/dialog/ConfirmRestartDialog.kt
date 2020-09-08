@@ -20,11 +20,11 @@ class ConfirmRestartDialog : DialogFragment(), OnClickListener {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return AlertDialog.Builder(requireActivity())
-                .setTitle(R.string.dialog_restart)
-                .setMessage(R.string.dialog_restart_warning)
-                .setNegativeButton(android.R.string.cancel, this)
-                .setPositiveButton(android.R.string.yes, this)
-                .create()
+            .setTitle(R.string.dialog_restart)
+            .setMessage(R.string.dialog_restart_warning)
+            .setNegativeButton(android.R.string.cancel, this)
+            .setPositiveButton(android.R.string.yes, this)
+            .create()
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {

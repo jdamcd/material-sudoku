@@ -218,9 +218,9 @@ class Game {
         other as Game
 
         return sudoku == other.sudoku &&
-                answers contentDeepEquals other.answers &&
-                notes contentDeepEquals other.notes &&
-                numberOfCheats == other.numberOfCheats
+            answers contentDeepEquals other.answers &&
+            notes contentDeepEquals other.notes &&
+            numberOfCheats == other.numberOfCheats
     }
 
     override fun hashCode(): Int {

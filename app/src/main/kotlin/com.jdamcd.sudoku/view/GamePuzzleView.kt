@@ -121,7 +121,8 @@ class GamePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context
         if (game.getGiven(row, col) != 0) {
             drawDigit(canvas, givens, row, col, game.getGiven(row, col))
         } else if (showMistakes && game.getAnswer(row, col) != 0 &&
-                game.getAnswer(row, col) != game.getSolution(row, col)) {
+            game.getAnswer(row, col) != game.getSolution(row, col)
+        ) {
             drawDigit(canvas, mistake, row, col, game.getAnswer(row, col))
         } else if (game.getAnswer(row, col) != 0) {
             drawDigit(canvas, solved, row, col, game.getAnswer(row, col))
@@ -133,8 +134,12 @@ class GamePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context
     }
 
     private fun drawDigit(canvas: Canvas, paint: Paint, row: Int, col: Int, digit: Int) {
-        canvas.drawText(digit.toString(), padWidth + col * cellWidth + digitX,
-                padHeight + row * cellHeight + digitY, paint)
+        canvas.drawText(
+            digit.toString(),
+            padWidth + col * cellWidth + digitX,
+            padHeight + row * cellHeight + digitY,
+            paint
+        )
     }
 
     private fun drawSelectedCell(canvas: Canvas) {

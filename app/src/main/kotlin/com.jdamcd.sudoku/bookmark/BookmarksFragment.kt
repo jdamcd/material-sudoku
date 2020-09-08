@@ -15,8 +15,8 @@ import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.view.OffsetDecoration
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_recycler_bookmarks.*
+import javax.inject.Inject
 
 class BookmarksFragment : BaseFragment(), BookmarksPresenter.View {
 

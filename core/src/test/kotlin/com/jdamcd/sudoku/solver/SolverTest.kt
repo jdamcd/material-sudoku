@@ -3,10 +3,10 @@ package com.jdamcd.sudoku.solver
 import com.jdamcd.sudoku.TestPuzzles
 import com.jdamcd.sudoku.game.Sudoku
 import com.jdamcd.sudoku.util.Format
-import java.io.IOException
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.Ignore
 import org.junit.Test
+import java.io.IOException
 
 class SolverTest {
 

@@ -32,9 +32,9 @@ import com.jdamcd.sudoku.view.GamePuzzleView
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposables
 import io.reactivex.schedulers.Schedulers
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_puzzle.*
 import kotlinx.android.synthetic.main.layout_numpad_rectangle.*
+import javax.inject.Inject
 
 class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, GamePuzzleView.OnCellSelectedListener, ConfirmRestartDialog.RestartContract {
 
@@ -76,11 +76,13 @@ class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, Gam
     override fun onAttach(context: Context) {
         super.onAttach(context)
         puzzleId = requireActivity().intent.getLongExtra(PuzzleActivity.EXTRA_PUZZLE_ID, -1)
-        timer = PuzzleTimer(object : UpdateCallback {
-            override fun update(time: String) {
-                hostActivity.setTime(time)
+        timer = PuzzleTimer(
+            object : UpdateCallback {
+                override fun update(time: String) {
+                    hostActivity.setTime(time)
+                }
             }
-        })
+        )
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
@@ -98,9 +100,9 @@ class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, Gam
         clear_cell.setOnClickListener(this)
         note_toggle.setOnClickListener(this)
         disposable = repository.getPuzzle(puzzleId)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { data -> setupPuzzle(data) }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { data -> setupPuzzle(data) }
     }
 
     private fun setupPuzzle(data: Puzzle) {
@@ -152,21 +154,25 @@ class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, Gam
 
     private fun saveBookmarkState() {
         repository.setBookmarked(puzzleId, isBookmarked)
-                .subscribeOn(Schedulers.io())
-                .subscribe()
+            .subscribeOn(Schedulers.io())
+            .subscribe()
     }
 
     private fun savePausedState() {
-        repository.save(PuzzleSave(puzzleId,
+        repository.save(
+            PuzzleSave(
+                puzzleId,
                 Format.stringFromGrid(game.answers),
                 Format.serialiseNotes(game.notes),
                 timer.getTime(),
                 isBookmarked,
                 game.getPercentageCorrect(),
                 isCompleted,
-                game.numberOfCheats))
-                .subscribeOn(Schedulers.io())
-                .subscribe()
+                game.numberOfCheats
+            )
+        )
+            .subscribeOn(Schedulers.io())
+            .subscribe()
         setupResumePrompts()
     }
 
@@ -179,10 +185,16 @@ class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, Gam
     }
 
     private fun saveCompletedState() {
-        repository.save(PuzzleSave.forCompleted(puzzleId, Format.stringFromGrid(game.answers),
-                timer.getTime(), game.numberOfCheats))
-                .subscribeOn(Schedulers.io())
-                .subscribe()
+        repository.save(
+            PuzzleSave.forCompleted(
+                puzzleId,
+                Format.stringFromGrid(game.answers),
+                timer.getTime(),
+                game.numberOfCheats
+            )
+        )
+            .subscribeOn(Schedulers.io())
+            .subscribe()
         clearResumePrompts()
     }
 
@@ -490,8 +502,8 @@ class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, Gam
 
     private fun saveRestartedState() {
         repository.save(PuzzleSave.forRestart(puzzleId))
-                .subscribeOn(Schedulers.io())
-                .subscribe()
+            .subscribeOn(Schedulers.io())
+            .subscribe()
     }
 
     private fun setViewsEnabled(enabled: Boolean) {

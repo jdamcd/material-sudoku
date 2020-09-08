@@ -15,24 +15,28 @@ internal class ScoreboardPresenter @Inject constructor(private val repository: P
     override fun start(view: View) {
         super.start(view)
 
-        addSubscription(repository.getCompletedPuzzles()
+        addSubscription(
+            repository.getCompletedPuzzles()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { completed -> view.showSummary(completed.size, extractCounts(completed)) })
+                .subscribe { completed -> view.showSummary(completed.size, extractCounts(completed)) }
+        )
 
-        addSubscription(repository.getCompletedPuzzles()
+        addSubscription(
+            repository.getCompletedPuzzles()
                 .toObservable()
                 .flatMap { list ->
                     Observable.fromIterable(list)
-                            .groupBy { it.level }
-                            .filter { it.key != Level.SPECIAL }
+                        .groupBy { it.level }
+                        .filter { it.key != Level.SPECIAL }
                 }
                 .subscribeOn(Schedulers.io())
                 .subscribe {
                     it.toList()
-                            .observeOn(AndroidSchedulers.mainThread())
-                            .subscribe(view::showLevelStats)
-                })
+                        .observeOn(AndroidSchedulers.mainThread())
+                        .subscribe(view::showLevelStats)
+                }
+        )
     }
 
     private fun extractCounts(puzzles: List<Puzzle>): IntArray {

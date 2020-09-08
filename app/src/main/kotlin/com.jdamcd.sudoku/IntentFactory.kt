@@ -88,9 +88,9 @@ class IntentFactory @Inject constructor(private val context: Context) {
         const val EXTRA_SHORTCUT = "extra_shortcut"
 
         fun isRandomShortcut(intent: Intent) = intent.hasExtra(EXTRA_SHORTCUT) &&
-                intent.getStringExtra(EXTRA_SHORTCUT) == ShortcutController.ID_RANDOM
+            intent.getStringExtra(EXTRA_SHORTCUT) == ShortcutController.ID_RANDOM
 
         fun isResumeShortcut(intent: Intent) = intent.hasExtra(EXTRA_SHORTCUT) &&
-                intent.getStringExtra(EXTRA_SHORTCUT) == ShortcutController.ID_RESUME
+            intent.getStringExtra(EXTRA_SHORTCUT) == ShortcutController.ID_RESUME
     }
 }

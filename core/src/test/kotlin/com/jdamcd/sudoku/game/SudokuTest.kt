@@ -76,7 +76,7 @@ class SudokuTest {
     @Test
     fun implementsEquals() {
         EqualsVerifier.forClass(Sudoku::class.java)
-                .suppress(Warning.NONFINAL_FIELDS)
-                .verify()
+            .suppress(Warning.NONFINAL_FIELDS)
+            .verify()
     }
 }

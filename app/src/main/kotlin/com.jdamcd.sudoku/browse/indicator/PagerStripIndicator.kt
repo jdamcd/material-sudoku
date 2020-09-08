@@ -123,13 +123,15 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         updateTabStyles()
         checkedTabWidths = false
 
-        viewTreeObserver.addOnGlobalLayoutListener(object : OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                viewTreeObserver.removeOnGlobalLayoutListener(this)
-                currentPosition = pager!!.currentItem
-                scrollToChild(currentPosition, 0)
+        viewTreeObserver.addOnGlobalLayoutListener(
+            object : OnGlobalLayoutListener {
+                override fun onGlobalLayout() {
+                    viewTreeObserver.removeOnGlobalLayoutListener(this)
+                    currentPosition = pager!!.currentItem
+                    scrollToChild(currentPosition, 0)
+                }
             }
-        })
+        )
     }
 
     private fun addTextTab(position: Int, title: String) {

@@ -16,5 +16,5 @@ class EventBus @Inject constructor() {
     }
 
     fun <T> listen(eventType: Class<T>): Observable<T> = publisher.ofType(eventType)
-            .subscribeOn(AndroidSchedulers.mainThread())
+        .subscribeOn(AndroidSchedulers.mainThread())
 }

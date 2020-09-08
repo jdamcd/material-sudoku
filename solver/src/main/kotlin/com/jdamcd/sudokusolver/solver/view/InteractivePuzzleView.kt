@@ -78,8 +78,12 @@ class InteractivePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(
         for (row in 0..8) {
             for (col in 0..8) {
                 if (puzzleData!!.getCellValue(row, col) == 0) {
-                    canvas.drawText(puzzleData!!.getSolutionCellValue(row, col).toString() + "", padWidth + col * cellWidth + digitX,
-                            padHeight + row * cellHeight + digitY, solved)
+                    canvas.drawText(
+                        puzzleData!!.getSolutionCellValue(row, col).toString() + "",
+                        padWidth + col * cellWidth + digitX,
+                        padHeight + row * cellHeight + digitY,
+                        solved
+                    )
                 }
             }
         }
@@ -156,8 +160,8 @@ class InteractivePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(
     }
 
     fun getCursorPosition(): CellPosition =
-            if (selectedRect == null) CellPosition()
-            else CellPosition(cursorRow, cursorCol)
+        if (selectedRect == null) CellPosition()
+        else CellPosition(cursorRow, cursorCol)
 
     private fun setCursor(row: Int, col: Int) {
         cursorRow = row

@@ -20,10 +20,10 @@ class PuzzleCompleteDialog : BaseDialogFragment(), OnClickListener {
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         return AlertDialog.Builder(requireActivity())
-                .setTitle(generateGreeting())
-                .setMessage(generateMessage())
-                .setPositiveButton(android.R.string.yes, this)
-                .create()
+            .setTitle(generateGreeting())
+            .setMessage(generateMessage())
+            .setPositiveButton(android.R.string.yes, this)
+            .create()
     }
 
     private fun generateGreeting(): String {

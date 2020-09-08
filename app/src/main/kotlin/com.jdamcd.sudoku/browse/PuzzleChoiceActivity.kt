@@ -15,9 +15,9 @@ import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.ViewUtil
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
+import kotlinx.android.synthetic.main.activity_puzzle_choice.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
-import kotlinx.android.synthetic.main.activity_puzzle_choice.*
 
 class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
 
@@ -118,8 +118,8 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
         val subject = PublishSubject.create<View>()
         fab.setOnClickListener { subject.onNext(it) }
         return subject
-                .throttleFirst(2, TimeUnit.SECONDS)
-                .map { PuzzlePagerAdapter.levels[pager.currentItem] }
+            .throttleFirst(2, TimeUnit.SECONDS)
+            .map { PuzzlePagerAdapter.levels[pager.currentItem] }
     }
 
     override fun showRandomError() {
@@ -137,8 +137,8 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
     override fun showResumePrompt(puzzle: Puzzle) {
         if (!isFinishing) {
             ResumePuzzleSheet
-                    .forPuzzle(puzzle)
-                    .show(supportFragmentManager, TAG_RESUME_PROMPT)
+                .forPuzzle(puzzle)
+                .show(supportFragmentManager, TAG_RESUME_PROMPT)
         }
     }
 

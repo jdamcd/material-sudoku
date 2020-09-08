@@ -30,20 +30,24 @@ internal class PuzzleListPresenter @Inject constructor(
 
         setListSubscription(view, settings.isHideCompleted)
 
-        addSubscription(eventBus.listen(HideCompleted::class.java)
+        addSubscription(
+            eventBus.listen(HideCompleted::class.java)
                 .map { it == HideCompleted.HIDE }
-                .subscribe { setListSubscription(view, it) })
+                .subscribe { setListSubscription(view, it) }
+        )
 
-        addSubscription(view.onPuzzleClicked()
-                .subscribe { view.getContext()?.startActivity(intents.getPuzzle(it.id)) })
+        addSubscription(
+            view.onPuzzleClicked()
+                .subscribe { view.getContext()?.startActivity(intents.getPuzzle(it.id)) }
+        )
     }
 
     private fun setListSubscription(view: View, hideCompleted: Boolean) {
         removeSubscription(listDisposable)
         listDisposable = repository.getPuzzles(view.getLevel(), hideCompleted)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { view.showPuzzles(it) }
+            .subscribeOn(Schedulers.io())
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { view.showPuzzles(it) }
         addSubscription(listDisposable)
     }
 

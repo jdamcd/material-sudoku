@@ -16,18 +16,20 @@ class PuzzleDaoTest : DatabaseTest() {
     fun loadsSinglePuzzle() {
         val actual = dao.getPuzzle(25L).blockingGet()
 
-        val expected = PuzzleLoad(25L,
-                "easy",
-                25,
-                "005406700060090030304000506900060005030109060200040008409000601010070050002608900",
-                "125436789867591234394782516941867325538129467276345198489253671613974852752618943",
-                Strings.EMPTY,
-                Strings.EMPTY,
-                0,
-                false,
-                0,
-                false,
-                0)
+        val expected = PuzzleLoad(
+            25L,
+            "easy",
+            25,
+            "005406700060090030304000506900060005030109060200040008409000601010070050002608900",
+            "125436789867591234394782516941867325538129467276345198489253671613974852752618943",
+            Strings.EMPTY,
+            Strings.EMPTY,
+            0,
+            false,
+            0,
+            false,
+            0
+        )
         assertThat(actual).isEqualTo(expected)
     }
 
@@ -121,18 +123,20 @@ class PuzzleDaoTest : DatabaseTest() {
 
         val actual = dao.getPuzzle(25L).blockingGet()
 
-        val expected = PuzzleLoad(25L,
-                "easy",
-                25,
-                "005406700060090030304000506900060005030109060200040008409000601010070050002608900",
-                "125436789867591234394782516941867325538129467276345198489253671613974852752618943",
-                "test-game",
-                "test-notes",
-                1234,
-                true,
-                20,
-                false,
-                1)
+        val expected = PuzzleLoad(
+            25L,
+            "easy",
+            25,
+            "005406700060090030304000506900060005030109060200040008409000601010070050002608900",
+            "125436789867591234394782516941867325538129467276345198489253671613974852752618943",
+            "test-game",
+            "test-notes",
+            1234,
+            true,
+            20,
+            false,
+            1
+        )
         assertThat(actual).isEqualTo(expected)
     }
 

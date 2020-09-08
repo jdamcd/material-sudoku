@@ -27,12 +27,12 @@ class ShortcutController @Inject constructor(
     @TargetApi(N_MR1)
     private fun createResumeShortcut(): ShortcutInfo {
         return ShortcutInfo.Builder(context, ID_RESUME)
-                .setIntent(intentFactory.getResumeSplash())
-                .setShortLabel(context.getString(R.string.shortcut_resume_label))
-                .setLongLabel(context.getString(R.string.shortcut_resume_long_label))
-                .setDisabledMessage(context.getString(R.string.shortcut_resume_disabled))
-                .setIcon(Icon.createWithResource(context, R.drawable.ic_shortcut_bookmark))
-                .build()
+            .setIntent(intentFactory.getResumeSplash())
+            .setShortLabel(context.getString(R.string.shortcut_resume_label))
+            .setLongLabel(context.getString(R.string.shortcut_resume_long_label))
+            .setDisabledMessage(context.getString(R.string.shortcut_resume_disabled))
+            .setIcon(Icon.createWithResource(context, R.drawable.ic_shortcut_bookmark))
+            .build()
     }
 
     fun disableResume() {

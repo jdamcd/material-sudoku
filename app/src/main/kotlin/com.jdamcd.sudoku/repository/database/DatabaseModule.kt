@@ -13,10 +13,10 @@ internal class DatabaseModule {
     @Singleton
     fun provideDatabase(context: Context): PuzzleDatabase {
         return Room.databaseBuilder(context, PuzzleDatabase::class.java, AssetDb.NAME)
-                .createFromAsset(AssetDb.PATH)
-                .addMigrations(PuzzleDatabase.MIGRATION_1_2)
-                .fallbackToDestructiveMigration()
-                .build()
+            .createFromAsset(AssetDb.PATH)
+            .addMigrations(PuzzleDatabase.MIGRATION_1_2)
+            .fallbackToDestructiveMigration()
+            .build()
     }
 
     @Provides

@@ -10,8 +10,8 @@ import com.jdamcd.sudoku.base.BaseFragment
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.view.OffsetDecoration
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_recycler_puzzles.*
+import javax.inject.Inject
 
 class PuzzleListFragment : BaseFragment(), PuzzleListPresenter.View {
 

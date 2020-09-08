@@ -23,9 +23,9 @@ import com.jdamcd.sudoku.view.PreviewPuzzleView
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import io.reactivex.subjects.Subject
+import kotlinx.android.synthetic.main.card_puzzle.view.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
-import kotlinx.android.synthetic.main.card_puzzle.view.*
 
 class PuzzleAdapter @Inject constructor() :
     ListAdapter<Puzzle, PuzzleViewHolder>(PuzzleAdapter.diffCallback) {
@@ -75,10 +75,12 @@ class PuzzleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     private fun setTitle(item: Puzzle) {
         val builder = SpannableStringBuilder(item.title)
         val numberLength = item.number.toString().length
-        builder.setSpan(ForegroundColorSpan(ContextCompat.getColor(itemView.context, R.color.primary)),
-                item.title.length - (numberLength + 1),
-                item.title.length,
-                Spannable.SPAN_INCLUSIVE_INCLUSIVE)
+        builder.setSpan(
+            ForegroundColorSpan(ContextCompat.getColor(itemView.context, R.color.primary)),
+            item.title.length - (numberLength + 1),
+            item.title.length,
+            Spannable.SPAN_INCLUSIVE_INCLUSIVE
+        )
         title.text = builder
     }
 

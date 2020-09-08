@@ -10,8 +10,8 @@ import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.base.BaseFragment
 import com.jdamcd.sudoku.game.Sudoku
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_how_to_play.*
+import javax.inject.Inject
 
 @SuppressLint("ValidFragment")
 class HowToPlayFragment : BaseFragment() {

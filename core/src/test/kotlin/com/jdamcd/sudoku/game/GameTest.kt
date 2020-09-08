@@ -117,7 +117,7 @@ class GameTest {
         val position = game.cheatRandomCell()
 
         assertThat(game.getAnswer(position.row, position.col))
-                .isEqualTo(game.getSolution(position.row, position.col))
+            .isEqualTo(game.getSolution(position.row, position.col))
     }
 
     @Test
@@ -259,8 +259,8 @@ class GameTest {
     @Test
     fun implementsEquals() {
         EqualsVerifier.forClass(Game::class.java)
-                .suppress(Warning.NONFINAL_FIELDS)
-                .withIgnoredFields("moves")
-                .verify()
+            .suppress(Warning.NONFINAL_FIELDS)
+            .withIgnoredFields("moves")
+            .verify()
     }
 }

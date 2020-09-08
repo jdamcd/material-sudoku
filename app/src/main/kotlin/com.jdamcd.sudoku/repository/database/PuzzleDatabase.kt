@@ -17,7 +17,8 @@ internal abstract class PuzzleDatabase : RoomDatabase() {
                 val copyTable = "copy"
 
                 // V2: Create puzzle table with extra schema constraints for Room
-                database.execSQL("CREATE TABLE IF NOT EXISTS `$copyTable` (" +
+                database.execSQL(
+                    "CREATE TABLE IF NOT EXISTS `$copyTable` (" +
                         "`_id` INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT, " +
                         "`level` TEXT NOT NULL, " +
                         "`number` INTEGER NOT NULL, " +
@@ -29,11 +30,14 @@ internal abstract class PuzzleDatabase : RoomDatabase() {
                         "`bookmarked` INTEGER, " +
                         "`progress` INTEGER, " +
                         "`completed` INTEGER, " +
-                        "`cheats` INTEGER)")
+                        "`cheats` INTEGER)"
+                )
 
-                database.execSQL("INSERT INTO $copyTable (_id, level, number, givens, solution, game, notes, time, bookmarked, progress, completed, cheats) " +
+                database.execSQL(
+                    "INSERT INTO $copyTable (_id, level, number, givens, solution, game, notes, time, bookmarked, progress, completed, cheats) " +
                         "SELECT _id, level, number, givens, solution, game, notes, time, bookmarked, progress, completed, cheats " +
-                        "FROM $table")
+                        "FROM $table"
+                )
 
                 database.execSQL("DROP TABLE $table")
                 database.execSQL("ALTER TABLE $copyTable RENAME TO $table")

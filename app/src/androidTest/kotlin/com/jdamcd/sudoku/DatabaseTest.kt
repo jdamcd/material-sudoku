@@ -18,20 +18,22 @@ open class DatabaseTest {
     open fun setUp() {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         db = Room.databaseBuilder(context, PuzzleDatabase::class.java, AssetDb.NAME)
-                .createFromAsset(AssetDb.PATH)
-                .addMigrations(PuzzleDatabase.MIGRATION_1_2)
-                .allowMainThreadQueries()
-                .build()
+            .createFromAsset(AssetDb.PATH)
+            .addMigrations(PuzzleDatabase.MIGRATION_1_2)
+            .allowMainThreadQueries()
+            .build()
         dao = db.puzzleDao()
     }
 
     @After
     fun tearDown() {
         db.close()
-        assertThat(InstrumentationRegistry
+        assertThat(
+            InstrumentationRegistry
                 .getInstrumentation()
                 .targetContext
                 .getDatabasePath(AssetDb.NAME)
-                .delete()).isTrue()
+                .delete()
+        ).isTrue()
     }
 }

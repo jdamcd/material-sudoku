@@ -19,22 +19,29 @@ internal class BookmarksPresenter @Inject constructor(
     override fun start(view: BookmarksPresenter.View) {
         super.start(view)
 
-        addSubscription(repository.getBookmarkedPuzzles()
+        addSubscription(
+            repository.getBookmarkedPuzzles()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
-                .subscribe { view.showPuzzles(it) })
+                .subscribe { view.showPuzzles(it) }
+        )
 
-        addSubscription(view.onPuzzleClicked()
+        addSubscription(
+            view.onPuzzleClicked()
                 .subscribe {
                     view.getContext()?.startActivity(intents.getPuzzle(it.id))
-                })
+                }
+        )
 
-        addSubscription(view.onRemoveAll()
+        addSubscription(
+            view.onRemoveAll()
                 .flatMapCompletable {
                     repository.removeAllBookmarks()
-                            .subscribeOn(Schedulers.io())
-                            .observeOn(AndroidSchedulers.mainThread()) }
-                .subscribe())
+                        .subscribeOn(Schedulers.io())
+                        .observeOn(AndroidSchedulers.mainThread())
+                }
+                .subscribe()
+        )
     }
 
     internal interface View : PresenterView {

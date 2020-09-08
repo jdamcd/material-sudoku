@@ -17,8 +17,8 @@ import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.Strings
 import dagger.android.support.AndroidSupportInjection
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_resume_puzzle.*
+import javax.inject.Inject
 
 class ResumePuzzleSheet : BottomSheetDialogFragment() {
 
@@ -77,10 +77,11 @@ class ResumePuzzleSheet : BottomSheetDialogFragment() {
         fun forPuzzle(puzzle: Puzzle): ResumePuzzleSheet {
             val resumePrompt = ResumePuzzleSheet()
             resumePrompt.arguments = bundleOf(
-                    PARAM_ID to puzzle.id,
-                    PARAM_NAME to puzzle.title,
-                    PARAM_TIME to Strings.formatTime(puzzle.time),
-                    PARAM_PROGRESS to formatProgress(puzzle))
+                PARAM_ID to puzzle.id,
+                PARAM_NAME to puzzle.title,
+                PARAM_TIME to Strings.formatTime(puzzle.time),
+                PARAM_PROGRESS to formatProgress(puzzle)
+            )
             return resumePrompt
         }
 

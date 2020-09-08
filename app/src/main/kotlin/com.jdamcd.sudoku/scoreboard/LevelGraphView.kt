@@ -43,11 +43,13 @@ class LevelGraphView(context: Context, attrs: AttributeSet) : View(context, attr
     }
 
     private fun startBarAnimations() {
-        val animator = ObjectAnimator.ofPropertyValuesHolder(this,
-                PropertyValuesHolder.ofInt("easyWidth", MIN_WIDTH, getBarWidth(0)),
-                PropertyValuesHolder.ofInt("normalWidth", MIN_WIDTH, getBarWidth(1)),
-                PropertyValuesHolder.ofInt("hardWidth", MIN_WIDTH, getBarWidth(2)),
-                PropertyValuesHolder.ofInt("extremeWidth", MIN_WIDTH, getBarWidth(3)))
+        val animator = ObjectAnimator.ofPropertyValuesHolder(
+            this,
+            PropertyValuesHolder.ofInt("easyWidth", MIN_WIDTH, getBarWidth(0)),
+            PropertyValuesHolder.ofInt("normalWidth", MIN_WIDTH, getBarWidth(1)),
+            PropertyValuesHolder.ofInt("hardWidth", MIN_WIDTH, getBarWidth(2)),
+            PropertyValuesHolder.ofInt("extremeWidth", MIN_WIDTH, getBarWidth(3))
+        )
 
         animator.startDelay = ANIM_DELAY.toLong()
         animator.duration = ANIM_TIME.toLong()

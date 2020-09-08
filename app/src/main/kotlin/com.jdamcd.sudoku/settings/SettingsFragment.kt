@@ -93,8 +93,9 @@ class SettingsFragment : BasePreferenceFragment(), OnPreferenceClickListener, On
 
     private fun toggleDarkMode(enabled: Boolean) {
         AppCompatDelegate.setDefaultNightMode(
-                if (enabled) AppCompatDelegate.MODE_NIGHT_YES
-                else AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            if (enabled) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        )
     }
 
     companion object {

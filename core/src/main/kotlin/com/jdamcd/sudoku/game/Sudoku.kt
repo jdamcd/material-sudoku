@@ -59,7 +59,7 @@ class Sudoku {
         other as Sudoku
 
         val equalSolution = (solution == null && other.solution == null) ||
-                (solution != null && other.solution != null && solution!!.contentDeepEquals(other.solution!!))
+            (solution != null && other.solution != null && solution!!.contentDeepEquals(other.solution!!))
 
         return givens contentDeepEquals other.givens && equalSolution
     }

@@ -32,17 +32,19 @@ data class PuzzleLoad(
         sudoku.solution = Format.gridFromString(solution)
         val game = game(sudoku, game, notes)
         game.numberOfCheats = cheats ?: 0
-        return Puzzle(id,
-                mappedLevel,
-                number,
-                strings.puzzleName(mappedLevel.nameId, number),
-                sudoku,
-                game,
-                solution,
-                time ?: 0,
-                bookmarked ?: false,
-                completed ?: false,
-                cheats ?: 0)
+        return Puzzle(
+            id,
+            mappedLevel,
+            number,
+            strings.puzzleName(mappedLevel.nameId, number),
+            sudoku,
+            game,
+            solution,
+            time ?: 0,
+            bookmarked ?: false,
+            completed ?: false,
+            cheats ?: 0
+        )
     }
 
     private fun game(sudoku: Sudoku, game: String?, notes: String?): Game {

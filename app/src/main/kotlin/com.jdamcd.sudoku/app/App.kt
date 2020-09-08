@@ -24,8 +24,9 @@ class App : DaggerApplication() {
 
     private fun setupTheme() {
         AppCompatDelegate.setDefaultNightMode(
-                if (settings.isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
-                else AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM)
+            if (settings.isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
+            else AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+        )
     }
 
     override fun applicationInjector(): AndroidInjector<out DaggerApplication> {

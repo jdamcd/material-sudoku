@@ -15,9 +15,9 @@ import com.jdamcd.sudoku.repository.Level.HARD
 import com.jdamcd.sudoku.repository.Level.MEDIUM
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.util.Strings
-import javax.inject.Inject
 import kotlinx.android.synthetic.main.fragment_scoreboard.*
 import kotlinx.android.synthetic.main.layout_scorecard_summary.*
+import javax.inject.Inject
 
 class ScoreboardFragment : BaseFragment(), ScoreboardPresenter.View {
 

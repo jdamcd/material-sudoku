@@ -137,10 +137,12 @@ abstract class PuzzleView(context: Context, attrs: AttributeSet) : View(context,
         for (row in 0..8) {
             for (col in 0..8) {
                 if (puzzleData!!.getCellValue(row, col) != 0) {
-                    canvas.drawText(puzzleData!!.getCellValue(row, col).toString(),
-                            padWidth + col * cellWidth + digitX,
-                            padHeight + row * cellHeight + digitY,
-                            givens)
+                    canvas.drawText(
+                        puzzleData!!.getCellValue(row, col).toString(),
+                        padWidth + col * cellWidth + digitX,
+                        padHeight + row * cellHeight + digitY,
+                        givens
+                    )
                 }
             }
         }

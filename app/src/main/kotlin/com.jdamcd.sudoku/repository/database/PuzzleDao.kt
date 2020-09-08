@@ -42,14 +42,16 @@ abstract class PuzzleDao {
     @Transaction
     open fun bulkUpdatePuzzles(saves: Set<PuzzleSave>) {
         for (save in saves) {
-            updatePuzzle(save.id,
-                    save.game,
-                    save.notes,
-                    save.time,
-                    save.bookmarked,
-                    save.progress,
-                    save.completed,
-                    save.cheats)
+            updatePuzzle(
+                save.id,
+                save.game,
+                save.notes,
+                save.time,
+                save.bookmarked,
+                save.progress,
+                save.completed,
+                save.cheats
+            )
         }
     }
 
@@ -57,7 +59,8 @@ abstract class PuzzleDao {
     open fun bulkGetPuzzles(ids: Set<Long>): List<PuzzleLoad> {
         val result = mutableListOf<PuzzleLoad>()
         ids.chunked(CHUNK_SIZE) {
-            subset: List<Long> -> result.addAll(getPuzzles(subset.toSet()))
+            subset: List<Long> ->
+            result.addAll(getPuzzles(subset.toSet()))
         }
         return result
     }
