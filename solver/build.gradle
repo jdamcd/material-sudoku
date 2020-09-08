@@ -2,13 +2,13 @@ apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 
 android {
-    compileSdkVersion 29
-    buildToolsVersion '29.0.2'
+    compileSdkVersion 30
+    buildToolsVersion '30.0.2'
 
     defaultConfig {
         applicationId 'com.jdamcd.sudokusolver'
         minSdkVersion 23
-        targetSdkVersion 29
+        targetSdkVersion 30
         versionCode Integer.parseInt(project.SOLVER_VERSION_CODE)
         versionName project.SOLVER_VERSION_NAME + '-' + versionCode
         project.ext.set('archivesBaseName', 'solver-' + versionName)
