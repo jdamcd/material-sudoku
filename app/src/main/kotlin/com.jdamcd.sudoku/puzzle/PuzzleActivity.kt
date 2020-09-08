@@ -6,8 +6,10 @@ import com.jdamcd.sudoku.BuildConfig
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.base.BaseActivity
 import com.jdamcd.sudoku.settings.user.Settings
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class PuzzleActivity : BaseActivity(), PuzzleFragment.PuzzleContract {
 
     @Inject lateinit var settings: Settings

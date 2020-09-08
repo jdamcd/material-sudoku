@@ -2,10 +2,11 @@ package com.jdamcd.sudoku.util
 
 import android.content.Context
 import androidx.annotation.StringRes
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Locale
 import javax.inject.Inject
 
-class Strings @Inject constructor(private val context: Context) {
+class Strings @Inject constructor(@ApplicationContext private val context: Context) {
 
     fun puzzleName(@StringRes levelRes: Int, number: Int) = context.getString(levelRes) + " #" + number
 

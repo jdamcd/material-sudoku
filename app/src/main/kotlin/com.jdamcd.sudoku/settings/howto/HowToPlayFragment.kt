@@ -5,16 +5,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.jdamcd.sudoku.Constants
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.base.BaseFragment
 import com.jdamcd.sudoku.game.Sudoku
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_how_to_play.*
 import javax.inject.Inject
 
 @SuppressLint("ValidFragment")
-class HowToPlayFragment : BaseFragment() {
+@AndroidEntryPoint
+class HowToPlayFragment : Fragment() {
 
     @Inject internal lateinit var intents: IntentFactory
 

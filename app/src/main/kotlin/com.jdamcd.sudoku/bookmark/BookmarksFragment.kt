@@ -7,18 +7,20 @@ import android.view.MenuInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.base.BaseFragment
 import com.jdamcd.sudoku.browse.PuzzleAdapter
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.view.OffsetDecoration
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.fragment_recycler_bookmarks.*
 import javax.inject.Inject
 
-class BookmarksFragment : BaseFragment(), BookmarksPresenter.View {
+@AndroidEntryPoint
+class BookmarksFragment : Fragment(), BookmarksPresenter.View {
 
     @Inject internal lateinit var presenter: BookmarksPresenter
     @Inject lateinit var adapter: PuzzleAdapter

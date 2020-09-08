@@ -5,8 +5,10 @@ import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.base.BaseActivity
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.shortcut.ShortcutController
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class SplashActivity : BaseActivity() {
 
     @Inject lateinit var intents: IntentFactory
