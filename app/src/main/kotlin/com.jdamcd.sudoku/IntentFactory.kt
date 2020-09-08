@@ -12,9 +12,10 @@ import com.jdamcd.sudoku.settings.SettingsActivity
 import com.jdamcd.sudoku.settings.howto.HowToPlayActivity
 import com.jdamcd.sudoku.settings.license.LicensesActivity
 import com.jdamcd.sudoku.shortcut.ShortcutController
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
-class IntentFactory @Inject constructor(private val context: Context) {
+class IntentFactory @Inject constructor(@ApplicationContext private val context: Context) {
 
     fun getPuzzleChoice(): Intent {
         val intent = Intent(context, PuzzleChoiceActivity::class.java)

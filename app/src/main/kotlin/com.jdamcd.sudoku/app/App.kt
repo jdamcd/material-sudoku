@@ -1,14 +1,15 @@
 package com.jdamcd.sudoku.app
 
+import android.app.Application
 import androidx.appcompat.app.AppCompatDelegate
 import com.jdamcd.sudoku.BuildConfig
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.DebugUtil
-import dagger.android.AndroidInjector
-import dagger.android.support.DaggerApplication
+import dagger.hilt.android.HiltAndroidApp
 import javax.inject.Inject
 
-class App : DaggerApplication() {
+@HiltAndroidApp
+class App : Application() {
 
     @Inject lateinit var settings: Settings
 
@@ -27,9 +28,5 @@ class App : DaggerApplication() {
             if (settings.isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
             else AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
         )
-    }
-
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent.factory().create(this)
     }
 }

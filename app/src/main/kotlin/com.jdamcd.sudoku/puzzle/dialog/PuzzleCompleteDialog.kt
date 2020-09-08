@@ -6,14 +6,16 @@ import android.content.DialogInterface.OnClickListener
 import android.content.res.Resources
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
+import androidx.fragment.app.DialogFragment
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.base.BaseDialogFragment
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.Strings
+import dagger.hilt.android.AndroidEntryPoint
 import java.util.Random
 import javax.inject.Inject
 
-class PuzzleCompleteDialog : BaseDialogFragment(), OnClickListener {
+@AndroidEntryPoint
+class PuzzleCompleteDialog : DialogFragment(), OnClickListener {
 
     @Inject lateinit var settings: Settings
     @Inject lateinit var res: Resources

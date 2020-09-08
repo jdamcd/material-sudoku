@@ -10,11 +10,12 @@ import android.os.Build.VERSION_CODES.N_MR1
 import androidx.core.content.getSystemService
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
+import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Arrays.asList
 import javax.inject.Inject
 
 class ShortcutController @Inject constructor(
-    val context: Context,
+    @ApplicationContext val context: Context,
     private val intentFactory: IntentFactory
 ) {
 

@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.core.content.ContextCompat
+import androidx.fragment.app.Fragment
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.base.BaseFragment
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Level.EASY
 import com.jdamcd.sudoku.repository.Level.EXTREME
@@ -15,11 +15,13 @@ import com.jdamcd.sudoku.repository.Level.HARD
 import com.jdamcd.sudoku.repository.Level.MEDIUM
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.util.Strings
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_scoreboard.*
 import kotlinx.android.synthetic.main.layout_scorecard_summary.*
 import javax.inject.Inject
 
-class ScoreboardFragment : BaseFragment(), ScoreboardPresenter.View {
+@AndroidEntryPoint
+class ScoreboardFragment : Fragment(), ScoreboardPresenter.View {
 
     @Inject internal lateinit var presenter: ScoreboardPresenter
 

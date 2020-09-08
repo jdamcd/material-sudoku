@@ -10,14 +10,16 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.Preference.OnPreferenceChangeListener
 import androidx.preference.Preference.OnPreferenceClickListener
+import androidx.preference.PreferenceFragmentCompat
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.base.BasePreferenceFragment
 import com.jdamcd.sudoku.util.AppInfo
 import com.jdamcd.sudoku.util.snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
-class SettingsFragment : BasePreferenceFragment(), OnPreferenceClickListener, OnPreferenceChangeListener {
+@AndroidEntryPoint
+class SettingsFragment : PreferenceFragmentCompat(), OnPreferenceClickListener, OnPreferenceChangeListener {
 
     @Inject internal lateinit var info: AppInfo
     @Inject internal lateinit var intents: IntentFactory

@@ -1,7 +1,6 @@
 package com.jdamcd.sudoku.browse
 
 import android.app.Dialog
-import android.content.Context
 import android.content.DialogInterface
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -16,19 +15,15 @@ import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.Strings
-import dagger.android.support.AndroidSupportInjection
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_resume_puzzle.*
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class ResumePuzzleSheet : BottomSheetDialogFragment() {
 
     @Inject lateinit var intents: IntentFactory
     @Inject lateinit var settings: Settings
-
-    override fun onAttach(context: Context) {
-        AndroidSupportInjection.inject(this)
-        super.onAttach(context)
-    }
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)

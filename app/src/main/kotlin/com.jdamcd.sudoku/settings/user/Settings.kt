@@ -4,10 +4,11 @@ import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
 import androidx.preference.PreferenceManager
+import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
 class Settings @Inject
-constructor(private val context: Context) {
+constructor(@ApplicationContext private val context: Context) {
 
     var isTimerEnabled: Boolean
         get() = preferences.getBoolean(SHOW_TIMER_ID, true)

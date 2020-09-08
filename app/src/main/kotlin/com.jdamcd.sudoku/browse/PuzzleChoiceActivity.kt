@@ -13,12 +13,14 @@ import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.ViewUtil
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import kotlinx.android.synthetic.main.activity_puzzle_choice.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
+@AndroidEntryPoint
 class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
 
     @Inject internal lateinit var presenter: PuzzleChoicePresenter

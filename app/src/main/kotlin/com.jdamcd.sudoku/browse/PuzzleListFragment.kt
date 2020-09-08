@@ -4,16 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.base.BaseFragment
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.view.OffsetDecoration
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.android.synthetic.main.fragment_recycler_puzzles.*
 import javax.inject.Inject
 
-class PuzzleListFragment : BaseFragment(), PuzzleListPresenter.View {
+@AndroidEntryPoint
+class PuzzleListFragment : Fragment(), PuzzleListPresenter.View {
 
     @Inject internal lateinit var presenter: PuzzleListPresenter
     @Inject internal lateinit var adapter: PuzzleAdapter

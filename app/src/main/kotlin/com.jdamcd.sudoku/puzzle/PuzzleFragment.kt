@@ -11,8 +11,8 @@ import android.view.View.OnClickListener
 import android.view.View.OnLongClickListener
 import android.view.ViewGroup
 import android.widget.Button
+import androidx.fragment.app.Fragment
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.base.BaseFragment
 import com.jdamcd.sudoku.eventbus.EventBus
 import com.jdamcd.sudoku.eventbus.event.GameResult
 import com.jdamcd.sudoku.game.CellPosition
@@ -29,6 +29,7 @@ import com.jdamcd.sudoku.shortcut.ShortcutController
 import com.jdamcd.sudoku.util.Format
 import com.jdamcd.sudoku.util.snackbar
 import com.jdamcd.sudoku.view.GamePuzzleView
+import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposables
 import io.reactivex.schedulers.Schedulers
@@ -36,7 +37,8 @@ import kotlinx.android.synthetic.main.fragment_puzzle.*
 import kotlinx.android.synthetic.main.layout_numpad_rectangle.*
 import javax.inject.Inject
 
-class PuzzleFragment : BaseFragment(), OnClickListener, OnLongClickListener, GamePuzzleView.OnCellSelectedListener, ConfirmRestartDialog.RestartContract {
+@AndroidEntryPoint
+class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuzzleView.OnCellSelectedListener, ConfirmRestartDialog.RestartContract {
 
     @Inject lateinit var repository: PuzzleRepository
     @Inject lateinit var eventBus: EventBus
