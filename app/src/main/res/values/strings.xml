@@ -100,7 +100,8 @@
   <string name="settings_puzzle_show_errors">Highlight errors</string>
   <string name="settings_puzzle_show_errors_summary">Instant feedback if you make a mistake</string>
   <string name="settings_theme_title">Theme</string>
-  <string name="settings_dark_mode">Force dark mode</string>
+  <string name="settings_system_theme">Use system theme</string>
+  <string name="settings_night_mode">Night mode</string>
   <string name="settings_general_title">General</string>
   <string name="settings_general_version">Version</string>
   <string name="settings_how_to_play">How to play</string>

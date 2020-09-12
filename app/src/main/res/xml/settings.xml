@@ -1,4 +1,6 @@
-<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+<PreferenceScreen
+  xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto">
   <PreferenceCategory
     android:title="@string/settings_puzzle_title">
     <CheckBoxPreference
@@ -20,9 +22,14 @@
   <PreferenceCategory
     android:title="@string/settings_theme_title">
     <SwitchPreference
-      android:key="settings_dark_mode"
-      android:title="@string/settings_dark_mode"
-      android:defaultValue="false" />
+      android:key="settings_system_theme"
+      android:title="@string/settings_system_theme"
+      android:defaultValue="true" />
+    <SwitchPreference
+      android:key="settings_night_mode"
+      android:title="@string/settings_night_mode"
+      android:defaultValue="false"
+      app:isPreferenceVisible="false" />
   </PreferenceCategory>
   <PreferenceCategory
     android:title="@string/settings_general_title">

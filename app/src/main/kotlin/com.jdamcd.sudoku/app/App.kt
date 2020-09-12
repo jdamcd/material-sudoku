@@ -25,8 +25,11 @@ class App : Application() {
 
     private fun setupTheme() {
         AppCompatDelegate.setDefaultNightMode(
-            if (settings.isDarkMode) AppCompatDelegate.MODE_NIGHT_YES
-            else AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+            when {
+                settings.isSystemTheme -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                settings.isNightMode -> AppCompatDelegate.MODE_NIGHT_YES
+                else -> AppCompatDelegate.MODE_NIGHT_NO
+            }
         )
     }
 }

@@ -26,9 +26,13 @@ constructor(@ApplicationContext private val context: Context) {
         get() = preferences.getBoolean(HIDE_COMPLETED_ID, false)
         set(isHideCompleted) = preferenceEditor.putBoolean(HIDE_COMPLETED_ID, isHideCompleted).apply()
 
-    var isDarkMode: Boolean
-        get() = preferences.getBoolean(DARK_MODE_ID, false)
-        set(isDarkMode) = preferenceEditor.putBoolean(DARK_MODE_ID, isDarkMode).apply()
+    var isSystemTheme: Boolean
+        get() = preferences.getBoolean(SYSTEM_THEME_ID, true)
+        set(isSystemTheme) = preferenceEditor.putBoolean(SYSTEM_THEME_ID, isSystemTheme).apply()
+
+    var isNightMode: Boolean
+        get() = preferences.getBoolean(NIGHT_MODE_ID, false)
+        set(isNightMode) = preferenceEditor.putBoolean(NIGHT_MODE_ID, isNightMode).apply()
 
     var lastPlayed: Long
         get() = preferences.getLong(LAST_PLAYED_ID, NOT_SET)
@@ -56,7 +60,8 @@ constructor(@ApplicationContext private val context: Context) {
         private const val SHOW_TIMER_ID = "settings_timer"
         private const val HIDE_COMPLETED_ID = "settings_completed"
         private const val SHOW_ERRORS_ID = "settings_show_errors"
-        private const val DARK_MODE_ID = "settings_dark_mode"
+        private const val SYSTEM_THEME_ID = "settings_system_theme"
+        private const val NIGHT_MODE_ID = "settings_night_mode"
         private const val LAST_PLAYED_ID = "last_played"
         private const val RESUME_PROMPT_ID = "resume_prompt"
         private const val RATE_SHOWN_ID = "shown_rate"
