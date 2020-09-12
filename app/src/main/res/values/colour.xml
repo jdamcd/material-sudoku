@@ -13,6 +13,7 @@
   <color name="brand">#2196f3</color>
   <color name="brand_dark">#1976d2</color>
   <color name="brand_accent">#ff5252</color>
+  <color name="splash">#1976d2</color>
 
   <!-- Puzzle list -->
   <color name="tab_selection">#20ffffff</color>
