@@ -27,7 +27,7 @@ constructor(@ApplicationContext private val context: Context) {
         set(isHideCompleted) = preferenceEditor.putBoolean(HIDE_COMPLETED_ID, isHideCompleted).apply()
 
     var isSystemTheme: Boolean
-        get() = preferences.getBoolean(SYSTEM_THEME_ID, false)
+        get() = preferences.getBoolean(SYSTEM_THEME_ID, true)
         set(isSystemTheme) = preferenceEditor.putBoolean(SYSTEM_THEME_ID, isSystemTheme).apply()
 
     var isNightMode: Boolean
