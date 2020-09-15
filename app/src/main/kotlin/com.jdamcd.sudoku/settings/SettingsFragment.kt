@@ -89,13 +89,12 @@ class SettingsFragment : PreferenceFragmentCompat(), OnPreferenceChangeListener 
     private fun toggleSystemTheme(enabled: Boolean) {
         findPreference<Preference>(KEY_NIGHT_MODE)?.isVisible = !enabled
         AppCompatDelegate.setDefaultNightMode(
-            when {
-                enabled -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                settings.isNightMode -> AppCompatDelegate.MODE_NIGHT_YES
-                else -> AppCompatDelegate.MODE_NIGHT_NO
-            }
+                when {
+                    enabled -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
+                    settings.isNightMode -> AppCompatDelegate.MODE_NIGHT_YES
+                    else -> AppCompatDelegate.MODE_NIGHT_NO
+                }
         )
-        findPreference<Preference>(KEY_NIGHT_MODE)?.isVisible = !enabled
     }
 
     private fun toggleNightMode(enabled: Boolean) {
