@@ -33,8 +33,6 @@
     <item quantity="other">%d 개 공개됨</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">플레이하기 시작한 퍼즐이 여기 나타납니다.</string>
 

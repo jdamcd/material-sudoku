@@ -36,8 +36,6 @@
     <item quantity="other">%d reveals</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Puzzles you\'ve started playing appear here</string>
   <string name="action_remove_all">Remove all</string>

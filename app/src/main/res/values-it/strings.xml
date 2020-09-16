@@ -34,8 +34,6 @@
     <item quantity="other">%d scoperte</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Ecco i puzzle hai iniziato a scoprire</string>
 

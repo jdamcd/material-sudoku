@@ -33,8 +33,6 @@
     <item quantity="other">%d 展示</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">这里的都是你已经开始玩的拼图</string>
 

@@ -36,8 +36,6 @@
     <item quantity="other">%d ujawniono</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Łamigłówki, które zacząłeś rozwiązywać pojawiają się tutaj</string>
 

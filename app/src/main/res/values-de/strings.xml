@@ -34,8 +34,6 @@
     <item quantity="other">%d Enthüllungen</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Begonnene Rätsel erscheinen hier</string>
 

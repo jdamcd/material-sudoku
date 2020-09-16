@@ -36,8 +36,6 @@
     <item quantity="other">%d открыты</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Здесь показаны головоломки, которые вы начали разгадывать</string>
 

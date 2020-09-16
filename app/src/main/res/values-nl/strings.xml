@@ -34,8 +34,6 @@
     <item quantity="other">%d tonen</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Puzzels die u begonnen bent te spelen verschijnen hier</string>
 

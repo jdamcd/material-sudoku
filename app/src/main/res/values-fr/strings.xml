@@ -34,8 +34,6 @@
     <item quantity="other">%d révélés</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Les puzzles que vous avez commencés apparaissent ici</string>
 

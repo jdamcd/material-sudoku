@@ -34,8 +34,6 @@
     <item quantity="other">%d visar</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Pussel du har påbörjat visas här</string>
 

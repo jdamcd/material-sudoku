@@ -34,8 +34,6 @@
     <item quantity="other">%d adet gösteriliyor</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Oynamaya başladığınız bulmacaları burada görebilirsiniz</string>
 

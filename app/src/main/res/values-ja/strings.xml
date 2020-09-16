@@ -33,8 +33,6 @@
     <item quantity="other">答えを明かした数 %d</item>
   </plurals>
 
-  <!-- Banners -->
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">あなたが遊び始めたゲームはここに表示されます</string>
 
