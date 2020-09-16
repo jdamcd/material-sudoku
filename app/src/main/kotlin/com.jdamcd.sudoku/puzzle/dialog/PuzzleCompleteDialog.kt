@@ -35,7 +35,7 @@ class PuzzleCompleteDialog : DialogFragment(), OnClickListener {
 
     private fun generateMessage(): String {
         val builder = StringBuilder()
-        if (settings.isTimerEnabled) {
+        if (settings.timerEnabled) {
             val time = Strings.formatTime(requireArguments().getLong(ARGS_TIME))
             builder.append(resources.getString(R.string.puzzle_complete_time, time))
         } else {

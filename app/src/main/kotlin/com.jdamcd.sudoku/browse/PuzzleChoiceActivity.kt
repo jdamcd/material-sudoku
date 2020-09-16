@@ -88,7 +88,7 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.activity_puzzle_choice, menu)
         val item = menu.findItem(R.id.action_hide_completed)
-        item.isChecked = settings.isHideCompleted
+        item.isChecked = settings.hideCompleted
         return true
     }
 

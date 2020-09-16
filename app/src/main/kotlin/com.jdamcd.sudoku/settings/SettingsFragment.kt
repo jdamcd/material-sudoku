@@ -32,7 +32,7 @@ class SettingsFragment : PreferenceFragmentCompat(), OnPreferenceChangeListener 
     override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
         addPreferencesFromResource(R.xml.settings)
         findPreference<Preference>(KEY_VERSION)?.summary = info.getVersion()
-        findPreference<Preference>(KEY_NIGHT_MODE)?.isVisible = !settings.isSystemTheme
+        findPreference<Preference>(KEY_NIGHT_MODE)?.isVisible = !settings.useSystemTheme
         setListeners()
     }
 
@@ -91,7 +91,7 @@ class SettingsFragment : PreferenceFragmentCompat(), OnPreferenceChangeListener 
         AppCompatDelegate.setDefaultNightMode(
                 when {
                     enabled -> AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM
-                    settings.isNightMode -> AppCompatDelegate.MODE_NIGHT_YES
+                    settings.nightMode -> AppCompatDelegate.MODE_NIGHT_YES
                     else -> AppCompatDelegate.MODE_NIGHT_NO
                 }
         )

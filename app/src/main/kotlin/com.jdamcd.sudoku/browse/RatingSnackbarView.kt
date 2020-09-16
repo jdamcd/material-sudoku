@@ -19,7 +19,7 @@ internal class RatingSnackbarView @Inject constructor(
         rateBar.setAction(R.string.banner_rate) { onActionClick(rateBar, view) }
         rateBar.view.setOnClickListener { rateBar.dismiss() }
         rateBar.show()
-        settings.isRatePromptShown = true
+        settings.ratingPromptShown = true
     }
 
     private fun onActionClick(rateBar: Snackbar, parent: View) {

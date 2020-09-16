@@ -112,11 +112,11 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
             game = data.game
         }
         puzzle_board.setGame(game)
-        puzzle_board.setShowMistakes(settings.isShowErrors)
+        puzzle_board.setShowMistakes(settings.showErrors)
 
         hostActivity.setPuzzleName(data.title)
         level = data.level
-        timer.setStartAt(data.time, settings.isTimerEnabled)
+        timer.setStartAt(data.time, settings.timerEnabled)
 
         isCompleted = data.isCompleted
         isBookmarked = data.isBookmarked || data.time == 0L // First open
@@ -140,7 +140,7 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
     override fun onResume() {
         super.onResume()
         timer.start()
-        if (settings.isTimerEnabled && !isCompleted) {
+        if (settings.timerEnabled && !isCompleted) {
             timer.startUpdates()
         }
     }
@@ -206,7 +206,7 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
-        if (settings.isCheatsEnabled) {
+        if (settings.cheatsEnabled) {
             inflater.inflate(R.menu.fragment_puzzle_cheat, menu)
             menu.findItem(R.id.action_cheat_cell).isEnabled = !isCompleted && isEmptyCellSelected
             menu.findItem(R.id.action_cheat_random_cell).isEnabled = !isCompleted
@@ -497,7 +497,7 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
         timer.restart()
         saveRestartedState()
         hostActivity.invalidateMenu()
-        if (settings.isTimerEnabled) {
+        if (settings.timerEnabled) {
             timer.startUpdates()
         }
     }

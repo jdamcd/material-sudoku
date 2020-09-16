@@ -27,7 +27,7 @@ internal class PuzzleChoicePresenter @Inject constructor(
     override fun start(view: View) {
         super.start(view)
 
-        if (BuildConfig.GOOGLE && !settings.isRatePromptShown) {
+        if (BuildConfig.GOOGLE && !settings.ratingPromptShown) {
             setupRatingPrompt(view)
         }
 
@@ -41,7 +41,7 @@ internal class PuzzleChoicePresenter @Inject constructor(
         addSubscription(
             view.onToggleCompleted()
                 .subscribe {
-                    settings.isHideCompleted = it
+                    settings.hideCompleted = it
                     eventBus.publish(if (it) HideCompleted.HIDE else HideCompleted.SHOW)
                 }
         )
@@ -72,7 +72,7 @@ internal class PuzzleChoicePresenter @Inject constructor(
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe { count ->
-                    if (count >= Settings.RATING_THRESHOLD && !settings.isRatePromptShown) {
+                    if (count >= Settings.RATING_THRESHOLD && !settings.ratingPromptShown) {
                         view.showRatingPrompt()
                     }
                 }
