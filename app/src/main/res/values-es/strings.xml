@@ -35,8 +35,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">¿Te gusta esta app?</string>
-  <string name="banner_rate">Califícala</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Los puzles que has comenzado a jugar aparecen aquí</string>

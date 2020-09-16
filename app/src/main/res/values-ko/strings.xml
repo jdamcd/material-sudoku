@@ -34,8 +34,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">이 앱이 마음에 드십니까?</string>
-  <string name="banner_rate">평가해 주세요</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">플레이하기 시작한 퍼즐이 여기 나타납니다.</string>

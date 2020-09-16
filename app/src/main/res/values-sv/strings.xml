@@ -35,8 +35,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">Gillar du den här appen?</string>
-  <string name="banner_rate">Betygsätt den</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Pussel du har påbörjat visas här</string>

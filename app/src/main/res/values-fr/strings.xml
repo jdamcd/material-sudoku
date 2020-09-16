@@ -35,8 +35,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">Vous aimez cette application ?</string>
-  <string name="banner_rate">Notez-la </string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Les puzzles que vous avez commencés apparaissent ici</string>

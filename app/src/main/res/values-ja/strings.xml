@@ -34,8 +34,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">このアプリは気に入って頂けましたか？</string>
-  <string name="banner_rate">評価する</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">あなたが遊び始めたゲームはここに表示されます</string>

@@ -37,8 +37,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">Нравится это приложение?</string>
-  <string name="banner_rate">Оцените его</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Здесь показаны головоломки, которые вы начали разгадывать</string>

@@ -35,8 +35,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">Bu uygulamayı beğendiniz mi?</string>
-  <string name="banner_rate">Puan verin</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Oynamaya başladığınız bulmacaları burada görebilirsiniz</string>

@@ -37,8 +37,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">Enjoying this app?</string>
-  <string name="banner_rate">Rate</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Puzzles you\'ve started playing appear here</string>

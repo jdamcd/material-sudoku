@@ -34,8 +34,6 @@
   </plurals>
 
   <!-- Banners -->
-  <string name="banner_action_call">喜欢这个应用?</string>
-  <string name="banner_rate">评价</string>
 
   <!-- Bookmarks -->
   <string name="bookmarks_empty">这里的都是你已经开始玩的拼图</string>
