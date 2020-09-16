@@ -131,12 +131,12 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
     override fun showRatingPrompt() {
         val reviewManager = ReviewManagerFactory.create(this)
         reviewManager.requestReviewFlow()
-                .addOnCompleteListener {
-                    if (it.isSuccessful) {
-                        reviewManager.launchReviewFlow(this, it.result)
-                        settings.ratingPromptShown = true
-                    }
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    reviewManager.launchReviewFlow(this, it.result)
+                    settings.ratingPromptShown = true
                 }
+            }
     }
 
     override fun showSyncStatus(isSyncing: Boolean) {
