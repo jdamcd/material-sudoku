@@ -134,6 +134,7 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
                 .addOnCompleteListener {
                     if (it.isSuccessful) {
                         reviewManager.launchReviewFlow(this, it.result)
+                        settings.ratingPromptShown = true
                     }
                 }
     }
