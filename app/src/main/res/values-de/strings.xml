@@ -34,10 +34,6 @@
     <item quantity="other">%d Enthüllungen</item>
   </plurals>
 
-  <!-- Banners -->
-  <string name="banner_action_call">Gefällt dir die App?</string>
-  <string name="banner_rate">Bewerte sie</string>
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Begonnene Rätsel erscheinen hier</string>
 

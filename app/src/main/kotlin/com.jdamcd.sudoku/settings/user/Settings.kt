@@ -10,27 +10,27 @@ import javax.inject.Inject
 class Settings @Inject
 constructor(@ApplicationContext private val context: Context) {
 
-    var isTimerEnabled: Boolean
+    var timerEnabled: Boolean
         get() = preferences.getBoolean(SHOW_TIMER_ID, true)
         set(enabled) = preferenceEditor.putBoolean(SHOW_TIMER_ID, enabled).apply()
 
-    var isCheatsEnabled: Boolean
+    var cheatsEnabled: Boolean
         get() = preferences.getBoolean(SHOW_CHEATS_ID, true)
         set(enabled) = preferenceEditor.putBoolean(SHOW_CHEATS_ID, enabled).apply()
 
-    var isShowErrors: Boolean
+    var showErrors: Boolean
         get() = preferences.getBoolean(SHOW_ERRORS_ID, false)
         set(isShowErrors) = preferenceEditor.putBoolean(SHOW_ERRORS_ID, isShowErrors).apply()
 
-    var isHideCompleted: Boolean
+    var hideCompleted: Boolean
         get() = preferences.getBoolean(HIDE_COMPLETED_ID, false)
         set(isHideCompleted) = preferenceEditor.putBoolean(HIDE_COMPLETED_ID, isHideCompleted).apply()
 
-    var isSystemTheme: Boolean
+    var useSystemTheme: Boolean
         get() = preferences.getBoolean(SYSTEM_THEME_ID, true)
         set(isSystemTheme) = preferenceEditor.putBoolean(SYSTEM_THEME_ID, isSystemTheme).apply()
 
-    var isNightMode: Boolean
+    var nightMode: Boolean
         get() = preferences.getBoolean(NIGHT_MODE_ID, false)
         set(isNightMode) = preferenceEditor.putBoolean(NIGHT_MODE_ID, isNightMode).apply()
 
@@ -42,7 +42,7 @@ constructor(@ApplicationContext private val context: Context) {
         get() = preferences.getBoolean(RESUME_PROMPT_ID, false)
         set(showResumePrompt) = preferenceEditor.putBoolean(RESUME_PROMPT_ID, showResumePrompt).apply()
 
-    var isRatePromptShown: Boolean
+    var ratingPromptShown: Boolean
         get() = preferences.getBoolean(RATE_SHOWN_ID, false)
         set(shown) = preferenceEditor.putBoolean(RATE_SHOWN_ID, shown).apply()
 

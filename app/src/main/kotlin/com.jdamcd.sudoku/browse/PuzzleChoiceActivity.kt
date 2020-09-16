@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import com.google.android.play.core.review.ReviewManagerFactory
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.base.BaseActivity
@@ -25,7 +26,6 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
 
     @Inject internal lateinit var presenter: PuzzleChoicePresenter
 
-    @Inject internal lateinit var rateSnackbarHelper: RatingSnackbarView
     @Inject internal lateinit var intents: IntentFactory
     @Inject internal lateinit var settings: Settings
 
@@ -88,7 +88,7 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.activity_puzzle_choice, menu)
         val item = menu.findItem(R.id.action_hide_completed)
-        item.isChecked = settings.isHideCompleted
+        item.isChecked = settings.hideCompleted
         return true
     }
 
@@ -129,7 +129,14 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
     }
 
     override fun showRatingPrompt() {
-        rateSnackbarHelper.show(pager)
+        val reviewManager = ReviewManagerFactory.create(this)
+        reviewManager.requestReviewFlow()
+            .addOnCompleteListener {
+                if (it.isSuccessful) {
+                    reviewManager.launchReviewFlow(this, it.result)
+                    settings.ratingPromptShown = true
+                }
+            }
     }
 
     override fun showSyncStatus(isSyncing: Boolean) {

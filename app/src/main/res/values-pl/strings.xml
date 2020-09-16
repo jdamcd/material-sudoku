@@ -36,10 +36,6 @@
     <item quantity="other">%d ujawniono</item>
   </plurals>
 
-  <!-- Banners -->
-  <string name="banner_action_call">Podoba ci się ta aplikacja?</string>
-  <string name="banner_rate">Oceń ją</string>
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Łamigłówki, które zacząłeś rozwiązywać pojawiają się tutaj</string>
 

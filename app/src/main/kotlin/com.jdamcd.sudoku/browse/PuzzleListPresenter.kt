@@ -28,7 +28,7 @@ internal class PuzzleListPresenter @Inject constructor(
     override fun start(view: View) {
         super.start(view)
 
-        setListSubscription(view, settings.isHideCompleted)
+        setListSubscription(view, settings.hideCompleted)
 
         addSubscription(
             eventBus.listen(HideCompleted::class.java)

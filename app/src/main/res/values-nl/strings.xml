@@ -34,10 +34,6 @@
     <item quantity="other">%d tonen</item>
   </plurals>
 
-  <!-- Banners -->
-  <string name="banner_action_call">Vind u deze app leuk?</string>
-  <string name="banner_rate">Beoordeling</string>
-
   <!-- Bookmarks -->
   <string name="bookmarks_empty">Puzzels die u begonnen bent te spelen verschijnen hier</string>
 

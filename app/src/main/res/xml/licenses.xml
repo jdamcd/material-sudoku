@@ -8,13 +8,6 @@
         android:data="https://github.com/JetBrains/kotlin" />
     </Preference>
     <Preference
-      android:summary="© Dagger Contributors \u00B7 Apache License 2.0"
-      android:title="Dagger">
-      <intent
-        android:action="android.intent.action.VIEW"
-        android:data="https://github.com/google/dagger" />
-    </Preference>
-    <Preference
       android:summary="© RxJava Contributors \u00B7 Apache License 2.0"
       android:title="RxJava">
       <intent
