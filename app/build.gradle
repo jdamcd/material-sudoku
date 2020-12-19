@@ -76,22 +76,22 @@ android {
 dependencies {
     ext.dagger_version = '2.26'
     ext.anko_version = '0.10.8'
-    ext.room_version = '2.2.5'
+    ext.room_version = '2.2.6'
 
     implementation project(':core')
 
     // Support
     implementation 'androidx.annotation:annotation:1.1.0'
     implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.core:core-ktx:1.3.1'
+    implementation 'androidx.core:core-ktx:1.3.2'
     implementation 'androidx.recyclerview:recyclerview:1.1.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.4'
     implementation 'androidx.preference:preference:1.1.1'
     implementation 'androidx.cardview:cardview:1.0.0'
 
     // Google
     implementation 'com.google.android.material:material:1.2.1'
-    implementation 'com.google.android.play:core:1.8.0'
+    implementation 'com.google.android.play:core:1.9.0'
 
     // Core
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -106,7 +106,7 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
 
     // Unit tests
-    testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.1'
     testImplementation 'org.mockito:mockito-core:3.2.4'
     testImplementation('com.nhaarman:mockito-kotlin:1.6.0') {
         exclude group: 'org.jetbrains.kotlin', module: 'kotlin-stdlib'
