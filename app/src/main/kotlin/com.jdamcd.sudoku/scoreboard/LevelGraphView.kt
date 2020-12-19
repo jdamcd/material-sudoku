@@ -80,7 +80,7 @@ class LevelGraphView(context: Context, attrs: AttributeSet) : View(context, attr
     }
 
     private fun getBarWidth(i: Int): Int {
-        val max = counts.max() ?: 0
+        val max = counts.maxOrNull() ?: 0
         if (max > 0) {
             val barWidth = (counts[i].toFloat() / max.toFloat() * width).toInt()
             return if (barWidth > MIN_WIDTH) barWidth else MIN_WIDTH

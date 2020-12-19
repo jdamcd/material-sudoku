@@ -1,11 +1,12 @@
 package com.jdamcd.sudoku.puzzle
 
 import android.os.Handler
+import android.os.Looper
 import com.jdamcd.sudoku.util.Strings
 
 internal class PuzzleTimer(private val callback: UpdateCallback) {
 
-    private val timeHandler = Handler()
+    private val timeHandler = Handler(Looper.getMainLooper())
     private var startTime = 0L
     private var timeOffset = 0L
     private var currentText: String? = null

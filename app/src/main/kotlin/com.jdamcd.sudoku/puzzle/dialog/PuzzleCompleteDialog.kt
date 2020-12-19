@@ -24,7 +24,7 @@ class PuzzleCompleteDialog : DialogFragment(), OnClickListener {
         return AlertDialog.Builder(requireActivity())
             .setTitle(generateGreeting())
             .setMessage(generateMessage())
-            .setPositiveButton(android.R.string.yes, this)
+            .setPositiveButton(android.R.string.ok, this)
             .create()
     }
 

@@ -23,7 +23,7 @@ class ConfirmRestartDialog : DialogFragment(), OnClickListener {
             .setTitle(R.string.dialog_restart)
             .setMessage(R.string.dialog_restart_warning)
             .setNegativeButton(android.R.string.cancel, this)
-            .setPositiveButton(android.R.string.yes, this)
+            .setPositiveButton(android.R.string.ok, this)
             .create()
     }
 
