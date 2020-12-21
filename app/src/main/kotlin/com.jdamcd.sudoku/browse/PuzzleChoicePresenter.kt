@@ -7,7 +7,6 @@ import com.jdamcd.sudoku.base.Presenter
 import com.jdamcd.sudoku.base.PresenterView
 import com.jdamcd.sudoku.eventbus.EventBus
 import com.jdamcd.sudoku.eventbus.event.HideCompleted
-import com.jdamcd.sudoku.eventbus.event.SavesSync
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.repository.PuzzleRepository
@@ -30,13 +29,6 @@ internal class PuzzleChoicePresenter @Inject constructor(
         if (BuildConfig.GOOGLE && !settings.ratingPromptShown) {
             setupRatingPrompt(view)
         }
-
-        addSubscription(
-            eventBus.listen(SavesSync::class.java)
-                .subscribe {
-                    view.showSyncStatus(it == SavesSync.SYNCING)
-                }
-        )
 
         addSubscription(
             view.onToggleCompleted()
@@ -98,7 +90,6 @@ internal class PuzzleChoicePresenter @Inject constructor(
     internal interface View : PresenterView {
         fun showRatingPrompt()
         fun showRandomError()
-        fun showSyncStatus(isSyncing: Boolean)
         fun showResumePrompt(puzzle: Puzzle)
         fun openPuzzle(puzzle: Puzzle)
 

@@ -139,10 +139,6 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
             }
     }
 
-    override fun showSyncStatus(isSyncing: Boolean) {
-        progress_bar.visibility = if (isSyncing) View.VISIBLE else View.GONE
-    }
-
     override fun showResumePrompt(puzzle: Puzzle) {
         if (!isFinishing) {
             ResumePuzzleSheet

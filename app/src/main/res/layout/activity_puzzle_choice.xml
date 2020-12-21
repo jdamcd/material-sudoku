@@ -26,16 +26,6 @@
     style="@style/Match"
     app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-  <ProgressBar
-    android:id="@+id/progress_bar"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
-    android:layout_marginBottom="-6.5dp"
-    android:indeterminate="true"
-    android:layout_gravity="bottom"
-    android:visibility="gone" />
-
   <com.google.android.material.floatingactionbutton.FloatingActionButton
     android:id="@+id/fab"
     android:layout_width="wrap_content"
