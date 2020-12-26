@@ -12,11 +12,11 @@ import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
+import com.jdamcd.sudoku.databinding.FragmentResumePuzzleBinding
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.Strings
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_resume_puzzle.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -24,6 +24,9 @@ class ResumePuzzleSheet : BottomSheetDialogFragment() {
 
     @Inject lateinit var intents: IntentFactory
     @Inject lateinit var settings: Settings
+
+    private var _binding: FragmentResumePuzzleBinding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateDialog(savedInstanceState: Bundle?): Dialog {
         val dialog = super.onCreateDialog(savedInstanceState)
@@ -45,19 +48,21 @@ class ResumePuzzleSheet : BottomSheetDialogFragment() {
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return View.inflate(ContextThemeWrapper(context, R.style.SudokuTheme), R.layout.fragment_resume_puzzle, container)
+        val view = View.inflate(ContextThemeWrapper(context, R.style.SudokuTheme), R.layout.fragment_resume_puzzle, container)
+        _binding = FragmentResumePuzzleBinding.bind(view)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         val arguments = requireArguments()
-        title.text = getString(R.string.resume_title, arguments[PARAM_NAME] as String)
-        time_played.text = arguments[PARAM_TIME] as String
-        progress_count.text = arguments[PARAM_PROGRESS] as String
+        binding.title.text = getString(R.string.resume_title, arguments[PARAM_NAME] as String)
+        binding.timePlayed.text = arguments[PARAM_TIME] as String
+        binding.progressCount.text = arguments[PARAM_PROGRESS] as String
         configureButton(arguments[PARAM_ID] as Long)
     }
 
     private fun configureButton(puzzleId: Long) {
-        ok_button.setOnClickListener {
+        binding.okButton.setOnClickListener {
             startActivity(intents.getPuzzle(puzzleId))
             dismiss()
         }
@@ -66,6 +71,11 @@ class ResumePuzzleSheet : BottomSheetDialogFragment() {
     override fun onDismiss(dialog: DialogInterface) {
         super.onDismiss(dialog)
         settings.resumePrompt = false
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        _binding = null
     }
 
     companion object {

@@ -23,12 +23,11 @@ import com.jdamcd.sudoku.view.PreviewPuzzleView
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
 import io.reactivex.subjects.Subject
-import kotlinx.android.synthetic.main.card_puzzle.view.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
 class PuzzleAdapter @Inject constructor() :
-    ListAdapter<Puzzle, PuzzleViewHolder>(PuzzleAdapter.diffCallback) {
+    ListAdapter<Puzzle, PuzzleViewHolder>(diffCallback) {
 
     private val clickSubject = PublishSubject.create<Puzzle>()
 
@@ -56,11 +55,11 @@ class PuzzleAdapter @Inject constructor() :
 
 class PuzzleViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
-    private val title: TextView = itemView.puzzle_title
-    private val time: TextView = itemView.puzzle_time
-    private val preview: PreviewPuzzleView = itemView.puzzle_preview
-    private val progress: ProgressBar = itemView.puzzle_progress
-    private val bookmark: View = itemView.puzzle_bookmark
+    private val title: TextView = itemView.findViewById(R.id.puzzle_title)
+    private val time: TextView = itemView.findViewById(R.id.puzzle_time)
+    private val preview: PreviewPuzzleView = itemView.findViewById(R.id.puzzle_preview)
+    private val progress: ProgressBar = itemView.findViewById(R.id.puzzle_progress)
+    private val bookmark: View = itemView.findViewById(R.id.puzzle_bookmark)
 
     fun bind(item: Puzzle, clickSubject: Subject<Puzzle>) {
         setTitle(item)

@@ -10,6 +10,7 @@ import com.google.android.play.core.review.ReviewManagerFactory
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.base.BaseActivity
+import com.jdamcd.sudoku.databinding.ActivityPuzzleChoiceBinding
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.settings.user.Settings
@@ -17,7 +18,6 @@ import com.jdamcd.sudoku.util.ViewUtil
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.Observable
 import io.reactivex.subjects.PublishSubject
-import kotlinx.android.synthetic.main.activity_puzzle_choice.*
 import java.util.concurrent.TimeUnit
 import javax.inject.Inject
 
@@ -25,20 +25,22 @@ import javax.inject.Inject
 class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
 
     @Inject internal lateinit var presenter: PuzzleChoicePresenter
-
     @Inject internal lateinit var intents: IntentFactory
     @Inject internal lateinit var settings: Settings
 
     private val toggleSubject = PublishSubject.create<Boolean>()
     private val fabView = RandomFabView()
 
+    private lateinit var binding: ActivityPuzzleChoiceBinding
+
     public override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_puzzle_choice)
-        setupActionBar(false)
+        binding = ActivityPuzzleChoiceBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+        setupActionBar(showUp = false)
 
         presenter.start(this)
-        fabView.setup(fab)
+        fabView.setup(binding.fab)
         configurePager()
 
         handleIntent()
@@ -76,8 +78,9 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
 
     private fun configurePager() {
         val pagerAdapter = PuzzlePagerAdapter(supportFragmentManager, resources)
+        val pager = binding.pager
         pager.adapter = pagerAdapter
-        indicator.setViewPager(pager)
+        binding.indicator.setViewPager(pager)
         pager.currentItem = 1
         pager.offscreenPageLimit = pagerAdapter.count - 1
         pager.setPageMarginDrawable(R.drawable.divider_vertical)
@@ -118,10 +121,10 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
 
     override fun onFabClick(): Observable<Level> {
         val subject = PublishSubject.create<View>()
-        fab.setOnClickListener { subject.onNext(it) }
+        binding.fab.setOnClickListener { subject.onNext(it) }
         return subject
             .throttleFirst(2, TimeUnit.SECONDS)
-            .map { PuzzlePagerAdapter.levels[pager.currentItem] }
+            .map { PuzzlePagerAdapter.levels[binding.pager.currentItem] }
     }
 
     override fun showRandomError() {

@@ -28,13 +28,12 @@ import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.shortcut.ShortcutController
 import com.jdamcd.sudoku.util.Format
 import com.jdamcd.sudoku.util.snackbar
+import com.jdamcd.sudoku.view.CheckableImageButton
 import com.jdamcd.sudoku.view.GamePuzzleView
 import dagger.hilt.android.AndroidEntryPoint
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposables
 import io.reactivex.schedulers.Schedulers
-import kotlinx.android.synthetic.main.fragment_puzzle.*
-import kotlinx.android.synthetic.main.layout_numpad_rectangle.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -46,6 +45,9 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
     @Inject lateinit var shortcuts: ShortcutController
 
     private lateinit var numKeys: Array<Button>
+    private lateinit var boardView: GamePuzzleView
+    private lateinit var clearButton: View
+    private lateinit var noteToggle: CheckableImageButton
 
     private var puzzleId: Long = 0
     private lateinit var level: Level
@@ -93,26 +95,33 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        numKeys = Array(NUMKEY_IDS.size) { i -> view.findViewById<Button>(NUMKEY_IDS[i]) }
-        puzzle_board.setOnCellSelectedListener(this)
+        findViews(view)
+        numKeys = Array(NUMKEY_IDS.size) { i -> view.findViewById(NUMKEY_IDS[i]) }
+        boardView.setOnCellSelectedListener(this)
         for (button in numKeys) {
             button.setOnClickListener(this)
             button.setOnLongClickListener(this)
         }
-        clear_cell.setOnClickListener(this)
-        note_toggle.setOnClickListener(this)
+        clearButton.setOnClickListener(this)
+        noteToggle.setOnClickListener(this)
         disposable = repository.getPuzzle(puzzleId)
             .subscribeOn(Schedulers.io())
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe { data -> setupPuzzle(data) }
     }
 
+    private fun findViews(root: View) {
+        boardView = root.findViewById(R.id.puzzle_board)
+        clearButton = root.findViewById(R.id.clear_cell)
+        noteToggle = root.findViewById(R.id.note_toggle)
+    }
+
     private fun setupPuzzle(data: Puzzle) {
         if (!isLoaded) {
             game = data.game
         }
-        puzzle_board.setGame(game)
-        puzzle_board.setShowMistakes(settings.showErrors)
+        boardView.setGame(game)
+        boardView.setShowMistakes(settings.showErrors)
 
         hostActivity.setPuzzleName(data.title)
         level = data.level
@@ -283,22 +292,22 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
     private fun clearAllNotes() {
         game.clearNotes()
         onCellChanged()
-        puzzle_board.invalidate()
+        boardView.invalidate()
         hostActivity.invalidateMenu()
     }
 
     private fun tryUndo() {
         if (!isLoaded) return
         when {
-            isCompleted -> puzzle_board.snackbar(R.string.toast_puzzle_completed)
+            isCompleted -> boardView.snackbar(R.string.toast_puzzle_completed)
             game.canUndo() -> undo()
-            else -> puzzle_board.snackbar(R.string.toast_no_move_history)
+            else -> boardView.snackbar(R.string.toast_no_move_history)
         }
     }
 
     private fun undo() {
         val undoCell = game.undo()
-        puzzle_board.setCursor(undoCell.row, undoCell.col)
+        boardView.setCursor(undoCell.row, undoCell.col)
         onCellSelected(undoCell)
         onCellChanged()
     }
@@ -316,18 +325,18 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
             R.id.keypad_8 -> setCursorCell(8)
             R.id.keypad_9 -> setCursorCell(9)
             R.id.clear_cell -> {
-                clearCell(puzzle_board.cursorPosition)
+                clearCell(boardView.cursorPosition)
                 onCellChanged()
             }
             R.id.note_toggle -> {
-                note_toggle.toggle()
+                noteToggle.toggle()
                 invalidateUIState()
             }
         }
     }
 
     override fun onLongClick(v: View): Boolean {
-        if (!isLoaded || !note_toggle.isEnabled || note_toggle.isChecked) return false
+        if (!isLoaded || !noteToggle.isEnabled || noteToggle.isChecked) return false
         when (v.id) {
             R.id.keypad_1 -> {
                 setCursorNote(1)
@@ -370,26 +379,26 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
     }
 
     private fun setCursorCell(value: Int) {
-        val cursor = puzzle_board.cursorPosition
+        val cursor = boardView.cursorPosition
         if (cursor.isSet()) {
-            if (note_toggle.isEnabled && note_toggle.isChecked) {
+            if (noteToggle.isEnabled && noteToggle.isChecked) {
                 game.toggleNote(cursor.row, cursor.col, value)
             } else {
                 answerCell(cursor, value)
             }
             onCellChanged()
         } else {
-            puzzle_board.snackbar(R.string.toast_no_cursor)
+            boardView.snackbar(R.string.toast_no_cursor)
         }
     }
 
     private fun setCursorNote(value: Int) {
-        val cursor = puzzle_board.cursorPosition
+        val cursor = boardView.cursorPosition
         if (cursor.isSet()) {
             game.toggleNote(cursor.row, cursor.col, value)
             onCellChanged()
         } else {
-            puzzle_board.snackbar(R.string.toast_no_cursor)
+            boardView.snackbar(R.string.toast_no_cursor)
         }
     }
 
@@ -416,13 +425,13 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
             game.clear(cursor.row, cursor.col)
             isEmptyCellSelected = true
         } else {
-            puzzle_board.snackbar(R.string.toast_no_cursor)
+            boardView.snackbar(R.string.toast_no_cursor)
         }
     }
 
     private fun onCellChanged() {
         if (!isLoaded) return
-        puzzle_board.invalidate()
+        boardView.invalidate()
         invalidateUIState()
         if (game.isCompleted()) {
             setCompleted()
@@ -438,11 +447,11 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
 
     private fun invalidateUIState() {
         hostActivity.invalidateMenu()
-        val cursor = puzzle_board.cursorPosition
+        val cursor = boardView.cursorPosition
         numKeys.iterator().forEach { b -> b.isEnabled = !isGivenSelected }
-        note_toggle.isEnabled = !isGivenSelected && cursor.isSet() && !game.hasAnswer(cursor.row, cursor.col)
-        clear_cell.isEnabled = !isGivenSelected && cursor.isSet() && (game.hasAnswer(cursor.row, cursor.col) || game.hasNotes(cursor.row, cursor.col))
-        if (!isGivenSelected && !note_toggle.isChecked) {
+        noteToggle.isEnabled = !isGivenSelected && cursor.isSet() && !game.hasAnswer(cursor.row, cursor.col)
+        clearButton.isEnabled = !isGivenSelected && cursor.isSet() && (game.hasAnswer(cursor.row, cursor.col) || game.hasNotes(cursor.row, cursor.col))
+        if (!isGivenSelected && !noteToggle.isChecked) {
             for (i in 0..8) {
                 numKeys[i].isEnabled = !game.isSolvedDigit(i + 1)
             }
@@ -451,7 +460,7 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
 
     private fun cheatCell() {
         if (!game.isSolutionAvailable()) return
-        val cursor = puzzle_board.cursorPosition
+        val cursor = boardView.cursorPosition
         if (cursor.isSet()) {
             game.cheatCell(cursor.row, cursor.col)
             isEmptyCellSelected = false
@@ -462,7 +471,7 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
     private fun cheatRandomCell() {
         val cell = game.cheatRandomCell()
         if (cell.isSet()) {
-            puzzle_board.setCursor(cell.row, cell.col)
+            boardView.setCursor(cell.row, cell.col)
             isEmptyCellSelected = false
             isGivenSelected = false
             onCellChanged()
@@ -510,9 +519,9 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
 
     private fun setViewsEnabled(enabled: Boolean) {
         numKeys.iterator().forEach { b -> b.isEnabled = enabled }
-        note_toggle.isEnabled = enabled
-        clear_cell.isEnabled = enabled
-        puzzle_board.isEnabled = enabled
+        noteToggle.isEnabled = enabled
+        clearButton.isEnabled = enabled
+        boardView.isEnabled = enabled
     }
 
     private fun showRestartConfirmation() {
@@ -523,8 +532,8 @@ class PuzzleFragment : Fragment(), OnClickListener, OnLongClickListener, GamePuz
     }
 
     private fun clearCursor() {
-        puzzle_board.clearCursor()
-        puzzle_board.invalidate()
+        boardView.clearCursor()
+        boardView.invalidate()
     }
 
     companion object {

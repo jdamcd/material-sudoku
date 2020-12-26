@@ -8,6 +8,7 @@
   android:orientation="vertical">
 
   <include
+    android:id="@+id/scorecard_summary"
     style="@style/CardMargin"
     layout="@layout/layout_scorecard_summary" />
 

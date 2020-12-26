@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.SimpleItemAnimator
 import com.jdamcd.sudoku.R
+import com.jdamcd.sudoku.databinding.FragmentRecyclerPuzzlesBinding
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.view.OffsetDecoration
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_recycler_puzzles.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -20,23 +20,27 @@ class PuzzleListFragment : Fragment(), PuzzleListPresenter.View {
     @Inject internal lateinit var presenter: PuzzleListPresenter
     @Inject internal lateinit var adapter: PuzzleAdapter
 
+    private var _binding: FragmentRecyclerPuzzlesBinding? = null
+    private val binding get() = _binding!!
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
-        return inflater.inflate(R.layout.fragment_recycler_puzzles, container, false)
+        _binding = FragmentRecyclerPuzzlesBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        recycler_view.addItemDecoration(OffsetDecoration(requireContext(), R.dimen.half_gutter))
-        (recycler_view.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
+        binding.recyclerView.addItemDecoration(OffsetDecoration(requireContext(), R.dimen.half_gutter))
+        (binding.recyclerView.itemAnimator as SimpleItemAnimator).supportsChangeAnimations = false
         presenter.start(this)
     }
 
     override fun showPuzzles(puzzles: List<Puzzle>) {
         adapter.submitList(puzzles)
-        if (recycler_view.adapter == null) {
-            recycler_view.adapter = adapter
+        if (binding.recyclerView.adapter == null) {
+            binding.recyclerView.adapter = adapter
         }
-        empty.visibility = if (puzzles.isEmpty()) View.VISIBLE else View.GONE
-        loading.visibility = View.GONE
+        binding.empty.visibility = if (puzzles.isEmpty()) View.VISIBLE else View.GONE
+        binding.loading.root.visibility = View.GONE
     }
 
     override fun onPuzzleClicked() = adapter.itemClicked()
@@ -46,6 +50,7 @@ class PuzzleListFragment : Fragment(), PuzzleListPresenter.View {
     override fun onDestroyView() {
         super.onDestroyView()
         presenter.stop()
+        _binding = null
     }
 
     companion object {
