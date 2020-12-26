@@ -10,8 +10,8 @@ import com.jdamcd.sudoku.Constants
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.game.Sudoku
+import com.jdamcd.sudoku.view.PreviewPuzzleView
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_how_to_play.*
 import javax.inject.Inject
 
 @SuppressLint("ValidFragment")
@@ -28,8 +28,9 @@ class HowToPlayFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        puzzle_heart.setPreview(Sudoku(PUZZLE_HEART))
-        puzzle_heart.setOnClickListener {
+        val heart = view.findViewById<PreviewPuzzleView>(R.id.puzzle_heart)
+        heart.setPreview(Sudoku(PUZZLE_HEART))
+        heart.setOnClickListener {
             if (++easterEggCounter % EASTER_EGG_THRESHOLD == 0) {
                 openHeartPuzzle()
             }

@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.fragment.app.Fragment
 import com.jdamcd.sudoku.R
+import com.jdamcd.sudoku.databinding.FragmentScoreboardBinding
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Level.EASY
 import com.jdamcd.sudoku.repository.Level.EXTREME
@@ -16,8 +17,6 @@ import com.jdamcd.sudoku.repository.Level.MEDIUM
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.util.Strings
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.android.synthetic.main.fragment_scoreboard.*
-import kotlinx.android.synthetic.main.layout_scorecard_summary.*
 import javax.inject.Inject
 
 @AndroidEntryPoint
@@ -25,8 +24,12 @@ class ScoreboardFragment : Fragment(), ScoreboardPresenter.View {
 
     @Inject internal lateinit var presenter: ScoreboardPresenter
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, bundle: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_scoreboard, container, false)
+    private var _binding: FragmentScoreboardBinding? = null
+    private val binding get() = _binding!!
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, bundle: Bundle?): View {
+        _binding = FragmentScoreboardBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -36,20 +39,22 @@ class ScoreboardFragment : Fragment(), ScoreboardPresenter.View {
     override fun onDestroyView() {
         super.onDestroyView()
         presenter.stop()
+        _binding = null
     }
 
     override fun showSummary(count: Int, countsByLevel: IntArray) {
+        val card = binding.scorecardSummary
         if (count == 0) {
-            summary_empty.visibility = View.VISIBLE
-            summary_graph.visibility = View.GONE
-            summary_total.visibility = View.GONE
+            card.summaryEmpty.visibility = View.VISIBLE
+            card.summaryGraph.visibility = View.GONE
+            card.summaryTotal.visibility = View.GONE
         } else {
-            summary_empty.visibility = View.GONE
-            summary_graph.visibility = View.VISIBLE
-            summary_total.visibility = View.VISIBLE
+            card.summaryEmpty.visibility = View.GONE
+            card.summaryGraph.visibility = View.VISIBLE
+            card.summaryTotal.visibility = View.VISIBLE
         }
-        summary_total.text = count.toString()
-        summary_graph.setCounts(countsByLevel)
+        card.summaryTotal.text = count.toString()
+        card.summaryGraph.setCounts(countsByLevel)
     }
 
     override fun showLevelStats(completed: List<Puzzle>) {
@@ -90,10 +95,10 @@ class ScoreboardFragment : Fragment(), ScoreboardPresenter.View {
 
     private fun getCardView(level: Level): View {
         return when (level) {
-            EASY -> scorecard_easy
-            MEDIUM -> scorecard_medium
-            HARD -> scorecard_hard
-            EXTREME -> scorecard_extreme
+            EASY -> binding.scorecardEasy.root
+            MEDIUM -> binding.scorecardMedium.root
+            HARD -> binding.scorecardMedium.root
+            EXTREME -> binding.scorecardExtreme.root
             else -> throw IllegalStateException("Unexpected level")
         }
     }
@@ -107,17 +112,17 @@ class ScoreboardFragment : Fragment(), ScoreboardPresenter.View {
         var cheats = Integer.MAX_VALUE
         lateinit var puzzle: String
 
-        internal operator fun set(time: Long, cheats: Int, puzzle: String) {
+        operator fun set(time: Long, cheats: Int, puzzle: String) {
             this.time = time
             this.cheats = cheats
             this.puzzle = puzzle
         }
 
-        internal fun hasCheats(): Boolean {
+        fun hasCheats(): Boolean {
             return cheats > 0
         }
 
-        internal fun worseThan(time: Long, cheats: Int): Boolean {
+        fun worseThan(time: Long, cheats: Int): Boolean {
             return cheats < this.cheats || cheats == this.cheats && time < this.time
         }
     }
