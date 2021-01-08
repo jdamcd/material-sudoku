@@ -6,6 +6,7 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import kotlin.math.max
 
 class AutoGridRecyclerView : RecyclerView {
 
@@ -51,7 +52,7 @@ class AutoGridRecyclerView : RecyclerView {
         }
     }
 
-    override fun setAdapter(adapter: RecyclerView.Adapter<*>?) {
+    override fun setAdapter(adapter: Adapter<*>?) {
         super.setAdapter(adapter)
         restorePosition()
     }
@@ -66,7 +67,7 @@ class AutoGridRecyclerView : RecyclerView {
     override fun onMeasure(widthSpec: Int, heightSpec: Int) {
         super.onMeasure(widthSpec, heightSpec)
         if (columnWidth > 0) {
-            manager.spanCount = Math.max(2, measuredWidth / columnWidth)
+            manager.spanCount = max(2, measuredWidth / columnWidth)
         }
     }
 

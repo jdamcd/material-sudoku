@@ -306,7 +306,7 @@ class GamePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context
 
     private fun notifyListener() = listener?.onCellSelected(CellPosition(cursorRow, cursorCol))
 
-    override fun onSaveInstanceState(): Parcelable? {
+    override fun onSaveInstanceState(): Parcelable {
         val state = Bundle()
         state.putParcelable(STATE_SUPER, super.onSaveInstanceState())
         state.putIntArray(STATE_CURSOR, if (selectedRect == null) intArrayOf(NOT_SET, NOT_SET) else intArrayOf(cursorRow, cursorCol))

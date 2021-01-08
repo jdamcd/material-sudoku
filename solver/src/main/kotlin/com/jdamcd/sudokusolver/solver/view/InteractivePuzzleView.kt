@@ -11,6 +11,8 @@ import android.view.MotionEvent
 import androidx.core.content.ContextCompat
 import com.jdamcd.sudoku.game.CellPosition
 import com.jdamcd.sudokusolver.R
+import kotlin.math.max
+import kotlin.math.min
 
 class InteractivePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context, attrs) {
 
@@ -152,8 +154,8 @@ class InteractivePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(
         if (selectedRect != null) {
             invalidate()
         }
-        cursorRow = Math.min(Math.max(row, 0), 8)
-        cursorCol = Math.min(Math.max(col, 0), 8)
+        cursorRow = min(max(row, 0), 8)
+        cursorCol = min(max(col, 0), 8)
         selectedRect = getCellRect(cursorRow, cursorCol)
         invalidate()
         notifyListener()
@@ -222,7 +224,7 @@ class InteractivePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(
 
     private fun notifyListener() = listener?.onCellSelected(CellPosition(cursorRow, cursorCol))
 
-    override fun onSaveInstanceState(): Parcelable? {
+    override fun onSaveInstanceState(): Parcelable {
         val state = Bundle()
         state.putParcelable(STATE_SUPER, super.onSaveInstanceState())
         state.putIntArray(STATE_CURSOR, if (selectedRect == null) intArrayOf(NOT_SET, NOT_SET) else intArrayOf(cursorRow, cursorCol))

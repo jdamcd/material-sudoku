@@ -10,9 +10,7 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.util.TypedValue
 import android.view.Gravity
-import android.view.View
 import android.view.ViewTreeObserver.OnGlobalLayoutListener
-import android.widget.FrameLayout
 import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import android.widget.TextView
@@ -53,7 +51,7 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
 
         tabsContainer = LinearLayout(context)
         tabsContainer.orientation = LinearLayout.HORIZONTAL
-        tabsContainer.layoutParams = FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT)
+        tabsContainer.layoutParams = LayoutParams(LayoutParams.MATCH_PARENT, LayoutParams.MATCH_PARENT)
         addView(tabsContainer)
 
         initDimens()
@@ -61,7 +59,7 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         initSystemAttributes(context, attrs)
 
         indicatorColours = resources.getIntArray(R.array.tab_colours)
-        tabLayoutParams = LinearLayout.LayoutParams(0, FrameLayout.LayoutParams.MATCH_PARENT, 1.0f)
+        tabLayoutParams = LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f)
     }
 
     private fun initDimens() {
@@ -161,7 +159,7 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
     override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
         super.onMeasure(widthMeasureSpec, heightMeasureSpec)
 
-        if (View.MeasureSpec.getMode(widthMeasureSpec) == View.MeasureSpec.UNSPECIFIED) {
+        if (MeasureSpec.getMode(widthMeasureSpec) == MeasureSpec.UNSPECIFIED) {
             return
         }
 
@@ -253,17 +251,17 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         requestLayout()
     }
 
-    public override fun onSaveInstanceState(): Parcelable? {
+    public override fun onSaveInstanceState(): Parcelable {
         val superState = super.onSaveInstanceState()
         val savedState = SavedState(superState)
         savedState.currentPosition = currentPosition
         return savedState
     }
 
-    private class SavedState : View.BaseSavedState {
-        internal var currentPosition: Int = 0
+    private class SavedState : BaseSavedState {
+        var currentPosition: Int = 0
 
-        internal constructor(superState: Parcelable?) : super(superState)
+        constructor(superState: Parcelable?) : super(superState)
 
         private constructor(input: Parcel) : super(input) {
             currentPosition = input.readInt()
