@@ -19,7 +19,7 @@ The game was featured on Google Play and downloaded over a million times in the 
 ## License
 
 ```
-Copyright 2020 Jamie McDonald
+Copyright 2021 Jamie McDonald
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

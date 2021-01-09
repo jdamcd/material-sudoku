@@ -13,6 +13,8 @@ import androidx.core.content.ContextCompat
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.game.CellPosition
 import com.jdamcd.sudoku.game.Game
+import kotlin.math.max
+import kotlin.math.min
 
 class GamePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context, attrs) {
 
@@ -241,8 +243,8 @@ class GamePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context
 
     private fun selectPressedCell(row: Int, col: Int) {
         if (puzzleData == null) return
-        cursorRow = Math.min(Math.max(row, 0), 8)
-        cursorCol = Math.min(Math.max(col, 0), 8)
+        cursorRow = min(max(row, 0), 8)
+        cursorCol = min(max(col, 0), 8)
         selectedRect = getCellRect(cursorRow, cursorCol)
         invalidate()
         notifyListener()

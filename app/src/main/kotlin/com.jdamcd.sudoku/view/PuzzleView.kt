@@ -9,6 +9,8 @@ import android.view.View
 import androidx.core.content.ContextCompat
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.game.Sudoku
+import kotlin.math.max
+import kotlin.math.min
 
 abstract class PuzzleView(context: Context, attrs: AttributeSet) : View(context, attrs) {
 
@@ -51,7 +53,7 @@ abstract class PuzzleView(context: Context, attrs: AttributeSet) : View(context,
     }
 
     public override fun onMeasure(widthMeasureSpec: Int, heightMeasureSpec: Int) {
-        val smallestSide = Math.min(widthMeasureSpec, heightMeasureSpec)
+        val smallestSide = min(widthMeasureSpec, heightMeasureSpec)
         super.onMeasure(smallestSide, smallestSide)
     }
 
@@ -120,13 +122,13 @@ abstract class PuzzleView(context: Context, attrs: AttributeSet) : View(context,
     }
 
     private fun drawVerticalPadding(canvas: Canvas) {
-        lines.strokeWidth = Math.max(padWidth * 2, 2f)
+        lines.strokeWidth = max(padWidth * 2, 2f)
         canvas.drawLine(0f, 0f, 0f, height.toFloat(), lines)
         canvas.drawLine(width.toFloat(), 0f, width.toFloat(), height.toFloat(), lines)
     }
 
     private fun drawHorizontalPadding(canvas: Canvas) {
-        lines.strokeWidth = Math.max(padHeight * 2, 2f)
+        lines.strokeWidth = max(padHeight * 2, 2f)
         canvas.drawLine(0f, 0f, width.toFloat(), 0f, lines)
         canvas.drawLine(0f, height.toFloat(), width.toFloat(), height.toFloat(), lines)
     }
