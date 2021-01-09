@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Tableau des scores</string>
   <string name="title_activity_settings">Paramètres</string>
   <string name="title_activity_licenses">Licences</string>
-  <string name="title_activity_how_to_play">Comment jouer</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Signets</string>
@@ -80,17 +79,8 @@
   <string name="settings_puzzle_timer_summary">Jouez contre la montre</string>
   <string name="settings_general_title">Général</string>
   <string name="settings_general_version">Version</string>
-  <string name="settings_how_to_play">Comment jouer</string>
-
   <string name="action_licenses">Les licences du logiciel</string>
   <string name="action_rate">Noter l\'application</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Compléter le puzzle en remplissant …</string>
-  <string name="how_to_play_row">chaque ligne</string>
-  <string name="how_to_play_col">chaque colonne</string>
-  <string name="how_to_play_box">et chaque case</string>
-  <string name="how_to_play_end">avec les chiffres de\n1 à 9</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Signet créé</string>

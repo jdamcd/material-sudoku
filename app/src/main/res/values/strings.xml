@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Scoreboard</string>
   <string name="title_activity_settings">Settings</string>
   <string name="title_activity_licenses">Licenses</string>
-  <string name="title_activity_how_to_play">How to play</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Bookmarks</string>
@@ -100,17 +99,8 @@
   <string name="settings_night_mode">Night mode</string>
   <string name="settings_general_title">General</string>
   <string name="settings_general_version">Version</string>
-  <string name="settings_how_to_play">How to play</string>
-
   <string name="action_licenses">Software licenses</string>
   <string name="action_rate">Rate app</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Complete the puzzle by filling…</string>
-  <string name="how_to_play_row">each row</string>
-  <string name="how_to_play_col">each column</string>
-  <string name="how_to_play_box">and each box</string>
-  <string name="how_to_play_end">with the digits 1\u20149</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Bookmarked</string>

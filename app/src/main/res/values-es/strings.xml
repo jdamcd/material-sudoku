@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Tabla de marcadores</string>
   <string name="title_activity_settings">Configuración</string>
   <string name="title_activity_licenses">Licencias</string>
-  <string name="title_activity_how_to_play">Cómo jugar</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Marcadores</string>
@@ -80,17 +79,8 @@
   <string name="settings_puzzle_timer_summary">Jugar contra reloj</string>
   <string name="settings_general_title">General</string>
   <string name="settings_general_version">Versión</string>
-  <string name="settings_how_to_play">Cómo jugar</string>
-
   <string name="action_licenses">Licencias de software</string>
   <string name="action_rate">Calificar app</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Completar el puzle llenando…</string>
-  <string name="how_to_play_row">cada fila</string>
-  <string name="how_to_play_col">cada columna</string>
-  <string name="how_to_play_box">y cada celda</string>
-  <string name="how_to_play_end">con los dígitos 1 al 9</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Agregado a marcadores</string>

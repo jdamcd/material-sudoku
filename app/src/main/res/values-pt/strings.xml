@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Pontuação</string>
   <string name="title_activity_settings">Configurações</string>
   <string name="title_activity_licenses">Licenças</string>
-  <string name="title_activity_how_to_play">Como jogar</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Favoritos</string>
@@ -80,17 +79,8 @@
   <string name="settings_puzzle_timer_summary">Jogar contra o relógio</string>
   <string name="settings_general_title">Geral</string>
   <string name="settings_general_version">Versão</string>
-  <string name="settings_how_to_play">Como jogar</string>
-
   <string name="action_licenses">Licenças de software</string>
   <string name="action_rate">Avaliar o aplicativo</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Conclua o quebra-cabeças preenchendo…</string>
-  <string name="how_to_play_row">cada linha</string>
-  <string name="how_to_play_col">cada coluna</string>
-  <string name="how_to_play_box">e cada caixa</string>
-  <string name="how_to_play_end">com os dígitos de 1 a 9</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Favoritos</string>

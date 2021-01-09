@@ -9,7 +9,6 @@ import com.jdamcd.sudoku.browse.PuzzleChoiceActivity
 import com.jdamcd.sudoku.puzzle.PuzzleActivity
 import com.jdamcd.sudoku.scoreboard.ScoreboardActivity
 import com.jdamcd.sudoku.settings.SettingsActivity
-import com.jdamcd.sudoku.settings.howto.HowToPlayActivity
 import com.jdamcd.sudoku.settings.license.LicensesActivity
 import com.jdamcd.sudoku.shortcut.ShortcutController
 import dagger.hilt.android.qualifiers.ApplicationContext
@@ -70,10 +69,6 @@ class IntentFactory @Inject constructor(@ApplicationContext private val context:
         return intent
     }
 
-    fun getHowToPlay(): Intent {
-        return Intent(context, HowToPlayActivity::class.java)
-    }
-
     fun getLicenses(): Intent {
         return Intent(context, LicensesActivity::class.java)
     }
@@ -85,7 +80,6 @@ class IntentFactory @Inject constructor(@ApplicationContext private val context:
 
     companion object {
         const val EXTRA_RESUME_ID = "extra_resume_id"
-        const val EXTRA_RECREATE = "extra_recreate"
         const val EXTRA_SHORTCUT = "extra_shortcut"
 
         fun isRandomShortcut(intent: Intent) = intent.hasExtra(EXTRA_SHORTCUT) &&

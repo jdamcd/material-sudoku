@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Skorbord</string>
   <string name="title_activity_settings">Ayarlar</string>
   <string name="title_activity_licenses">Lisanslar</string>
-  <string name="title_activity_how_to_play">Nasıl oynanır</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Yer işaretleri</string>
@@ -80,17 +79,8 @@
   <string name="settings_puzzle_timer_summary">Zamana karşı oyna</string>
   <string name="settings_general_title">Genel</string>
   <string name="settings_general_version">Sürüm</string>
-  <string name="settings_how_to_play">Nasıl oynanır</string>
-
   <string name="action_licenses">Yazılım lisansları</string>
   <string name="action_rate">Uygulamaya puan ver</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Bulmacayı tamamlamak için</string>
-  <string name="how_to_play_row">her satırı</string>
-  <string name="how_to_play_col">her sütunu</string>
-  <string name="how_to_play_box">ve her kutuyu</string>
-  <string name="how_to_play_end">1\'den 9\'ya kadar rakamlarla doldurun</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Yer işareti eklenmiş</string>

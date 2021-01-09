@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">スコアボード</string>
   <string name="title_activity_settings">設定</string>
   <string name="title_activity_licenses">ライセンス</string>
-  <string name="title_activity_how_to_play">遊び方</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">ブックマーク</string>
@@ -78,17 +77,8 @@
   <string name="settings_puzzle_timer_summary">時間内に解けるか挑戦する</string>
   <string name="settings_general_title">一般</string>
   <string name="settings_general_version">ヴァージョン</string>
-  <string name="settings_how_to_play">遊び方</string>
-
   <string name="action_licenses">ソフトウェア・ライセンス</string>
   <string name="action_rate">アプリを評価する</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">記入してパズルを完成させる・・・</string>
-  <string name="how_to_play_row">各行</string>
-  <string name="how_to_play_col">各列</string>
-  <string name="how_to_play_box">各ボックス</string>
-  <string name="how_to_play_end">１〜９の数</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">ブックマーク</string>
