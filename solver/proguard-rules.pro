@@ -1,0 +1,3 @@
+-ignorewarnings
+-dontobfuscate
+-keep class com.jdamcd.sudokusolver.** { *; }
