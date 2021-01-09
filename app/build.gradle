@@ -79,8 +79,6 @@ android {
 }
 
 dependencies {
-    ext.dagger_version = '2.26'
-    ext.anko_version = '0.10.8'
     ext.room_version = '2.2.6'
 
     implementation project(':core')
