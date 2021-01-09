@@ -58,6 +58,10 @@ internal class PuzzleKeypad(
 
     fun isNotesMode() = notes.isEnabled && notes.isChecked
 
+    fun reset() {
+        notes.isChecked = false
+    }
+
     override fun onClick(v: View) {
         when (v.id) {
             R.id.keypad_1 -> onSetValue(1)

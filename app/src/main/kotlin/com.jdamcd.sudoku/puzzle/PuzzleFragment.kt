@@ -417,6 +417,7 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
             isCompleted = false
             setViewsEnabled(true)
         }
+        keypad.reset()
         game.resetProgress()
         clearCursor()
         timer.restart()
