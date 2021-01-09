@@ -62,7 +62,6 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
     }
 
     init {
-        retainInstance = true
         setHasOptionsMenu(true)
     }
 
