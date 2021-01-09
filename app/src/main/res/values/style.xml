@@ -273,23 +273,4 @@
     <item name="android:text">@string/resume_button</item>
   </style>
 
-  <!-- How to -->
-
-  <style
-    name="HowToText"
-    parent="Wrap">
-    <item name="android:textColor">?android:attr/textColorPrimary</item>
-    <item name="android:fontFamily">sans-serif-light</item>
-    <item name="android:textSize">@dimen/text_how_to</item>
-    <item name="android:gravity">center_horizontal</item>
-  </style>
-
-  <style
-    name="HowToStep"
-    parent="Wrap">
-    <item name="android:orientation">vertical</item>
-    <item name="android:padding">@dimen/large_gutter</item>
-    <item name="android:gravity">center_horizontal</item>
-  </style>
-
 </resources>

@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">记分牌</string>
   <string name="title_activity_settings">设置</string>
   <string name="title_activity_licenses">授权许可</string>
-  <string name="title_activity_how_to_play">怎么玩</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">书签</string>
@@ -78,17 +77,8 @@
   <string name="settings_puzzle_timer_summary">分秒必争地玩</string>
   <string name="settings_general_title">通用</string>
   <string name="settings_general_version">版本</string>
-  <string name="settings_how_to_play">怎么玩</string>
-
   <string name="action_licenses">软件授权</string>
   <string name="action_rate">评价</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">通过填写数字完成谜题…</string>
-  <string name="how_to_play_row">每一行</string>
-  <string name="how_to_play_col">每一列</string>
-  <string name="how_to_play_box">和每个格子</string>
-  <string name="how_to_play_end">通过使用数字 1\u20149</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">书签</string>

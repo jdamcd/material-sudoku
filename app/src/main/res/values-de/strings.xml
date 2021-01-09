@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Punkteübersicht</string>
   <string name="title_activity_settings">Einstellungen</string>
   <string name="title_activity_licenses">Lizenzen</string>
-  <string name="title_activity_how_to_play">Spielregeln</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Lesezeichen</string>
@@ -80,17 +79,8 @@
   <string name="settings_puzzle_timer_summary">Gegen die Uhr spielen</string>
   <string name="settings_general_title">Allgemein</string>
   <string name="settings_general_version">Version</string>
-  <string name="settings_how_to_play">Spielregeln</string>
-
   <string name="action_licenses">Softwarelizenzen</string>
   <string name="action_rate">App bewerten</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Du löst das Rätsel durch Ausfüllen von</string>
-  <string name="how_to_play_row">jeder Zeile</string>
-  <string name="how_to_play_col">jeder Spalte</string>
-  <string name="how_to_play_box">und jeder Box</string>
-  <string name="how_to_play_end">mit Zahlen von 1\u20149</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Lesezeichen gesetzt</string>

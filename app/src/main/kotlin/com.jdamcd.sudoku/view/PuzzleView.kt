@@ -7,7 +7,6 @@ import android.graphics.Paint.Style
 import android.util.AttributeSet
 import android.view.View
 import androidx.core.content.ContextCompat
-import com.jdamcd.sudoku.Constants
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.game.Sudoku
 
@@ -83,7 +82,7 @@ abstract class PuzzleView(context: Context, attrs: AttributeSet) : View(context,
         val givens = Paint(Paint.ANTI_ALIAS_FLAG)
         givens.color = ContextCompat.getColor(context, R.color.digits_given)
         givens.style = Style.FILL
-        givens.textSize = Constants.DIGIT_SCALE * cellHeight
+        givens.textSize = DIGIT_SCALE * cellHeight
         givens.textAlign = Paint.Align.CENTER
         return givens
     }
@@ -146,5 +145,9 @@ abstract class PuzzleView(context: Context, attrs: AttributeSet) : View(context,
                 }
             }
         }
+    }
+
+    companion object {
+        const val DIGIT_SCALE = 0.7f
     }
 }

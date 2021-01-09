@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">스코어 보드</string>
   <string name="title_activity_settings">설정</string>
   <string name="title_activity_licenses">라이센스</string>
-  <string name="title_activity_how_to_play">게임 방법</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">북마크</string>
@@ -78,17 +77,8 @@
   <string name="settings_puzzle_timer_summary">제한 시간 모드</string>
   <string name="settings_general_title">일반</string>
   <string name="settings_general_version">버전</string>
-  <string name="settings_how_to_play">게임 방법</string>
-
   <string name="action_licenses">소프트웨어 라이센스</string>
   <string name="action_rate">앱 평가</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">…을 작성하여 퍼즐 완성</string>
-  <string name="how_to_play_row">각 행</string>
-  <string name="how_to_play_col">각 열</string>
-  <string name="how_to_play_box">각 상자</string>
-  <string name="how_to_play_end">숫자 1~9로</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">북마크됨</string>

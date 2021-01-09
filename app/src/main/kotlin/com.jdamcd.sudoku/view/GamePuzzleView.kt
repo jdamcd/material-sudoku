@@ -10,7 +10,6 @@ import android.os.Parcelable
 import android.util.AttributeSet
 import android.view.MotionEvent
 import androidx.core.content.ContextCompat
-import com.jdamcd.sudoku.Constants
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.game.CellPosition
 import com.jdamcd.sudoku.game.Game
@@ -82,7 +81,7 @@ class GamePuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context
         val paint = Paint(Paint.ANTI_ALIAS_FLAG)
         paint.color = ContextCompat.getColor(context, colorRes)
         paint.style = Paint.Style.FILL
-        paint.textSize = Constants.DIGIT_SCALE * cellHeight
+        paint.textSize = DIGIT_SCALE * cellHeight
         paint.textAlign = Paint.Align.CENTER
         return paint
     }

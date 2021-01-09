@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Segnapunti</string>
   <string name="title_activity_settings">Impostazioni</string>
   <string name="title_activity_licenses">Licenze</string>
-  <string name="title_activity_how_to_play">Come si gioca</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Segnalibri</string>
@@ -80,17 +79,8 @@
   <string name="settings_puzzle_timer_summary">Gioca contro il tempo</string>
   <string name="settings_general_title">Generale</string>
   <string name="settings_general_version">Versione</string>
-  <string name="settings_how_to_play">Come si gioca</string>
-
   <string name="action_licenses">Licenze del software</string>
   <string name="action_rate">Valuta l\'applicazone</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Completa il puzzle compilando…</string>
-  <string name="how_to_play_row">ogni riga</string>
-  <string name="how_to_play_col">ogni colona</string>
-  <string name="how_to_play_box">e ogni casela</string>
-  <string name="how_to_play_end">con un numero da\n1 a 9 caratteri</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Contrassegnato come preferito</string>

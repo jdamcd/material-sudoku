@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Таблица результатов</string>
   <string name="title_activity_settings">Настройки</string>
   <string name="title_activity_licenses">Лицензии</string>
-  <string name="title_activity_how_to_play">Как играть</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Закладки</string>
@@ -84,17 +83,8 @@
   <string name="settings_puzzle_timer_summary">Играть против часов</string>
   <string name="settings_general_title">Общее</string>
   <string name="settings_general_version">Версия</string>
-  <string name="settings_how_to_play">Как играть</string>
-
   <string name="action_licenses">Лицензии на программное обеспечение</string>
   <string name="action_rate">Оценить приложение</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Головоломка заканчивается, если…</string>
-  <string name="how_to_play_row">каждая строка</string>
-  <string name="how_to_play_col">каждый столбец</string>
-  <string name="how_to_play_box">и каждый квадрат</string>
-  <string name="how_to_play_end">заполнены цифрами от 1 до 9</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Добавлено в закладки</string>

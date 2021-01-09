@@ -8,7 +8,6 @@ import android.view.MenuItem
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.Preference.OnPreferenceChangeListener
-import androidx.preference.Preference.OnPreferenceClickListener
 import androidx.preference.PreferenceFragmentCompat
 import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.R
@@ -39,11 +38,6 @@ class SettingsFragment : PreferenceFragmentCompat(), OnPreferenceChangeListener 
     private fun setListeners() {
         listOf(KEY_CHEATS, KEY_TIMER, KEY_SHOW_ERRORS, KEY_SYSTEM_THEME, KEY_NIGHT_MODE)
             .forEach { findPreference<Preference>(it)?.onPreferenceChangeListener = this }
-
-        findPreference<Preference>(KEY_HOW_TO_PLAY)?.onPreferenceClickListener = OnPreferenceClickListener {
-            startActivity(intents.getHowToPlay())
-            true
-        }
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -110,7 +104,6 @@ class SettingsFragment : PreferenceFragmentCompat(), OnPreferenceChangeListener 
         const val KEY_SHOW_ERRORS = "settings_show_errors"
         const val KEY_SYSTEM_THEME = "settings_system_theme"
         const val KEY_NIGHT_MODE = "settings_night_mode"
-        const val KEY_HOW_TO_PLAY = "settings_how_to_play"
         const val KEY_VERSION = "settings_version"
     }
 }

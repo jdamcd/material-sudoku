@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Resultatlista</string>
   <string name="title_activity_settings">Inställningar</string>
   <string name="title_activity_licenses">Licenser</string>
-  <string name="title_activity_how_to_play">Hur du spelar</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Bokmärken</string>
@@ -80,17 +79,8 @@
   <string name="settings_puzzle_timer_summary">Spela mot klockan</string>
   <string name="settings_general_title">Allmänt</string>
   <string name="settings_general_version">Version</string>
-  <string name="settings_how_to_play">Hur du spelar</string>
-
   <string name="action_licenses">Programlicenser</string>
   <string name="action_rate">Betygsätt appen</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Gör pusslet färdigt genom att fylla i…</string>
-  <string name="how_to_play_row">varje vågrät rad</string>
-  <string name="how_to_play_col">varje lodrät rad</string>
-  <string name="how_to_play_box">och varje box</string>
-  <string name="how_to_play_end">med siffrorna 1\u20149</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Bokmärkt</string>

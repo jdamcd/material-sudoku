@@ -7,7 +7,6 @@
   <string name="title_activity_scoreboard">Tablica wyników</string>
   <string name="title_activity_settings">Ustawienia</string>
   <string name="title_activity_licenses">Licencje</string>
-  <string name="title_activity_how_to_play">Jak grać</string>
 
   <!-- Action bar -->
   <string name="action_bookmarks">Zakładki</string>
@@ -84,17 +83,8 @@
   <string name="settings_puzzle_timer_summary">Zagraj na czas</string>
   <string name="settings_general_title">Ogólne</string>
   <string name="settings_general_version">Wersja</string>
-  <string name="settings_how_to_play">Jak grać</string>
-
   <string name="action_licenses">Licencje na oprogramowanie</string>
   <string name="action_rate">Oceń aplikację</string>
-
-  <!-- How to play -->
-  <string name="how_to_play_start">Ułóż układankę poprzez wypełnienie …</string>
-  <string name="how_to_play_row">każdego rzędu</string>
-  <string name="how_to_play_col">każdej kolumny</string>
-  <string name="how_to_play_box">i każdego kwadratu</string>
-  <string name="how_to_play_end">cyframi 1–9</string>
 
   <!-- Content description -->
   <string name="content_bookmarked">Dodano do ulubionych</string>

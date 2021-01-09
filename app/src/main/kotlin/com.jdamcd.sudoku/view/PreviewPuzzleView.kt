@@ -8,7 +8,6 @@ import android.util.AttributeSet
 import androidx.core.content.ContextCompat
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.game.Game
-import com.jdamcd.sudoku.game.Sudoku
 
 class PreviewPuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(context, attrs) {
 
@@ -19,11 +18,6 @@ class PreviewPuzzleView(context: Context, attrs: AttributeSet) : PuzzleView(cont
     fun setGame(game: Game) {
         this.game = game
         setPuzzle(game.sudoku)
-    }
-
-    fun setPreview(sudoku: Sudoku) {
-        game = Game(sudoku)
-        setPuzzle(sudoku)
     }
 
     override fun initSizePaints() {

@@ -34,9 +34,6 @@
   <PreferenceCategory
     android:title="@string/settings_general_title">
     <Preference
-      android:key="settings_how_to_play"
-      android:title="@string/settings_how_to_play" />
-    <Preference
       android:key="settings_version"
       android:title="@string/settings_general_version"
       android:selectable="false" />
