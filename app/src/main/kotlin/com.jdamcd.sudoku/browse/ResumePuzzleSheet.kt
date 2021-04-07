@@ -10,7 +10,7 @@ import androidx.appcompat.view.ContextThemeWrapper
 import androidx.core.os.bundleOf
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
-import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.databinding.FragmentResumePuzzleBinding
 import com.jdamcd.sudoku.repository.Puzzle

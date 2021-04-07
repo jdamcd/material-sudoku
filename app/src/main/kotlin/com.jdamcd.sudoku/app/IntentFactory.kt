@@ -1,9 +1,8 @@
-package com.jdamcd.sudoku
+package com.jdamcd.sudoku.app
 
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
-import com.jdamcd.sudoku.app.SplashActivity
 import com.jdamcd.sudoku.bookmark.BookmarksActivity
 import com.jdamcd.sudoku.browse.PuzzleChoiceActivity
 import com.jdamcd.sudoku.puzzle.PuzzleActivity

@@ -8,7 +8,7 @@ import android.graphics.drawable.Icon
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.N_MR1
 import androidx.core.content.getSystemService
-import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.R
 import dagger.hilt.android.qualifiers.ApplicationContext
 import java.util.Arrays.asList

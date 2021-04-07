@@ -7,7 +7,7 @@ import android.view.Menu
 import android.view.MenuItem
 import android.view.View
 import com.google.android.play.core.review.ReviewManagerFactory
-import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.base.BaseActivity
 import com.jdamcd.sudoku.databinding.ActivityPuzzleChoiceBinding

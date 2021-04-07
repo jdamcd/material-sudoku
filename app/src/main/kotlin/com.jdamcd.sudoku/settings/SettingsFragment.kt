@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import androidx.preference.Preference
 import androidx.preference.Preference.OnPreferenceChangeListener
 import androidx.preference.PreferenceFragmentCompat
-import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.util.AppInfo

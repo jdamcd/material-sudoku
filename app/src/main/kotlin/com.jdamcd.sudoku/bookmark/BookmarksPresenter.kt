@@ -1,7 +1,7 @@
 package com.jdamcd.sudoku.bookmark
 
 import android.content.Context
-import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.base.Presenter
 import com.jdamcd.sudoku.base.PresenterView
 import com.jdamcd.sudoku.repository.Puzzle
