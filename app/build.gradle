@@ -100,6 +100,7 @@ dependencies {
     // Core
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "com.google.dagger:hilt-android:$hilt_version"
+    implementation 'androidx.hilt:hilt-lifecycle-viewmodel:1.0.0-alpha03'
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
 
     // Architecture
