@@ -7,6 +7,8 @@ import androidx.lifecycle.ViewModel
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.repository.PuzzleRepository
 import com.jdamcd.sudoku.repository.database.PuzzleSave
+import com.jdamcd.sudoku.settings.user.Settings
+import com.jdamcd.sudoku.shortcut.ShortcutController
 import dagger.hilt.android.lifecycle.HiltViewModel
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposables
@@ -15,7 +17,9 @@ import javax.inject.Inject
 
 @HiltViewModel
 class PuzzleViewModel @Inject constructor(
-    private val repository: PuzzleRepository
+    private val repository: PuzzleRepository,
+    private val shortcuts: ShortcutController,
+    private val settings: Settings
 ) : ViewModel(), LifecycleObserver {
 
     private var disposable = Disposables.empty()
@@ -41,6 +45,17 @@ class PuzzleViewModel @Inject constructor(
         repository.setBookmarked(id, isBookmarked)
             .subscribeOn(Schedulers.io())
             .subscribe()
+    }
+
+    fun enableResume(id: Long) {
+        settings.lastPlayed = id
+        settings.resumePrompt = true
+        shortcuts.enableResume()
+    }
+
+    fun disableResume() {
+        settings.resumePrompt = false
+        shortcuts.disableResume()
     }
 
     override fun onCleared() {

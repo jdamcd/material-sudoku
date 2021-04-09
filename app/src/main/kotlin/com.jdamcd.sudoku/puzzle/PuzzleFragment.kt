@@ -20,7 +20,6 @@ import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.repository.database.PuzzleSave
 import com.jdamcd.sudoku.settings.user.Settings
-import com.jdamcd.sudoku.shortcut.ShortcutController
 import com.jdamcd.sudoku.util.Format
 import com.jdamcd.sudoku.util.snackbar
 import com.jdamcd.sudoku.view.GamePuzzleView
@@ -33,7 +32,6 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
     private val viewModel: PuzzleViewModel by viewModels()
 
     @Inject lateinit var settings: Settings
-    @Inject lateinit var shortcuts: ShortcutController
 
     private lateinit var boardView: GamePuzzleView
     private lateinit var keypad: PuzzleKeypad
@@ -165,14 +163,8 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
                 game.numberOfCheats
             )
         )
-        setupResumePrompts()
-    }
-
-    private fun setupResumePrompts() {
         if (!isCompleted && game.getNumberOfCorrectAnswers() > 0) {
-            settings.lastPlayed = puzzleId
-            settings.resumePrompt = true
-            shortcuts.enableResume()
+            viewModel.enableResume(puzzleId)
         }
     }
 
@@ -185,12 +177,7 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
                 game.numberOfCheats
             )
         )
-        clearResumePrompts()
-    }
-
-    private fun clearResumePrompts() {
-        settings.resumePrompt = false
-        shortcuts.disableResume()
+        viewModel.disableResume()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {

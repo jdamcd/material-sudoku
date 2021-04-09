@@ -11,21 +11,22 @@ import androidx.core.content.getSystemService
 import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.R
 import dagger.hilt.android.qualifiers.ApplicationContext
-import java.util.Arrays.asList
 import javax.inject.Inject
 
+@TargetApi(N_MR1)
 class ShortcutController @Inject constructor(
     @ApplicationContext val context: Context,
     private val intentFactory: IntentFactory
 ) {
 
-    fun enableResume() {
-        if (SDK_INT < N_MR1) return
+    private val isSupported = SDK_INT >= N_MR1
 
-        getManager()?.dynamicShortcuts = asList(createResumeShortcut())
+    fun enableResume() {
+        if (isSupported) {
+            getManager()?.dynamicShortcuts = listOf(createResumeShortcut())
+        }
     }
 
-    @TargetApi(N_MR1)
     private fun createResumeShortcut(): ShortcutInfo {
         return ShortcutInfo.Builder(context, ID_RESUME)
             .setIntent(intentFactory.getResumeSplash())
@@ -37,28 +38,30 @@ class ShortcutController @Inject constructor(
     }
 
     fun disableResume() {
-        if (SDK_INT < N_MR1) return
-
-        val manager = getManager()
-        manager?.disableShortcuts(asList(ID_RESUME))
-        manager?.removeAllDynamicShortcuts()
+        if (isSupported) {
+            getManager()?.apply {
+                disableShortcuts(listOf(ID_RESUME))
+                removeAllDynamicShortcuts()
+            }
+        }
     }
 
-    fun reportRandomUsed() {
-        if (SDK_INT < N_MR1) return
 
-        getManager()?.reportShortcutUsed(ID_RANDOM)
+    fun reportRandomUsed() {
+        if (isSupported) {
+            getManager()?.reportShortcutUsed(ID_RANDOM)
+        }
+
     }
 
     fun reportResumeUsed() {
-        if (SDK_INT < N_MR1) return
-
-        getManager()?.reportShortcutUsed(ID_RESUME)
+        if (isSupported) {
+            getManager()?.reportShortcutUsed(ID_RESUME)
+        }
     }
 
-    @TargetApi(N_MR1)
     private fun getManager(): ShortcutManager? {
-        return context.getSystemService<ShortcutManager>()
+        return context.getSystemService()
     }
 
     companion object {
