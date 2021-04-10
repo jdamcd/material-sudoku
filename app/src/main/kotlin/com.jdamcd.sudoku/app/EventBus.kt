@@ -1,4 +1,4 @@
-package com.jdamcd.sudoku.eventbus
+package com.jdamcd.sudoku.app
 
 import io.reactivex.Observable
 import io.reactivex.android.schedulers.AndroidSchedulers
@@ -18,3 +18,5 @@ class EventBus @Inject constructor() {
     fun <T> listen(eventType: Class<T>): Observable<T> = publisher.ofType(eventType)
         .subscribeOn(AndroidSchedulers.mainThread())
 }
+
+enum class HideCompletedEvent { SHOW, HIDE }

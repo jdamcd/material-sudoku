@@ -1,7 +1,6 @@
 package com.jdamcd.sudoku.app
 
 import android.os.Bundle
-import com.jdamcd.sudoku.IntentFactory
 import com.jdamcd.sudoku.base.BaseActivity
 import com.jdamcd.sudoku.settings.user.Settings
 import com.jdamcd.sudoku.shortcut.ShortcutController

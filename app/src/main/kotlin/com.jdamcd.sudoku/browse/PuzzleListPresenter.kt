@@ -1,11 +1,11 @@
 package com.jdamcd.sudoku.browse
 
 import android.content.Context
-import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.app.EventBus
+import com.jdamcd.sudoku.app.HideCompletedEvent
+import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.base.Presenter
 import com.jdamcd.sudoku.base.PresenterView
-import com.jdamcd.sudoku.eventbus.EventBus
-import com.jdamcd.sudoku.eventbus.event.HideCompleted
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.repository.PuzzleRepository
@@ -31,8 +31,8 @@ internal class PuzzleListPresenter @Inject constructor(
         setListSubscription(view, settings.hideCompleted)
 
         addSubscription(
-            eventBus.listen(HideCompleted::class.java)
-                .map { it == HideCompleted.HIDE }
+            eventBus.listen(HideCompletedEvent::class.java)
+                .map { it == HideCompletedEvent.HIDE }
                 .subscribe { setListSubscription(view, it) }
         )
 

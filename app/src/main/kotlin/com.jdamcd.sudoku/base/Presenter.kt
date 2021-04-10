@@ -4,6 +4,7 @@ import androidx.annotation.CallSuper
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 
+@Deprecated("Migrate to ViewModel")
 open class Presenter<V : PresenterView> {
 
     private val disposables = CompositeDisposable()

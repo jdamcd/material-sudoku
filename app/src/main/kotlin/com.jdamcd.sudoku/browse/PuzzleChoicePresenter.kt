@@ -2,11 +2,11 @@ package com.jdamcd.sudoku.browse
 
 import android.content.Context
 import com.jdamcd.sudoku.BuildConfig
-import com.jdamcd.sudoku.IntentFactory
+import com.jdamcd.sudoku.app.EventBus
+import com.jdamcd.sudoku.app.HideCompletedEvent
+import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.base.Presenter
 import com.jdamcd.sudoku.base.PresenterView
-import com.jdamcd.sudoku.eventbus.EventBus
-import com.jdamcd.sudoku.eventbus.event.HideCompleted
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.repository.PuzzleRepository
@@ -34,7 +34,7 @@ internal class PuzzleChoicePresenter @Inject constructor(
             view.onToggleCompleted()
                 .subscribe {
                     settings.hideCompleted = it
-                    eventBus.publish(if (it) HideCompleted.HIDE else HideCompleted.SHOW)
+                    eventBus.publish(if (it) HideCompletedEvent.HIDE else HideCompletedEvent.SHOW)
                 }
         )
 

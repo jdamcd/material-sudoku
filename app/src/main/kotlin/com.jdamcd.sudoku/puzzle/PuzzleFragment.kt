@@ -9,48 +9,36 @@ import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import com.jdamcd.sudoku.R
-import com.jdamcd.sudoku.eventbus.EventBus
-import com.jdamcd.sudoku.eventbus.event.GameResult
 import com.jdamcd.sudoku.game.CellPosition
 import com.jdamcd.sudoku.game.Game
 import com.jdamcd.sudoku.puzzle.PuzzleTimer.UpdateCallback
 import com.jdamcd.sudoku.puzzle.dialog.ConfirmRestartDialog
 import com.jdamcd.sudoku.puzzle.dialog.PuzzleCompleteDialog
-import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
-import com.jdamcd.sudoku.repository.PuzzleRepository
 import com.jdamcd.sudoku.repository.database.PuzzleSave
 import com.jdamcd.sudoku.settings.user.Settings
-import com.jdamcd.sudoku.shortcut.ShortcutController
 import com.jdamcd.sudoku.util.Format
 import com.jdamcd.sudoku.util.snackbar
 import com.jdamcd.sudoku.view.GamePuzzleView
 import dagger.hilt.android.AndroidEntryPoint
-import io.reactivex.android.schedulers.AndroidSchedulers
-import io.reactivex.disposables.Disposables
-import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 @AndroidEntryPoint
 class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
 
-    @Inject lateinit var repository: PuzzleRepository
-    @Inject lateinit var eventBus: EventBus
     @Inject lateinit var settings: Settings
-    @Inject lateinit var shortcuts: ShortcutController
+    private val viewModel: PuzzleViewModel by viewModels()
 
     private lateinit var boardView: GamePuzzleView
     private lateinit var keypad: PuzzleKeypad
 
     private var puzzleId: Long = 0
-    private lateinit var level: Level
     private lateinit var timer: PuzzleTimer
     private lateinit var game: Game
     private var isBookmarked: Boolean = false
     private var isCompleted: Boolean = false
-
-    private var disposable = Disposables.empty()
 
     private val hostActivity: PuzzleContract
         get() = activity as PuzzleContract
@@ -62,7 +50,6 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
     }
 
     init {
-        retainInstance = true
         setHasOptionsMenu(true)
     }
 
@@ -85,10 +72,13 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         findViews(view)
-        disposable = repository.getPuzzle(puzzleId)
-            .subscribeOn(Schedulers.io())
-            .observeOn(AndroidSchedulers.mainThread())
-            .subscribe { data -> setupPuzzle(data) }
+        viewModel.uiModel.observe(viewLifecycleOwner) {
+            when (it) {
+                is PuzzleState.Data -> onPuzzleLoaded(it.puzzle)
+                else -> {}
+            }
+        }
+        viewModel.loadPuzzle(puzzleId)
     }
 
     private fun findViews(root: View) {
@@ -107,7 +97,7 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         boardView = root.findViewById(R.id.puzzle_board)
     }
 
-    private fun setupPuzzle(data: Puzzle) {
+    private fun onPuzzleLoaded(data: Puzzle) {
         if (!::game.isInitialized) {
             game = data.game
         }
@@ -115,7 +105,6 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         boardView.setShowMistakes(settings.showErrors)
 
         hostActivity.setPuzzleName(data.title)
-        level = data.level
         timer.setStartAt(data.time, settings.timerEnabled)
 
         isCompleted = data.isCompleted
@@ -140,11 +129,6 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         keypad.setupListeners()
     }
 
-    override fun onDestroyView() {
-        super.onDestroyView()
-        disposable.dispose()
-    }
-
     override fun onResume() {
         super.onResume()
         timer.start()
@@ -162,14 +146,8 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         timer.pause()
     }
 
-    private fun saveBookmarkState() {
-        repository.setBookmarked(puzzleId, isBookmarked)
-            .subscribeOn(Schedulers.io())
-            .subscribe()
-    }
-
     private fun savePausedState() {
-        repository.save(
+        viewModel.save(
             PuzzleSave(
                 puzzleId,
                 Format.stringFromGrid(game.answers),
@@ -181,21 +159,13 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
                 game.numberOfCheats
             )
         )
-            .subscribeOn(Schedulers.io())
-            .subscribe()
-        setupResumePrompts()
-    }
-
-    private fun setupResumePrompts() {
         if (!isCompleted && game.getNumberOfCorrectAnswers() > 0) {
-            settings.lastPlayed = puzzleId
-            settings.resumePrompt = true
-            shortcuts.enableResume()
+            viewModel.enableResume(puzzleId)
         }
     }
 
     private fun saveCompletedState() {
-        repository.save(
+        viewModel.save(
             PuzzleSave.forCompleted(
                 puzzleId,
                 Format.stringFromGrid(game.answers),
@@ -203,14 +173,7 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
                 game.numberOfCheats
             )
         )
-            .subscribeOn(Schedulers.io())
-            .subscribe()
-        clearResumePrompts()
-    }
-
-    private fun clearResumePrompts() {
-        settings.resumePrompt = false
-        shortcuts.disableResume()
+        viewModel.disableResume()
     }
 
     override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
@@ -246,7 +209,7 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
             R.id.action_bookmark -> {
                 isBookmarked = !isBookmarked
                 hostActivity.invalidateMenu()
-                saveBookmarkState()
+                viewModel.bookmark(puzzleId, isBookmarked)
                 return true
             }
             R.id.action_cheat_cell -> {
@@ -402,7 +365,6 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         saveCompletedState()
         hostActivity.invalidateMenu()
         setViewsEnabled(false)
-        eventBus.publish(GameResult(level, timer.getTime(), game.numberOfCheats))
     }
 
     private fun showCompletedMessage() {
@@ -421,17 +383,11 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         game.resetProgress()
         clearCursor()
         timer.restart()
-        saveRestartedState()
+        viewModel.save(PuzzleSave.forRestart(puzzleId))
         hostActivity.invalidateMenu()
         if (settings.timerEnabled) {
             timer.startUpdates()
         }
-    }
-
-    private fun saveRestartedState() {
-        repository.save(PuzzleSave.forRestart(puzzleId))
-            .subscribeOn(Schedulers.io())
-            .subscribe()
     }
 
     private fun showRestartConfirmation() {
