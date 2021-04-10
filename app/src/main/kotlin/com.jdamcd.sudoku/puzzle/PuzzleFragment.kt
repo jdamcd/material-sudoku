@@ -16,7 +16,6 @@ import com.jdamcd.sudoku.game.Game
 import com.jdamcd.sudoku.puzzle.PuzzleTimer.UpdateCallback
 import com.jdamcd.sudoku.puzzle.dialog.ConfirmRestartDialog
 import com.jdamcd.sudoku.puzzle.dialog.PuzzleCompleteDialog
-import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.repository.database.PuzzleSave
 import com.jdamcd.sudoku.settings.user.Settings
@@ -29,15 +28,13 @@ import javax.inject.Inject
 @AndroidEntryPoint
 class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
 
-    private val viewModel: PuzzleViewModel by viewModels()
-
     @Inject lateinit var settings: Settings
+    private val viewModel: PuzzleViewModel by viewModels()
 
     private lateinit var boardView: GamePuzzleView
     private lateinit var keypad: PuzzleKeypad
 
     private var puzzleId: Long = 0
-    private lateinit var level: Level
     private lateinit var timer: PuzzleTimer
     private lateinit var game: Game
     private var isBookmarked: Boolean = false
@@ -78,7 +75,7 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         viewModel.uiModel.observe(viewLifecycleOwner) {
             when (it) {
                 is PuzzleState.Data -> onPuzzleLoaded(it.puzzle)
-                PuzzleState.Loading -> {}
+                else -> {}
             }
         }
         viewModel.loadPuzzle(puzzleId)
@@ -108,7 +105,6 @@ class PuzzleFragment : Fragment(), ConfirmRestartDialog.RestartContract {
         boardView.setShowMistakes(settings.showErrors)
 
         hostActivity.setPuzzleName(data.title)
-        level = data.level
         timer.setStartAt(data.time, settings.timerEnabled)
 
         isCompleted = data.isCompleted
