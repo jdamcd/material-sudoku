@@ -1,11 +1,11 @@
 package com.jdamcd.sudoku.browse
 
 import android.content.Context
+import com.jdamcd.sudoku.app.EventBus
+import com.jdamcd.sudoku.app.HideCompletedEvent
 import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.base.Presenter
 import com.jdamcd.sudoku.base.PresenterView
-import com.jdamcd.sudoku.app.EventBus
-import com.jdamcd.sudoku.app.HideCompletedEvent
 import com.jdamcd.sudoku.repository.Level
 import com.jdamcd.sudoku.repository.Puzzle
 import com.jdamcd.sudoku.repository.PuzzleRepository
@@ -17,10 +17,10 @@ import io.reactivex.schedulers.Schedulers
 import javax.inject.Inject
 
 internal class PuzzleListPresenter @Inject constructor(
-        private val repository: PuzzleRepository,
-        private val eventBus: EventBus,
-        private val settings: Settings,
-        private val intents: IntentFactory
+    private val repository: PuzzleRepository,
+    private val eventBus: EventBus,
+    private val settings: Settings,
+    private val intents: IntentFactory
 ) : Presenter<PuzzleListPresenter.View>() {
 
     private var listDisposable = Disposables.empty()

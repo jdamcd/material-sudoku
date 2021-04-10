@@ -20,4 +20,3 @@ class EventBus @Inject constructor() {
 }
 
 enum class HideCompletedEvent { SHOW, HIDE }
-

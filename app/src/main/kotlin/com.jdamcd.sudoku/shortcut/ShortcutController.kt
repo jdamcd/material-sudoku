@@ -8,8 +8,8 @@ import android.graphics.drawable.Icon
 import android.os.Build.VERSION.SDK_INT
 import android.os.Build.VERSION_CODES.N_MR1
 import androidx.core.content.getSystemService
-import com.jdamcd.sudoku.app.IntentFactory
 import com.jdamcd.sudoku.R
+import com.jdamcd.sudoku.app.IntentFactory
 import dagger.hilt.android.qualifiers.ApplicationContext
 import javax.inject.Inject
 
@@ -46,12 +46,10 @@ class ShortcutController @Inject constructor(
         }
     }
 
-
     fun reportRandomUsed() {
         if (isSupported) {
             getManager()?.reportShortcutUsed(ID_RANDOM)
         }
-
     }
 
     fun reportResumeUsed() {
