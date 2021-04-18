@@ -6,6 +6,7 @@ import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
 import android.view.View
+import androidx.viewpager2.widget.MarginPageTransformer
 import com.google.android.play.core.review.ReviewManagerFactory
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.app.IntentFactory
@@ -77,15 +78,14 @@ class PuzzleChoiceActivity : BaseActivity(), PuzzleChoicePresenter.View {
     }
 
     private fun configurePager() {
-        val pagerAdapter = PuzzlePagerAdapter(supportFragmentManager, resources)
+        val pagerAdapter = PuzzlePagerAdapter(this)
         val pager = binding.pager
         pager.adapter = pagerAdapter
         binding.indicator.setViewPager(pager)
+        pager.offscreenPageLimit = pagerAdapter.itemCount - 1
         pager.currentItem = 1
-        pager.offscreenPageLimit = pagerAdapter.count - 1
-        pager.setPageMarginDrawable(R.drawable.divider_vertical)
-        pager.pageMargin = ViewUtil.dpToPx(resources, 5)
-        pager.addOnPageChangeListener(fabView)
+        pager.setPageTransformer(MarginPageTransformer(ViewUtil.dpToPx(resources, 5)))
+        pager.registerOnPageChangeCallback(fabView)
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {

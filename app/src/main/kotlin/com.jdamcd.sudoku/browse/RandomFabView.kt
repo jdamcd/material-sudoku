@@ -3,11 +3,11 @@ package com.jdamcd.sudoku.browse
 import android.animation.ArgbEvaluator
 import android.animation.ValueAnimator
 import android.content.res.ColorStateList
-import androidx.viewpager.widget.ViewPager
+import androidx.viewpager2.widget.ViewPager2
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.jdamcd.sudoku.R
 
-internal class RandomFabView : ViewPager.OnPageChangeListener {
+internal class RandomFabView : ViewPager2.OnPageChangeCallback() {
 
     private lateinit var fab: FloatingActionButton
     private lateinit var fabColours: IntArray
@@ -21,10 +21,6 @@ internal class RandomFabView : ViewPager.OnPageChangeListener {
     private fun colourAtPosition(position: Int): Int {
         return fabColours[position % fabColours.size]
     }
-
-    override fun onPageScrollStateChanged(state: Int) {}
-
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {}
 
     override fun onPageSelected(position: Int) {
         animateBackgroundChange(position)
