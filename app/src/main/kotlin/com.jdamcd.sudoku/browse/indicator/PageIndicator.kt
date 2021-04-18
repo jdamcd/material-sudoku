@@ -1,17 +1,16 @@
 package com.jdamcd.sudoku.browse.indicator
 
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import androidx.viewpager2.widget.ViewPager2
 
-interface PageIndicator : OnPageChangeListener {
+interface PageIndicator {
 
-    fun setViewPager(view: ViewPager)
+    fun setViewPager(view: ViewPager2)
 
-    fun setViewPager(view: ViewPager, initialPosition: Int)
+    fun setViewPager(view: ViewPager2, initialPosition: Int)
 
     fun setCurrentItem(item: Int)
 
-    fun setOnPageChangeListener(listener: OnPageChangeListener)
+    fun setOnPageChangeCallback(listener: ViewPager2.OnPageChangeCallback)
 
     fun notifyDataSetChanged()
 }

@@ -15,8 +15,8 @@ import android.widget.HorizontalScrollView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.core.widget.TextViewCompat
-import androidx.viewpager.widget.ViewPager
-import androidx.viewpager.widget.ViewPager.OnPageChangeListener
+import androidx.viewpager2.widget.ViewPager2
+import androidx.viewpager2.widget.ViewPager2.OnPageChangeCallback
 import com.jdamcd.sudoku.R
 import com.jdamcd.sudoku.util.ViewUtil
 
@@ -24,8 +24,8 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
 
     private val tabLayoutParams: LinearLayout.LayoutParams
 
-    private var pager: ViewPager? = null
-    private var listener: OnPageChangeListener? = null
+    private var pager: ViewPager2? = null
+    private var listener: OnPageChangeCallback? = null
 
     private val tabsContainer: LinearLayout
 
@@ -33,11 +33,13 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
     private lateinit var rectPaint: Paint
     private var tabBackground: Int = 0
     private var tabTextColour = -0x99999a
-    private val indicatorColours: IntArray
     private var tabTextSize = 12
     private var scrollOffset = 52
     private var indicatorHeight = 8
     private var tabPadding = 24
+
+    private val indicatorColours: IntArray
+    private val indicatorTitles: Array<String>
 
     private var currentPosition = 0
     private var currentPositionOffset = 0f
@@ -59,6 +61,7 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         initSystemAttributes(context, attrs)
 
         indicatorColours = resources.getIntArray(R.array.tab_colours)
+        indicatorTitles = resources.getStringArray(R.array.tab_titles)
         tabLayoutParams = LinearLayout.LayoutParams(0, LayoutParams.MATCH_PARENT, 1.0f)
     }
 
@@ -85,17 +88,17 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         a.recycle()
     }
 
-    override fun setViewPager(view: ViewPager) {
+    override fun setViewPager(view: ViewPager2) {
         if (pager === view) {
             return
         }
         view.adapter ?: throw IllegalStateException("ViewPager does not have adapter instance.")
         this.pager = view
-        view.addOnPageChangeListener(this)
+        view.registerOnPageChangeCallback(CallbackWrapper())
         notifyDataSetChanged()
     }
 
-    override fun setViewPager(view: ViewPager, initialPosition: Int) {
+    override fun setViewPager(view: ViewPager2, initialPosition: Int) {
         setViewPager(view)
         setCurrentItem(initialPosition)
     }
@@ -105,7 +108,7 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         requestLayout()
     }
 
-    override fun setOnPageChangeListener(listener: OnPageChangeListener) {
+    override fun setOnPageChangeCallback(listener: OnPageChangeCallback) {
         this.listener = listener
     }
 
@@ -113,9 +116,9 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
     override fun notifyDataSetChanged() {
         tabsContainer.removeAllViews()
 
-        tabCount = pager?.adapter!!.count
+        tabCount = pager?.adapter!!.itemCount
         for (i in 0 until tabCount) {
-            addTextTab(i, pager?.adapter!!.getPageTitle(i).toString())
+            addTextTab(i)
         }
 
         updateTabStyles()
@@ -132,9 +135,9 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         )
     }
 
-    private fun addTextTab(position: Int, title: String) {
+    private fun addTextTab(position: Int) {
         val tab = TextView(context)
-        tab.text = title
+        tab.text = indicatorTitles[position]
         tab.gravity = Gravity.CENTER
         TextViewCompat.setTextAppearance(tab, R.style.TabText)
         tab.setOnClickListener { pager!!.currentItem = position }
@@ -218,32 +221,6 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         return indicatorColours[position % indicatorColours.size]
     }
 
-    override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
-        currentPosition = position
-        currentPositionOffset = positionOffset
-
-        if (currentPositionOffset == 1.0f) {
-            currentPosition++
-            currentPositionOffset = 0f
-        }
-
-        scrollToChild(position, (positionOffset * tabsContainer.getChildAt(position).width).toInt())
-        invalidate()
-
-        listener?.onPageScrolled(position, positionOffset, positionOffsetPixels)
-    }
-
-    override fun onPageScrollStateChanged(state: Int) {
-        if (state == ViewPager.SCROLL_STATE_IDLE) {
-            scrollToChild(pager!!.currentItem, 0)
-        }
-        listener?.onPageScrollStateChanged(state)
-    }
-
-    override fun onPageSelected(position: Int) {
-        listener?.onPageSelected(position)
-    }
-
     public override fun onRestoreInstanceState(state: Parcelable) {
         val savedState = state as SavedState
         super.onRestoreInstanceState(savedState.superState)
@@ -256,6 +233,34 @@ class PagerStripIndicator @JvmOverloads constructor(context: Context, attrs: Att
         val savedState = SavedState(superState)
         savedState.currentPosition = currentPosition
         return savedState
+    }
+
+    private inner class CallbackWrapper : OnPageChangeCallback() {
+        override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+            currentPosition = position
+            currentPositionOffset = positionOffset
+
+            if (currentPositionOffset == 1.0f) {
+                currentPosition++
+                currentPositionOffset = 0f
+            }
+
+            scrollToChild(position, (positionOffset * tabsContainer.getChildAt(position).width).toInt())
+            invalidate()
+
+            listener?.onPageScrolled(position, positionOffset, positionOffsetPixels)
+        }
+
+        override fun onPageScrollStateChanged(state: Int) {
+            if (state == ViewPager2.SCROLL_STATE_IDLE) {
+                scrollToChild(pager!!.currentItem, 0)
+            }
+            listener?.onPageScrollStateChanged(state)
+        }
+
+        override fun onPageSelected(position: Int) {
+            listener?.onPageSelected(position)
+        }
     }
 
     private class SavedState : BaseSavedState {
