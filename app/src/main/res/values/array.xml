@@ -16,6 +16,13 @@
     <item>@color/extreme</item>
   </integer-array>
 
+  <integer-array name="tab_titles">
+    <item>@string/level_easy</item>
+    <item>@string/level_medium</item>
+    <item>@string/level_hard</item>
+    <item>@string/level_extreme</item>
+  </integer-array>
+
   <string-array name="complete_greetings">
     <item>@string/puzzle_complete_1</item>
     <item>@string/puzzle_complete_2</item>
