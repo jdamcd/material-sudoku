@@ -1,14 +1,13 @@
 buildscript {
-    ext.kotlin_version = '1.4.32'
-    ext.hilt_version = '2.33-beta'
+    ext.kotlin_version = '1.6.10'
+    ext.hilt_version = '2.40.1'
     repositories {
         mavenCentral()
-        jcenter()
         google()
         maven { url 'https://maven.fabric.io/public' }
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:4.1.3'
+        classpath 'com.android.tools.build:gradle:7.0.4'
         classpath "com.google.dagger:hilt-android-gradle-plugin:$hilt_version"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
@@ -21,7 +20,6 @@ plugins {
 allprojects {
     repositories {
         mavenCentral()
-        jcenter()
         google()
     }
 }
@@ -37,7 +35,7 @@ subprojects {
     spotless {
         kotlin {
             target '**/*.kt'
-            ktlint('0.41.0')
+            ktlint('0.43.2')
         }
     }
 }
